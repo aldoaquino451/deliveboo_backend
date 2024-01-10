@@ -21,7 +21,12 @@
 
 <body>
 
-    @yield('content')
+    @include('admin.partials.header')
+
+    <main>
+        @yield('content')
+    </main>
+
 
 </body>
 
