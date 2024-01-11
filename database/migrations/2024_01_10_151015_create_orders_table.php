@@ -19,8 +19,8 @@ return new class extends Migration
       $table->string('name', 45);
       $table->string('lastname', 45);
       $table->string('email', 45);
+      $table->string('address', 120);
       $table->string('phone_number', 14);
-      $table->string('status', 30)->default('in attesa di conferma...');
       $table->timestamps();
     });
   }

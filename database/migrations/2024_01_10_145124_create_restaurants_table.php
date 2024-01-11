@@ -13,17 +13,15 @@ return new class extends Migration
   {
     Schema::create('restaurants', function (Blueprint $table) {
       $table->id();
+      $table->unsignedBigInteger('user_id');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
       $table->string('name', 45);
       $table->string('slug', 50)->unique();
       $table->string('email', 45)->unique();
-      $table->string('password');
       $table->string('address', 120);
       $table->string('vat_number', 11)->unique();
       $table->string('image')->nullable();
       $table->text('description')->nullable();
-      $table->time('opening_time');
-      $table->time('closing_time');
-      $table->string('day_off', 10)->nullable();
       $table->timestamps();
     });
   }

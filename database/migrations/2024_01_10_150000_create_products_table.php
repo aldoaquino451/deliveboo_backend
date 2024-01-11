@@ -13,12 +13,13 @@ return new class extends Migration
   {
     Schema::create('products', function (Blueprint $table) {
       $table->id();
+
       $table->string('name', 45);
       $table->decimal('price', 5, 2);
       $table->string('image')->nullable();
       $table->boolean('is_visible')->default(0);
       $table->boolean('is_vegan')->default(0);
-      $table->tinyInteger('discount')->nullable()->unsigned();
+      $table->text('ingredients');
       $table->timestamps();
     });
   }
