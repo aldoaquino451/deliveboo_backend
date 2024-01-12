@@ -19,7 +19,6 @@ return new class extends Migration
 
             $table->foreign('product_id')->references('id')->on('products')->onDelete('set null');
             $table->tinyInteger('quantity')->default(1);
-
         });
     }
 

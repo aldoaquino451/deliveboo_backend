@@ -29,7 +29,6 @@ return new class extends Migration
 
             $table->dropColumn('category_id');
             $table->dropColumn('restaurante_id');
-
         });
     }
 };

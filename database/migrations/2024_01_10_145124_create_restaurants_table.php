@@ -6,31 +6,31 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-  /**
-   * Run the migrations.
-   */
-  public function up(): void
-  {
-    Schema::create('restaurants', function (Blueprint $table) {
-      $table->id();
-      $table->unsignedBigInteger('user_id');
-      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-      $table->string('name', 45);
-      $table->string('slug', 50)->unique();
-      $table->string('email', 45)->unique();
-      $table->string('address', 120);
-      $table->string('vat_number', 11)->unique();
-      $table->string('image')->nullable();
-      $table->text('description')->nullable();
-      $table->timestamps();
-    });
-  }
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('restaurants', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('name', 45);
+            $table->string('slug', 50)->unique();
+            $table->string('email', 45)->unique();
+            $table->string('address', 120);
+            $table->string('vat_number', 11)->unique();
+            $table->string('image')->nullable();
+            $table->text('description')->nullable();
+            $table->timestamps();
+        });
+    }
 
-  /**
-   * Reverse the migrations.
-   */
-  public function down(): void
-  {
-    Schema::dropIfExists('restaurants');
-  }
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('restaurants');
+    }
 };
