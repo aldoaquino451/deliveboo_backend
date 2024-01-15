@@ -1,11 +1,25 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-    <h1>{{ $product->name }}</h1>
-    <p>{{ $product->ingredients }}</p>
-    <p>{{ $product->price }}</p>
-    @if ($product->is_vegan) <span>Prodotto Vegano</span> @endif
+    <h3 class="mb-4 text-capitalize text-center">Dettagli Prodotto</h3>
 
-</div>
+    <div class="my-3 mx-5 p-3 card">
+
+        <h4 class="mb-3">{{ $product->name }}</h4>
+
+        <p class="mb-2">
+            <strong>Ingredienti: </strong>
+            <span class="ms-2">{{ $product->ingredients }}</span>
+        </p>
+        <p class="mb-2">
+            <strong>Prezzo: </strong>
+            <span class="ms-2">&euro; {{ $product->price }}</span>
+        </p>
+        @if ($product->is_vegan)
+            <p class="mb-2 text-success">
+                <strong>Prodotto Vegano</strong>
+            </p>
+        @endif
+
+    </div>
 @endsection

@@ -11,10 +11,8 @@ use App\Models\Order;
 
 class DashboardController extends Controller
 {
-    public function index(){
-        $restaurants = Restaurant::all();
-        $orders = Order::all();
-
-        return view('admin.dashboard', compact('restaurants', 'orders'));
-    }
+  public function index()
+  {
+    return view('admin.dashboard.index');
+  }
 }

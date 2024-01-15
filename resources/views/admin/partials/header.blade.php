@@ -1,18 +1,29 @@
-<header class="bg-dark text-center text-white fs-1">
-    <div class="container d-flex justify-content-between">
-        <span>logo</span>
+<header id="admin" class="bg-dark text-white">
+    <div class="container h-100 py-2 d-flex justify-content-between">
 
-        <a href="{{ route('admin.index') }}">HOME</a>
-        <a href="{{ route('admin.products.index') }}">PRODOTTI</a>
-        <a href="{{ route('admin.dashboard') }}">DASHBOARD</a>
+        <div class="d-flex gap-5 align-items-center">
+            <h3 class="m-0">LOGO</h3>
+            <ul class="m-0 list-unstyled d-flex gap-4">
+                <li>
+                    <a href="{{ route('admin.index') }}" class="link-light">HOME</a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.products.index') }}" class="link-light">PRODOTTI</a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.dashboard') }}" class="link-light">DASHBOARD</a>
+                </li>
+            </ul>
+        </div>
 
-        <div>
-            <a id="navbarDropdown" class="nav-link dropdown-toggle text-capitalize" href="#" role="button"
+        <div class="d-flex align-items-center">
+            <a id="navbarDropdown" class="nav-link dropdown-toggle text-capitalize fs-5" href="#" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('admin.index') }}">{{ __('Dashboard') }}</a>
                 <a class="dropdown-item" href="{{ url('profile') }}">{{ __('Profile') }}</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                     onclick="event.preventDefault();

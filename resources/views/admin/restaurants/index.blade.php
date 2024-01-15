@@ -1,24 +1,49 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        @if ($restaurant)
-            <div>
-                <h1>{{ $restaurant->name }}</h1>
-                <p>Email: <span class="ms-3">{{ $restaurant->email }}</span></p>
-                <p>Indirizzo: <span class="ms-3">{{ $restaurant->address }}</span></p>
-                <p>Partita IVA: <span class="ms-3">{{ $restaurant->vat_number }}</span></p>
-                <p>Descrizione: <span class="ms-3">{{ $restaurant->description }}</span></p>
+    <h1 class="mb-3 text-capitalize text-center">Home</h1>
 
-                <p>Crea un nuovo prodotto:</p>
-                <a class="btn btn-primary" href="{{ route('admin.products.create') }}">Crea prodotto</a>
-            </div>
-        @else
-            <div>
-                <p>Aggiungi il tuo ristorante</p>
-                <a class="btn btn-primary" href="{{ route('admin.create') }}">Crea</a>
+    @if ($restaurant)
+        <div class="px-5">
+            <h3 class="mb-3 text-capitalize">{{ $restaurant->name }}</h3>
+            <p class="mb-2">
+                <strong>Indirizzo: </strong>
+                <span class="ms-2">{{ $restaurant->address }}</span>
+            </p>
+            <p class="mb-2">
+                <strong>Descrizione: </strong>
+                <span class="ms-2">{{ $restaurant->description }}</span>
+            </p>
+            <p class="mb-2">
+                <strong>Email:</strong>
+                <span class="ms-2">{{ $restaurant->email }}</span>
+            </p>
+            <p class="mb-2">
+                <strong>Partita IVA: </strong>
+                <span class="ms-2">{{ $restaurant->vat_number }}</span>
+            </p>
 
+            <div class="mt-5">
+                <a class="p-0 btn btn-primary fs-2" href="{{ route('admin.products.create') }}">
+                    <div class="py-0 px-2 btn btn-primary d-flex align-items-center gap-3">
+                        <span>Crea un nuovo prodotto</span>
+                        <span class=" fs-2">
+                            <i class="fa-solid fa-circle-plus"></i>
+                        </span>
+                    </div>
+                </a>
             </div>
-        @endif
-    </div>
+        </div>
+    @else
+        <div class="d-flex justify-content-center">
+            <a class="p-0 btn btn-primary fs-2" href="{{ route('admin.create') }}">
+                <div class="btn btn-primary d-flex align-items-center gap-3">
+                    <span>Aggiungi il tuo ristorante</span>
+                    <span class=" fs-2">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </span>
+                </div>
+            </a>
+        </div>
+    @endif
 @endsection
