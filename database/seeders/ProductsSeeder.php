@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Functions\Helper;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -21,6 +22,7 @@ class ProductsSeeder extends Seeder
       $new_product->category_id = $product['category_id'];
       $new_product->restaurant_id = $product['restaurant_id'];
       $new_product->name = $product['name'];
+      $new_product->slug = Helper::generateSlug($product['name'], Product::class);
       $new_product->price = $product['price'];
       $new_product->image = $product['image'];
       $new_product->is_visible = $product['is_visible'];

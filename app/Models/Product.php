@@ -21,10 +21,13 @@ class Product extends Model
 
   protected $fillable = [
     'name',
+    'slug',
     'price',
     'image',
     'is_visible',
     'is_vegan',
     'ingredients',
+    'restaurant_id',
+    'category_id'
   ];
 }

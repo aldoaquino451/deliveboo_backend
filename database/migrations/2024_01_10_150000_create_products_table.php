@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name', 45);
+            $table->string('slug', 47);
             $table->decimal('price', 5, 2);
             $table->string('image')->nullable();
             $table->boolean('is_visible')->default(0);

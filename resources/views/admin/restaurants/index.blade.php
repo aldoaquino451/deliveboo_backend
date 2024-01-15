@@ -1,8 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div>
-        main
 
-    </div>
+    <h1>{{ $restaurant->name }}</h1>
+
 @endsection

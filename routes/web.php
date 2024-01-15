@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\RestaurantController;
+use App\Http\Controllers\Admin\ProductController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,10 +22,18 @@ Route::get('/', function () {
   return view('guest.home');
 });
 
-Route::get('/admin', function () {
-  return view('admin.home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/admin', function () {
+//   return view('admin.home');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::middleware(['auth', 'verified'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        Route::resource('/', RestaurantController::class);
+        Route::resource('products', ProductController::class);
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+  });
 
 
 
