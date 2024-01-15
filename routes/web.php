@@ -27,15 +27,13 @@ Route::get('/', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'verified'])
-    ->prefix('admin')
-    ->name('admin.')
-    ->group(function () {
-        Route::resource('/', RestaurantController::class);
-        Route::resource('products', ProductController::class);
-        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+  ->prefix('admin')
+  ->name('admin.')
+  ->group(function () {
+    Route::resource('/', RestaurantController::class);
+    Route::resource('products', ProductController::class);
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
   });
-
-
 
 // profilo
 Route::middleware('auth')->group(function () {
