@@ -18,8 +18,20 @@ class ProductController extends Controller
    */
   public function index()
   {
-    $restaurant_id = Restaurant::where('user_id', Auth::id())->first()->id;
-    $products = Product::where('restaurant_id', $restaurant_id)->get();
+
+
+      $restaurant = Restaurant::where('user_id', Auth::id())->first();
+    //   dd($restaurant);
+    //   if(!$restaurant){
+    //       abort('404');
+    //   }
+    //   $products = Product::where('restaurant_id', $restaurant_id)->get();
+      if ($restaurant) {
+        $products = Product::where('restaurant_id', $restaurant->id)->get();
+      } else {
+        $products = null;
+      }
+
 
 
     return view('admin.products.index', compact('products'));
@@ -56,9 +68,9 @@ class ProductController extends Controller
   /**
    * Display the specified resource.
    */
-  public function show(string $id)
+  public function show(Product $product)
   {
-    //
+    return view('admin.products.show', compact('product'));
   }
 
   /**
@@ -92,8 +104,9 @@ class ProductController extends Controller
   /**
    * Remove the specified resource from storage.
    */
-  public function destroy(string $id)
+  public function destroy(Product $product)
   {
-    //
+    $product->delete();
+    return redirect()->route('admin.products.index');
   }
 }

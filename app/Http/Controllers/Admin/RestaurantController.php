@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\Typology;
 use Illuminate\Support\Facades\Auth;
+use App\Functions\Helper;
+
 
 class RestaurantController extends Controller
 {
@@ -24,7 +27,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        $typologies = Typology::all();
+        return view('admin.restaurants.create', compact('typologies'));
     }
 
     /**
@@ -32,7 +36,20 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+        $new_restaurant = new Restaurant();
+        $form_data['slug'] = Helper::generateSlug($form_data['name'], Restaurant::class);
+        $form_data['user_id'] = Auth::id();
+
+        $new_restaurant->fill($form_data);
+        $new_restaurant->save();
+
+        if (array_key_exists('typologies', $form_data)) {
+            $new_restaurant->typologies()->attach($form_data['typologies']);
+        }
+
+
+        return redirect()->route('admin.index');
     }
 
     /**
