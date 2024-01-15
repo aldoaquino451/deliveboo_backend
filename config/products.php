@@ -320,7 +320,7 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Basilico, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'SushiVegano.jpg',
   ],
   [
     'category_id' => 7,
