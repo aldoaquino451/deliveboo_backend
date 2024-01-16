@@ -12,75 +12,74 @@ use App\Functions\Helper;
 
 class RestaurantController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $restaurant = Restaurant::where('user_id', Auth::id())->first();
+  /**
+   * Display a listing of the resource.
+   */
+  public function index()
+  {
+    $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-        return view('admin.restaurants.index', compact('restaurant'));
+    return view('admin.restaurants.index', compact('restaurant'));
+  }
+
+  /**
+   * Show the form for creating a new resource.
+   */
+  public function create()
+  {
+    $typologies = Typology::all();
+    return view('admin.restaurants.create', compact('typologies'));
+  }
+
+  /**
+   * Store a newly created resource in storage.
+   */
+  public function store(Request $request)
+  {
+    $form_data = $request->all();
+    $new_restaurant = new Restaurant();
+    $form_data['slug'] = Helper::generateSlug($form_data['name'], Restaurant::class);
+    $form_data['user_id'] = Auth::id();
+
+    $new_restaurant->fill($form_data);
+    $new_restaurant->save();
+
+    if (array_key_exists('typologies', $form_data)) {
+      $new_restaurant->typologies()->attach($form_data['typologies']);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        $typologies = Typology::all();
-        return view('admin.restaurants.create', compact('typologies'));
-    }
+    return redirect()->route('admin.index');
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $form_data = $request->all();
-        $new_restaurant = new Restaurant();
-        $form_data['slug'] = Helper::generateSlug($form_data['name'], Restaurant::class);
-        $form_data['user_id'] = Auth::id();
+  /**
+   * Display the specified resource.
+   */
+  public function show(string $id)
+  {
+    //
+  }
 
-        $new_restaurant->fill($form_data);
-        $new_restaurant->save();
+  /**
+   * Show the form for editing the specified resource.
+   */
+  public function edit(string $id)
+  {
+    //
+  }
 
-        if (array_key_exists('typologies', $form_data)) {
-            $new_restaurant->typologies()->attach($form_data['typologies']);
-        }
+  /**
+   * Update the specified resource in storage.
+   */
+  public function update(Request $request, string $id)
+  {
+    //
+  }
 
-
-        return redirect()->route('admin.index');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+  /**
+   * Remove the specified resource from storage.
+   */
+  public function destroy(string $id)
+  {
+    //
+  }
 }

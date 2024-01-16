@@ -18,21 +18,13 @@ class ProductController extends Controller
    */
   public function index()
   {
+    $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-
-      $restaurant = Restaurant::where('user_id', Auth::id())->first();
-    //   dd($restaurant);
-    //   if(!$restaurant){
-    //       abort('404');
-    //   }
-    //   $products = Product::where('restaurant_id', $restaurant_id)->get();
-      if ($restaurant) {
-        $products = Product::where('restaurant_id', $restaurant->id)->get();
-      } else {
-        $products = null;
-      }
-
-
+    if ($restaurant) {
+      $products = Product::where('restaurant_id', $restaurant->id)->get();
+    } else {
+      $products = null;
+    }
 
     return view('admin.products.index', compact('products'));
   }

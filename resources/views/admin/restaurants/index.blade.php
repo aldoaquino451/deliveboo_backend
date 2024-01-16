@@ -22,7 +22,15 @@
                 <strong>Partita IVA: </strong>
                 <span class="ms-2">{{ $restaurant->vat_number }}</span>
             </p>
+            <p class="mb-2">
+                <strong>Tipologie: </strong>
+                @foreach ($restaurant->typologies as $typology)
+                    <span class="badge bg-info" class="ms-2">{{ $typology->name }}</span>
+                @endforeach
+            </p>
 
+
+            {{-- 
             <div class="mt-5">
                 <a class="p-0 btn btn-primary fs-2" href="{{ route('admin.products.create') }}">
                     <div class="py-0 px-2 btn btn-primary d-flex align-items-center gap-3">
@@ -32,7 +40,8 @@
                         </span>
                     </div>
                 </a>
-            </div>
+            </div> 
+            --}}
         </div>
     @else
         <div class="d-flex justify-content-center">
