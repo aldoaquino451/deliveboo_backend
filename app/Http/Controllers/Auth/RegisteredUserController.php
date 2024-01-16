@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Restaurant;
+use App\Models\Typology;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
@@ -12,6 +14,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Functions\Helper;
+
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +24,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $typologies = Typology::all();
+        return view('auth.register', compact('typologies'));
     }
 
     /**
@@ -32,17 +37,32 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'lastname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'lastname' => $request->lastname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
+
+        $form_data = $request->all();
+        $new_restaurant = new Restaurant();
+        $form_data['slug'] = Helper::generateSlug($form_data['name_restaurant'], Restaurant::class);
+        $form_data['user_id'] = $user->id;
+
+        $new_restaurant->fill($form_data);
+        $new_restaurant->save();
+
+        if (array_key_exists('typologies', $form_data)) {
+            $new_restaurant->typologies()->attach($form_data['typologies']);
+        }
+
 
         Auth::login($user);
 
