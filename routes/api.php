@@ -21,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('restaurants', [PageController::class, 'restaurants']);
 
-Route::get('restaurantsByTypologies/{typologies}', [PageController::class, 'restaurantsByTypologies']);
+Route::get('restaurants-by-typologies/{typologies}', [PageController::class, 'restaurantsByTypologies']);
 
 Route::get('typologies', [PageController::class, 'typologies']);
