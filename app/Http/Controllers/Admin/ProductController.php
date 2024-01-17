@@ -18,6 +18,8 @@ class ProductController extends Controller
    */
   public function index()
   {
+    $deleteModalOn = false;
+
     $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
     if ($restaurant) {
@@ -26,7 +28,7 @@ class ProductController extends Controller
       $products = null;
     }
 
-    return view('admin.products.index', compact('products'));
+    return view('admin.products.index', compact('products', 'deleteModalOn'));
   }
 
   /**
@@ -99,6 +101,8 @@ class ProductController extends Controller
   public function destroy(Product $product)
   {
     $product->delete();
+    // $productToDelete = $product->name;
+    // dd($productToDelete);
     return redirect()->route('admin.products.index');
   }
 }
