@@ -3,8 +3,7 @@
 return [
   [
     "user_id" => 1,
-    "name" => "Cerino d'oro",
-    "email" => "cerinodoro@gmail.com",
+    "name_restaurant" => "Cerino d'oro",
     "address" => "Corso Calatafimi 400, 90129, Palermo, PA",
     "vat_number" => "25684951356",
     "image" => "cerinodoro.webp",
@@ -12,8 +11,7 @@ return [
   ],
   [
     "user_id" => 2,
-    "name" => "Cuma",
-    "email" => "cuma@gmail.com",
+    "name_restaurant" => "Cuma",
     "address" => "Via Giovan Battista Guccia 26, 90141, Palermo, PA",
     "vat_number" => "48579488514",
     "image" => "cuma.jpg",
@@ -21,8 +19,7 @@ return [
   ],
   [
     "user_id" => 3,
-    "name" => "La Traviata",
-    "email" => "latraviata@gmail.com",
+    "name_restaurant" => "La Traviata",
     "address" => "Piazza Olivella 16, 90133, Palermo, PA",
     "vat_number" => "22356448557",
     "image" => "latraviata.jpg",
@@ -30,8 +27,7 @@ return [
   ],
   [
     "user_id" => 4,
-    "name" => "Zangaloro Meat Factory",
-    "email" => "zangaloro@gmail.com",
+    "name_restaurant" => "Zangaloro Meat Factory",
     "address" => "Via Isidoro la Lumia 15/17, 90139, Palermo, PA",
     "vat_number" => "32223555492",
     "image" => "zangaloro.jpg",
@@ -39,8 +35,7 @@ return [
   ],
   [
     "user_id" => 5,
-    "name" => "Antica Focacceria San Francesco",
-    "email" => "info@anticafocacceria.com",
+    "name_restaurant" => "Antica Focacceria San Francesco",
     "address" => "Via A. Paternostro 58, 90133, Palermo, PA",
     "vat_number" => "75046356308",
     "image" => "anticafocacceria.jpg",
@@ -48,8 +43,7 @@ return [
   ],
   [
     "user_id" => 6,
-    "name" => "Ristorante Ferro di Cavallo",
-    "email" => "info@ristoranteferrodicavallo.it",
+    "name_restaurant" => "Ristorante Ferro di Cavallo",
     "address" => "Via Vittorio Emanuele 140, 90133, Palermo, PA",
     "vat_number" => "23032189508",
     "image" => null,
@@ -57,8 +51,7 @@ return [
   ],
   [
     "user_id" => 7,
-    "name" => "Verdechiaro",
-    "email" => "verdechiaro@gmail.com",
+    "name_restaurant" => "Verdechiaro",
     "address" => "Via Giuseppe Alessi 40/42, 90143, Palermo, PA",
     "vat_number" => "55662341891",
     "image" => "verdechiaro.jpg",
@@ -66,8 +59,7 @@ return [
   ],
   [
     "user_id" => 8,
-    "name" => "Pizzeria Natalino",
-    "email" => "pizzerianatalino@gmail.com",
+    "name_restaurant" => "Pizzeria Natalino",
     "address" => "Via Capitano Emanuele Basile 24/26, 90135, Palermo, PA",
     "vat_number" => "89554174456",
     "image" => "pizzerianatalino.jpg",
@@ -75,8 +67,7 @@ return [
   ],
   [
     "user_id" => 9,
-    "name" => "SKK Doner House",
-    "email" => "skk@gmail.com",
+    "name_restaurant" => "SKK Doner House",
     "address" => "Via dei Nebrodi 1, 90144, Palermo, PA",
     "vat_number" => "89965633234",
     "image" => "skk.jpg",
@@ -84,8 +75,7 @@ return [
   ],
   [
     "user_id" => 10,
-    "name" => "Hungry Polly",
-    "email" => "hungrypolly@gmail.com",
+    "name_restaurant" => "Hungry Polly",
     "address" => "Via Isidoro la Lumia 50, 90139, Palermo, PA",
     "vat_number" => "56555411284",
     "image" => "hungrypollo.webp",
@@ -93,8 +83,7 @@ return [
   ],
   [
     "user_id" => 11,
-    "name" => "Grace Coffee Corner",
-    "email" => "grace@gmail.com",
+    "name_restaurant" => "Grace Coffee Corner",
     "address" => "Viale Venere 1/B, 90149, Palermo, PA",
     "vat_number" => "77884566329",
     "image" => "grace.jpg",
@@ -102,8 +91,7 @@ return [
   ],
   [
     "user_id" => 12,
-    "name" => "Sushi Lab",
-    "email" => "sushilab@gmail.com",
+    "name_restaurant" => "Sushi Lab",
     "address" => "Via Quintino Sella 48/a, 90139, Palermo, PA",
     "vat_number" => "12133622356",
     "image" => "sushilab.jpg",
@@ -111,8 +99,7 @@ return [
   ],
   [
     "user_id" => 13,
-    "name" => "Yoshi",
-    "email" => "yoshi@gmail.com",
+    "name_restaurant" => "Yoshi",
     "address" => "Via Principe di Granatelli 29, 90139, Palermo, PA",
     "vat_number" => "36639656849",
     "image" => "yoshi.webp",

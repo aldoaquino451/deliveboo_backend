@@ -19,9 +19,8 @@ class RestaurantsSeeder extends Seeder
       $new_restaurant = new Restaurant();
 
       $new_restaurant->user_id = $restaurant['user_id'];
-      $new_restaurant->name = $restaurant['name'];
-      $new_restaurant->slug = Helper::generateSlug($new_restaurant->name, Restaurant::class);
-      $new_restaurant->email = $restaurant['email'];
+      $new_restaurant->name_restaurant = $restaurant['name_restaurant'];
+      $new_restaurant->slug = Helper::generateSlug($new_restaurant->name_restaurant, Restaurant::class);
       $new_restaurant->address = $restaurant['address'];
       $new_restaurant->vat_number = $restaurant['vat_number'];
       $new_restaurant->image = $restaurant['image'];
