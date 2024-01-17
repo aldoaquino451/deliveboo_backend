@@ -87,6 +87,10 @@ class ProductController extends Controller
    */
     public function edit(Product $product)
     {
+        if($product->restaurant->user_id != Auth::id()){
+            abort('404');
+        }
+
         $categories = Category::all();
 
     return view('admin.products.edit', compact('product', 'categories'));
