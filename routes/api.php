@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 //   return $request->user();
 // });
 
+Route::get('typologies', [PageController::class, 'typologies']);
+
 Route::get('restaurants', [PageController::class, 'restaurants']);
 
 Route::get('restaurants-by-typologies/{typologies}', [PageController::class, 'restaurantsByTypologies']);
 
-Route::get('typologies', [PageController::class, 'typologies']);
+Route::get('restaurant/{restaurant}', [PageController::class, 'showRestaurant']);
