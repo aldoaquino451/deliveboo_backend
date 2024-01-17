@@ -103,23 +103,19 @@ class ProductController extends Controller
   {
     $form_data = $request->validated();
 
-
     if ($product->name === $form_data['name']) {
       $form_data['slug'] = $product->slug;
     } else {
       $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
     }
 
-    // if (!isset($form_data['is_vegan'])) {
-    //   $form_data['is_vegan'] = 0;
-    // } else {
-    //   $form_data['is_vegan'] = 1;
-    // }
-    // if (!isset($form_data['is_visible'])) {
-    //   $form_data['is_visible'] = 0;
-    // } else {
-    //   $form_data['is_visible'] = 1;
-    // }
+    if (!isset($form_data['is_vegan'])) {
+      $form_data['is_vegan'] = 0;
+    }
+
+    if (!isset($form_data['is_visible'])) {
+      $form_data['is_visible'] = 0;
+    }
 
     $product->update($form_data);
 

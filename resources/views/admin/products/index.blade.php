@@ -52,10 +52,10 @@
                                 <h5 class="card-title">{{ $product->name }}</h5>
                                 <h5 class="card-title">&euro;{{ $product->price }}</h5>
                                 <p class="card-text">{{ $product->ingredients }}</p>
-                                @if ($product->is_vegan)
+                                @if ($product->is_vegan === 1)
                                     <p class="mb-2 fw-bold text-success">Prodotto Vegano</p>
                                 @endif
-                                @if ($product->is_visible)
+                                @if ($product->is_visible === 1)
                                     <p class="mb-2 fw-bold text-warning">E' visibile</p>
                                 @endif
                                 <div class="button-position">

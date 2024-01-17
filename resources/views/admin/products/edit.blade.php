@@ -87,14 +87,13 @@
             <div class="col-md-12 ">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="is_visible" name="is_visible" value="1"
-                        {{ old('is_visible', $product->is_visible) ? 'checked' : '' }}>
+                    @checked(old('is_visible', $product->is_visible ))>
                     <label class="form-check-label" for="is_visible">
                         Visibile
                     </label>
                 </div>
                 <div class="form-check">
-                    <input @if ($product->is_vegan) checked @endif class="form-check-input" type="checkbox"
-                        id="is_vegan" name="is_vegan" value="1" {{ old('is_vegan') ? 'checked' : '' }}>
+                    <input class="form-check-input" type="checkbox" id="is_vegan" name="is_vegan" value="1" @checked(old('is_vegan', $product->is_vegan ))>
                     <label class="form-check-label" for="is_vegan">
                         Vegano
                     </label>
