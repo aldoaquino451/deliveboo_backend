@@ -20,20 +20,18 @@ class PageController extends Controller
 
   public function restaurantsByTypologies($typologies)
   {
-    $array = [8, 9];
-    // $array = explode('-', $typologies);
+    // $restaurants = DB::select('SELECT `restaurants`.* , count(restaurants.id) FROM `restaurants`, `typologies`, `restaurant_typology` WHERE restaurants.id = restaurant_typology.restaurant_id AND  typologies.id = restaurant_typology.typology_id AND restaurant_typology.typology_id IN (5, 6, 11) GROUP BY restaurants.id HAVING count(restaurants.id) = 3;');
 
-    $restaurants = DB::raw('SELECT `restaurants`.* , count(restaurants.id) FROM `restaurants`, `typologies`, `restaurant_typology` WHERE restaurants.id = restaurant_typology.restaurant_id AND  typologies.id = restaurant_typology.typology_id AND restaurant_typology.typology_id IN (8, 9) GROUP BY restaurants.id HAVING count(restaurants.id) = 2;');
+    $typologies_arr = explode('-', $typologies);
 
-
-
-    dd($restaurants);
-    // $restaurants = Restaurant::with('typologies')->whereHas('typologies', function (Builder $query) use ($array) {
-    //   $query->whereIn('id', $array);
-    // })
-    //   ->groupBy('restaurants.id')
-    //   ->havingRaw('count(restaurants.id) = 2')
-    //   ->get();
+    $restaurants = DB::table('restaurants')
+      ->select('restaurants.*', DB::raw('COUNT(restaurants.id) as restaurant_count'))
+      ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
+      ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
+      ->whereIn('restaurant_typology.typology_id', $typologies_arr)
+      ->groupBy('restaurants.id')
+      ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
+      ->get();
 
     return response()->json($restaurants);
   }

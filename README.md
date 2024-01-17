@@ -13,6 +13,4 @@ Deliveboo
   - Asterisco campi obbligatori
   - compreso lato HMTL non permettere di inserire un numero negativo
   - messaggio di riuscita se il prodotto è inserito correttamente
-- Delete Modale
-- Page Controller per le Api del font end, selezionare più tipologie e restituire i ristoranti (restaurant-by-typologies)
 - Il prodotto che non fa parte del proprio ristorante non deve poter essere visualizzato in altri ristoranti (where auth id)
