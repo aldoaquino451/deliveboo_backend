@@ -9,6 +9,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 use Laravel\Prompts\Prompt;
 
@@ -59,11 +60,10 @@ class ProductController extends Controller
     /**
    * Store a newly created resource in storage.
    */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $restaurant_id = Restaurant::where('user_id', Auth::id())->first()->id;
-
-        $form_data = $request->all();
+        $form_data = $request->validated();
         $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
 
         $new_product = new Product();
@@ -95,9 +95,10 @@ class ProductController extends Controller
     /**
    * Update the specified resource in storage.
    */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        $form_data = $request->all();
+        $form_data = $request->validated();
+
 
         if ($product->name === $form_data['name']) {
             $form_data['slug'] = $product->slug;

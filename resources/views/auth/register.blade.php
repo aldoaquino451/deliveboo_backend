@@ -117,10 +117,11 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
-                            <div class="col-12">
+                            {{-- <div class="col-12">
                                 <label for="image" class="form-label">Immagine</label>
                                 <input id="image" class="form-control" name="image" type="file">
-                            </div>
+                            </div> --}}
+
                             <div class="col-12">
                                 <label for="description" class="form-label">Descrizione</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" id="description"
