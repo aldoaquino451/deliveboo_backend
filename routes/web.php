@@ -18,6 +18,7 @@ Route::middleware(['auth', 'verified'])
     Route::resource('products', ProductController::class);
     // rotte custom
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('products/{product}', [ProductController::class, 'productToDelete'])->name('products-new');
   });
 
 

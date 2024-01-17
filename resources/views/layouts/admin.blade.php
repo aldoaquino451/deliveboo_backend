@@ -24,7 +24,7 @@
     @include('admin.partials.header')
 
     <main id="admin">
-        <div class="container h-100 py-4">
+        <div class="container py-4">
             @yield('content')
         </div>
     </main>

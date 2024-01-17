@@ -8,5 +8,5 @@ header#admin {
 }
 
 main#admin {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }

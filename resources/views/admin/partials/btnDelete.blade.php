@@ -5,3 +5,9 @@
         <i class="fa-solid fa-trash"></i>
     </button>
 </form>
+
+
+{{-- @include('admin.partials.btnDelete', [
+'route' => route('admin.products.destroy', $product),
+'message' => 'Sei sicuro di voler eliminare questo prodotto?',
+]) --}}

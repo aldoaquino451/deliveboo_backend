@@ -10,15 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Laravel\Prompts\Prompt;
 
 class ProductController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
-  public function index()
+  public function productToDelete(Product $product)
   {
-    $deleteModalOn = false;
+    $productToDelete = $product;
 
     $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
@@ -28,7 +26,24 @@ class ProductController extends Controller
       $products = null;
     }
 
-    return view('admin.products.index', compact('products', 'deleteModalOn'));
+    return view('admin.products.index', compact('products', 'productToDelete'));
+  }
+  /**
+   * Display a listing of the resource.
+   */
+  public function index()
+  {
+    $productToDelete = null;
+
+    $restaurant = Restaurant::where('user_id', Auth::id())->first();
+
+    if ($restaurant) {
+      $products = Product::where('restaurant_id', $restaurant->id)->get();
+    } else {
+      $products = null;
+    }
+
+    return view('admin.products.index', compact('products', 'productToDelete'));
   }
 
   /**
