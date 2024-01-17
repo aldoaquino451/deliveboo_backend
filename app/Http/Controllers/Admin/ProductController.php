@@ -14,110 +14,110 @@ use Laravel\Prompts\Prompt;
 
 class ProductController extends Controller
 {
-  public function productToDelete(Product $product)
-  {
-    $productToDelete = $product;
+    public function productToDelete(Product $product)
+    {
+        $productToDelete = $product;
 
-    $restaurant = Restaurant::where('user_id', Auth::id())->first();
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-    if ($restaurant) {
-      $products = Product::where('restaurant_id', $restaurant->id)->get();
-    } else {
-      $products = null;
+        if ($restaurant) {
+            $products = Product::where('restaurant_id', $restaurant->id)->get();
+        } else {
+            $products = null;
+        }
+
+        return view('admin.products.index', compact('products', 'productToDelete'));
     }
-
-    return view('admin.products.index', compact('products', 'productToDelete'));
-  }
-  /**
+    /**
    * Display a listing of the resource.
    */
-  public function index()
-  {
-    $productToDelete = null;
+    public function index()
+    {
+        $productToDelete = null;
 
-    $restaurant = Restaurant::where('user_id', Auth::id())->first();
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-    if ($restaurant) {
-      $products = Product::where('restaurant_id', $restaurant->id)->get();
-    } else {
-      $products = null;
+        if ($restaurant) {
+            $products = Product::where('restaurant_id', $restaurant->id)->get();
+        } else {
+            $products = null;
+        }
+
+        return view('admin.products.index', compact('products', 'productToDelete'));
     }
 
-    return view('admin.products.index', compact('products', 'productToDelete'));
-  }
-
-  /**
+    /**
    * Show the form for creating a new resource.
    */
-  public function create()
-  {
-    $categories = Category::all();
+    public function create()
+    {
+        $categories = Category::all();
 
-    return view('admin.products.create', compact('categories'));
-  }
-
-  /**
-   * Store a newly created resource in storage.
-   */
-  public function store(Request $request)
-  {
-    $restaurant_id = Restaurant::where('user_id', Auth::id())->first()->id;
-
-    $form_data = $request->all();
-    $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
-
-    $new_product = new Product();
-    $new_product->restaurant_id = $restaurant_id;
-    $new_product->fill($form_data);
-    $new_product->save();
-
-    return redirect()->route('admin.products.index');
-  }
-
-  /**
-   * Display the specified resource.
-   */
-  public function show(Product $product)
-  {
-    return view('admin.products.show', compact('product'));
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(Product $product)
-  {
-    $categories = Category::all();
-
-    return view('admin.products.edit', compact('product', 'categories'));
-  }
-
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(Request $request, Product $product)
-  {
-    $form_data = $request->all();
-
-    if ($product->name === $form_data['name']) {
-      $form_data['slug'] = $product->slug;
-    } else {
-      $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
+        return view('admin.products.create', compact('categories'));
     }
 
-    $product->update($form_data);
+    /**
+   * Store a newly created resource in storage.
+   */
+    public function store(Request $request)
+    {
+        $restaurant_id = Restaurant::where('user_id', Auth::id())->first()->id;
 
-    return redirect()->route('admin.products.index');
-  }
+        $form_data = $request->all();
+        $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
 
-  /**
+        $new_product = new Product();
+        $new_product->restaurant_id = $restaurant_id;
+        $new_product->fill($form_data);
+        $new_product->save();
+
+        return redirect()->route('admin.products.index');
+    }
+
+    /**
+   * Display the specified resource.
+   */
+    public function show(Product $product)
+    {
+        return view('admin.products.show', compact('product'));
+    }
+
+    /**
+   * Show the form for editing the specified resource.
+   */
+    public function edit(Product $product)
+    {
+        $categories = Category::all();
+
+    return view('admin.products.edit', compact('product', 'categories'));
+    }
+
+    /**
+   * Update the specified resource in storage.
+   */
+    public function update(Request $request, Product $product)
+    {
+        $form_data = $request->all();
+
+        if ($product->name === $form_data['name']) {
+            $form_data['slug'] = $product->slug;
+        } else {
+            $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
+        }
+
+        $product->update($form_data);
+
+        return redirect()->route('admin.products.index');
+    }
+
+    /**
    * Remove the specified resource from storage.
    */
-  public function destroy(Product $product)
-  {
-    $product->delete();
-    // $productToDelete = $product->name;
-    // dd($productToDelete);
-    return redirect()->route('admin.products.index');
-  }
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        // $productToDelete = $product->name;
+        // dd($productToDelete);
+        return redirect()->route('admin.products.index');
+    }
 }

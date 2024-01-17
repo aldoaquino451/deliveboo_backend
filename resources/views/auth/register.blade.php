@@ -5,13 +5,20 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">Registrazione</div>
                     <div class="card-body">
+
                         @if ($errors->any())
                             <div class="alert alert-danger" role="alert">
-                                <p>Uno o più campi non sono compilati correttamente.</p>
+                                {{-- <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul> --}}
+                                <p>Uno o più campi non sono compilati correttamente</p>
                             </div>
                         @endif
+
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="mb-4 row">
@@ -44,7 +51,7 @@
                             </div>
                             <div class="mb-4 row">
                                 <label for="email"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
                                 <div class="col-md-8">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
@@ -85,19 +92,31 @@
                                     <input type="text"
                                         class="form-control @error('name_restaurant') is-invalid @enderror"
                                         id="name_restaurant" name="name_restaurant" value="{{ old('name_restaurant') }}">
+                                    @error('name_restaurant')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="vat_number">Partita IVA</label>
                                     <input type="text" class="form-control @error('vat_number') is-invalid @enderror"
                                         id="vat_number" name="vat_number" value="{{ old('vat_number') }}">
+                                    @error('vat_number')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                             </div>
+
                             <div class="col-12">
                                 <label for="address" class="form-label">Indirizzo</label>
                                 <input type="text" class="form-control @error('address') is-invalid @enderror"
                                     id="address" name="address" placeholder="indirizzo, CAP, Città(Prov)"
                                     value="{{ old('address') }}">
                             </div>
+                            @error('address')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+
                             <div class="col-12">
                                 <label for="image" class="form-label">Immagine</label>
                                 <input id="image" class="form-control" name="image" type="file">
@@ -107,6 +126,11 @@
                                 <textarea class="form-control @error('description') is-invalid @enderror" id="description"
                                     placeholder="Inserisci una breve descrizione" name="description" value="{{ old('description') }}"></textarea>
                             </div>
+                            @error('description')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
+
+
                             <div class="text-center mt-3">
                                 <p>Selezione una o più tipologie per il tuo ristorante:</p>
                                 <div class="btn" role="group" aria-label="Small button group">
@@ -119,7 +143,7 @@
                                 </div>
                             </div>
                             <div class="mb-4 row mb-0">
-                                <div class="col-md-6 offset-md-4">
+                                <div class="text-center">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('Register') }}
                                     </button>
