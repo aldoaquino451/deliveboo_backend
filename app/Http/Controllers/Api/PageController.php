@@ -68,7 +68,8 @@ class PageController extends Controller
 
   public function showRestaurant($slug)
   {
-    $restaurant = Restaurant::where('slug', $slug)->with('typologies', 'products')->first();
+    $restaurant = Restaurant::where('slug', $slug)->with('products.category')->first();
+
     return response()->json($restaurant);
   }
 }
