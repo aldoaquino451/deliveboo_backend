@@ -1,12 +1,12 @@
-@import '~bootstrap/scss/bootstrap';
-@import 'partials/header';
-@import 'partials/product';
-@import 'partials/delete-modal';
+@import "~bootstrap/scss/bootstrap";
+@import "partials/header";
+@import "partials/product";
+@import "partials/delete-modal";
 
 header#admin {
-  height: 70px;
+    height: 70px;
 }
 
 main#admin {
-  min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
 }

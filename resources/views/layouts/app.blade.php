@@ -12,6 +12,17 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+    {{-- font awesome  --}}
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css'
+        integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ=='
+        crossorigin='anonymous' />
+
+    {{-- Vue --}}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.15/vue.cjs.js'
+        integrity='sha512-v43CHylp2byK4H0o5WYD3XvfXhDD2infaA/ObwTLKru+zYNNCzye3Z1lv3dWZo0MGrTiXU+nhqPg/BH6HCwGuA=='
+        crossorigin='anonymous'></script>
+
 </head>
 
 <body>
@@ -36,11 +47,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                 </li>
                             @endif
                         @else
