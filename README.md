@@ -5,12 +5,37 @@ Deliveboo
 - destroy()
 - return redirect('http://localhost:5174/');
 
-### Cose da fare
-- Form User da fare il Required 
-  - Asterisco campi obbligatori
-  - modifica il messaggio che appare se l'email è già presente: questo utente è già registrato!
-- Form Products da fare tutta la validazione
-  - Asterisco campi obbligatori
-  - compreso lato HMTL non permettere di inserire un numero negativo
+### To Do List
+
+**Back End**
+- Form generico:
+  - in italiano
+  - facoltativo o asterisco
+  - il form deve partire solo se i dati sono corretti (controllo errore reattivo)
+
+- Form user: 
+  - tipologia ristoranti deve essere obbligatoria
+  - vat number  (crea controllo unicità) e email (messaggio di errore in italiano)
+  - password controllo che prima e seconda siano uguali (senza ricarica pagina)
+
+- Form prodotti update o create: 
   - messaggio di riuscita se il prodotto è inserito correttamente
-- Il prodotto che non fa parte del proprio ristorante non deve poter essere visualizzato in altri ristoranti (where auth id)
+  - immmagine nel form, con immagine di default se non inserita
+
+- Form prodotti update: checkbox metodo old() non funziona bene
+
+- Sistemare la modale
+
+- controllare la funzione show restaurant in modo tale che si possa visualizzare le categorie
+
+**Front End**
+- Carrello: 
+  - posso scegliere un solo ristorante
+  - se aggiungo i prodotti da un nuovo ristorante deve darmi errore (controllo restaurant id)
+  - crea una pagina per i carrello con all'interno il form dati del cliente
+  - se confermato parte la chiamata con brain tree ceh restituisce la conferma del pagamento 
+
+- Tipologie:
+  - deve partire la chiamata api al click 
+  - stampare il numero di risultati
+  - visualizza tutte le tipologie del ristorante (opzionale)
