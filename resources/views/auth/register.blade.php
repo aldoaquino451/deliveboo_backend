@@ -19,7 +19,7 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('register') }}">
+                        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-4 row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}
@@ -114,9 +114,8 @@
 
                             <div class="col-12">
                                 <label for="address" class="form-label">Indirizzo (*)</label>
-                                <input style="input[placeholder]:color: red" type="text"
-                                    class="form-control @error('address') is-invalid @enderror" id="address" required
-                                    name="address" placeholder="Indirizzo, CAP, Città, Provincia"
+                                <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                    id="address" required name="address" placeholder="Indirizzo, CAP, Città, Provincia"
                                     value="{{ old('address') }}">
                             </div>
                             @error('address')
@@ -125,8 +124,12 @@
 
                             <div class="col-12">
                                 <label for="image" class="form-label">Immagine</label>
-                                <input id="image" class="form-control" name="image" type="file">
+                                <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                    id="image" required name="image" value="{{ old('image') }}">
                             </div>
+                            @error('address')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
 
                             <div class="col-12">
                                 <label for="description" class="form-label">Descrizione</label>

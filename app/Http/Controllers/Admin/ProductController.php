@@ -2,134 +2,142 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Functions\Helper;
-use App\Models\Restaurant;
 use App\Models\Product;
 use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
-
-use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductRequest;
-use Illuminate\Http\Request;
+use App\Functions\Helper;
+use App\Models\Restaurant;
 use Laravel\Prompts\Prompt;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\ProductRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
-  public function productToDelete(Product $product)
-  {
-    $productToDelete = $product;
+    public function productToDelete(Product $product)
+    {
+        $productToDelete = $product;
 
-    $restaurant = Restaurant::where('user_id', Auth::id())->first();
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-    if ($restaurant) {
-      $products = Product::where('restaurant_id', $restaurant->id)->get();
-    } else {
-      $products = null;
+        if ($restaurant) {
+        $products = Product::where('restaurant_id', $restaurant->id)->get();
+        } else {
+        $products = null;
+        }
+
+        return view('admin.products.index', compact('products', 'productToDelete'));
+    }
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $productToDelete = null;
+
+        $restaurant = Restaurant::where('user_id', Auth::id())->first();
+
+        if ($restaurant) {
+        $products = Product::where('restaurant_id', $restaurant->id)->get();
+        } else {
+        $products = null;
+        }
+
+        return view('admin.products.index', compact('products', 'productToDelete'));
     }
 
-    return view('admin.products.index', compact('products', 'productToDelete'));
-  }
-  /**
-   * Display a listing of the resource.
-   */
-  public function index()
-  {
-    $productToDelete = null;
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        $categories = Category::all();
 
-    $restaurant = Restaurant::where('user_id', Auth::id())->first();
-
-    if ($restaurant) {
-      $products = Product::where('restaurant_id', $restaurant->id)->get();
-    } else {
-      $products = null;
+        return view('admin.products.create', compact('categories'));
     }
 
-    return view('admin.products.index', compact('products', 'productToDelete'));
-  }
-
-  /**
-   * Show the form for creating a new resource.
-   */
-  public function create()
-  {
-    $categories = Category::all();
-
-    return view('admin.products.create', compact('categories'));
-  }
-
-  /**
+    /**
    * Store a newly created resource in storage.
    */
-  public function store(ProductRequest $request)
-  {
+    public function store(ProductRequest $request)
+    {
     $restaurant_id = Restaurant::where('user_id', Auth::id())->first()->id;
     $form_data = $request->validated();
     $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
 
     $new_product = new Product();
     $new_product->restaurant_id = $restaurant_id;
+
+    //Salvataggio dell'immagine
+    if (array_key_exists('image', $form_data)) {
+        $form_data['image'] = Storage::put('uploads/products', $form_data['image']);
+        $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+    }
+
     $new_product->fill($form_data);
     $new_product->save();
 
     return redirect()->route('admin.products.index');
-  }
-
-  /**
-   * Display the specified resource.
-   */
-  public function show(Product $product)
-  {
-    return view('admin.products.show', compact('product'));
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   */
-  public function edit(Product $product)
-  {
-    if ($product->restaurant->user_id != Auth::id()) {
-      abort('404');
     }
 
-    $categories = Category::all();
-
-    return view('admin.products.edit', compact('product', 'categories'));
-  }
-
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(ProductRequest $request, Product $product)
-  {
-    $form_data = $request->validated();
-
-    if ($product->name === $form_data['name']) {
-      $form_data['slug'] = $product->slug;
-    } else {
-      $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
+    /**
+     * Display the specified resource.
+     */
+    public function show(Product $product)
+    {
+        return view('admin.products.show', compact('product'));
     }
 
-    if (!isset($form_data['is_vegan'])) {
-      $form_data['is_vegan'] = 0;
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Product $product)
+    {
+        if ($product->restaurant->user_id != Auth::id()) {
+        abort('404');
+        }
+
+        $categories = Category::all();
+
+        return view('admin.products.edit', compact('product', 'categories'));
     }
 
-    if (!isset($form_data['is_visible'])) {
-      $form_data['is_visible'] = 0;
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(ProductRequest $request, Product $product)
+    {
+        $form_data = $request->validated();
+
+        if ($product->name === $form_data['name']) {
+        $form_data['slug'] = $product->slug;
+        } else {
+        $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
+        }
+
+        if (!isset($form_data['is_vegan'])) {
+        $form_data['is_vegan'] = 0;
+        }
+
+        if (!isset($form_data['is_visible'])) {
+        $form_data['is_visible'] = 0;
+        }
+
+        $product->update($form_data);
+
+        return redirect()->route('admin.products.index');
     }
 
-    $product->update($form_data);
-
-    return redirect()->route('admin.products.index');
-  }
-
-  /**
-   * Remove the specified resource from storage.
-   */
-  public function destroy(Product $product)
-  {
-    $product->delete();
-    // $productToDelete = $product->name;
-    // dd($productToDelete);
-    return redirect()->route('admin.products.index');
-  }
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        // $productToDelete = $product->name;
+        // dd($productToDelete);
+        return redirect()->route('admin.products.index');
+    }
 }

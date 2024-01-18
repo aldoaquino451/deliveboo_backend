@@ -37,10 +37,14 @@
                 @enderror
             </div>
 
-            {{-- <div class="col-12">
+            <div class="col-12">
                 <label for="image" class="form-label">Immagine</label>
-                <input id="image" class="form-control" name="image" type="file">
-            </div> --}}
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" required
+                    name="image" value="{{ old('image') }}">
+            </div>
+            @error('address')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
 
             <div class="col-md-8">
                 <label for="category_id" class="form-label">Categoria</label>
