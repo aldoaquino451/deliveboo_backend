@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Auth\Events\Registered;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Storage;
+
 
 class RegisteredUserController extends Controller
 {
@@ -37,26 +39,28 @@ class RegisteredUserController extends Controller
      */
     public function store(UserRequest $request): RedirectResponse
     {
-        // $request->validate([
-        //     'name' => ['required', 'string', 'max:255'],
-        //     'lastname' => ['required', 'string', 'max:255'],
-        //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-        //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        // ]);
 
-        $userData = $request->validated();
+        //Sezione del formn destinata ai dati dell'user
+        $user_data = $request->validated();
         $user = User::create([
-        'name' => $userData['name'],
-        'lastname' => $userData['lastname'],
-        'email' => $userData['email'],
-        'password' => Hash::make($userData['password']),
+        'name' => $user_data['name'],
+        'lastname' => $user_data['lastname'],
+        'email' => $user_data['email'],
+        'password' => Hash::make($user_data['password']),
         ]);
-
         event(new Registered($user));
+
+        //Sezione del formn destinata ai dati del ristorante
         $form_data = $request->all();
         $new_restaurant = new Restaurant();
         $form_data['slug'] = Helper::generateSlug($form_data['name_restaurant'], Restaurant::class);
         $form_data['user_id'] = $user->id;
+
+        //Salvataggio dell'immagine
+        if (array_key_exists('image', $form_data)) {
+            $form_data['image'] = Storage::put('uploads/restaurants', $form_data['image']);
+            $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+        }
         $new_restaurant->fill($form_data);
         $new_restaurant->save();
 

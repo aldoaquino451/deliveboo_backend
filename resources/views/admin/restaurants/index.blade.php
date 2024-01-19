@@ -27,5 +27,9 @@
                 <span class="badge bg-info" class="ms-2">{{ $typology->name }}</span>
             @endforeach
         </p>
+        <p class="mb-2">
+        <p><strong>Immagine del ristorante:</strong></p>
+        <img src="{{ asset('storage/' . $restaurant->image) }}" alt="{{ $restaurant->image_original_name }}">
+        </p>
     </div>
 @endsection

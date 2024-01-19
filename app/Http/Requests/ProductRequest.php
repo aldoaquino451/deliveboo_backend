@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
     ];
   }
 
+
   public function messages(): array
   {
     return [

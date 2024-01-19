@@ -33,6 +33,7 @@ class UserRequest extends FormRequest
         'address' => ['required', 'string', 'max:120'],
         'vat_number' => ['required', 'string', 'min:11', 'max:11', 'unique:' . Restaurant::class],
         'description' => ['min:10', 'max:255'],
+        'typologies' => ['array', 'min:1'],
         ];
     }
 
@@ -41,6 +42,7 @@ class UserRequest extends FormRequest
         return [
             'name.max' => 'Questo campo deve essere lungo massimo 50 caratteri',
             'lastname.max' => 'Questo campo deve essere lungo massimo 50 caratteri',
+            'email.unique'=> 'Questa email è già utilizzata',
             'name_restaurant.required' => 'Questo campo è obbligatorio',
             'name_restaurant.max' => 'Questo campo deve essere lungo massimo 50 caratteri',
             'address.required' => 'Questo campo è obbligatorio',

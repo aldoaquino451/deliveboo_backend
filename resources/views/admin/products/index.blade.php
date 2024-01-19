@@ -40,6 +40,14 @@
                         </div>
                     </div>
                 </a>
+                
+                        @if (session('success'))
+            <div class="container d-flex justify-content-center">
+                <div class="alert alert-success text-center" role="alert">
+                    {{ session('success') }}
+                </div>
+            </div>
+        @endif
 
                 <div class="modal fade" id="deleteModal{{ $product->id }}" tabindex="-1" role="dialog"
                     aria-labelledby="deleteModalLabel" aria-hidden="true">

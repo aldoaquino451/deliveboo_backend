@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('slug', 52);
             $table->decimal('price', 5, 2);
             $table->string('image')->nullable();
+            $table->string('image_original_name')->nullable();
             $table->boolean('is_visible')->default(0);
             $table->boolean('is_vegan')->default(0);
             $table->text('ingredients');
