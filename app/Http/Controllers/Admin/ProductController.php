@@ -35,17 +35,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $productToDelete = null;
-
         $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-        if ($restaurant) {
         $products = Product::where('restaurant_id', $restaurant->id)->get();
-        } else {
-        $products = null;
-        }
 
-        return view('admin.products.index', compact('products', 'productToDelete'));
+        return view('admin.products.index', compact('products'));
     }
 
     /**
@@ -64,8 +58,11 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
     $restaurant_id = Restaurant::where('user_id', Auth::id())->first()->id;
+      
     $form_data = $request->validated();
     $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
+    $form_data['is_visible'] = $request->has('is_visible') ? 1 : 0;
+    $form_data['is_vegan'] = $request->has('is_vegan') ? 1 : 0;
 
     $new_product = new Product();
     $new_product->restaurant_id = $restaurant_id;
@@ -110,6 +107,8 @@ class ProductController extends Controller
     public function update(ProductRequest $request, Product $product)
     {
         $form_data = $request->validated();
+        $form_data['is_visible'] = $request->has('is_visible') ? 1 : 0;
+        $form_data['is_vegan'] = $request->has('is_vegan') ? 1 : 0;
 
         if ($product->name === $form_data['name']) {
         $form_data['slug'] = $product->slug;
@@ -117,13 +116,6 @@ class ProductController extends Controller
         $form_data['slug'] = Helper::generateSlug($form_data['name'], Product::class);
         }
 
-        if (!isset($form_data['is_vegan'])) {
-        $form_data['is_vegan'] = 0;
-        }
-
-        if (!isset($form_data['is_visible'])) {
-        $form_data['is_visible'] = 0;
-        }
 
         if(array_key_exists('image', $form_data)){
             if($product->image){
@@ -152,8 +144,7 @@ class ProductController extends Controller
         }
 
         $product->delete();
-        // $productToDelete = $product->name;
-        // dd($productToDelete);
+
         return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato eliminato correttamente');
     }
 }
