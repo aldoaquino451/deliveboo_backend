@@ -10,11 +10,6 @@
 
                         @if ($errors->any())
                             <div class="alert alert-danger" role="alert">
-                                {{-- <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul> --}}
                                 <p>Uno o più campi non sono compilati correttamente</p>
                             </div>
                         @endif
@@ -56,9 +51,10 @@
                                 <div class="col-md-8">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email">
+                                        value="{{ old('email') }}" required autocomplete="email"
+                                        onfocus="hideEmailMessage()">
                                     @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span id="email-message" class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -70,7 +66,7 @@
                                 <div class="col-md-8">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required minlength="8" maxlength="32" autocomplete="new-password">
+                                        required minlength="8" maxlength="32" autocomplete="off" not-enter not-space>
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -83,9 +79,10 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }} (*)</label>
                                 <div class="col-md-8">
                                     <input id="password-confirm" type="password"
-                                        class="form-control @error('password-confirm') is-invalid @enderror""
-                                        name="password_confirmation" required minlength="8" maxlength="32"
-                                        autocomplete="new-password">
+                                        class="form-control @error('password-confirm') is-invalid @enderror"
+                                        name="password_confirmation" required minlength="8" maxlength="32" not-enter
+                                        not-space autocomplete="off" onblur="validatePassword()">
+                                    <p id="message-password"></p>
                                 </div>
                             </div>
                             <h5 class="text-center my-3">Dati relativi al ristorante</h5>
@@ -105,9 +102,11 @@
                                     <label for="vat_number">Partita IVA (*)</label>
                                     <input type="text" class="form-control @error('vat_number') is-invalid @enderror"
                                         id="vat_number" required minlength="11" maxlength="11" name="vat_number"
-                                        value="{{ old('vat_number') }}">
+                                        value="{{ old('vat_number') }}" onfocus="hideVatNumberMessage()">
                                     @error('vat_number')
-                                        <p class="text-danger">{{ $message }}</p>
+                                        <span id="vat-number-message" class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
                                     @enderror
                                 </div>
                             </div>
@@ -125,7 +124,7 @@
                             <div class="col-12">
                                 <label for="image" class="form-label">Immagine</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror"
-                                    id="image" required name="image" value="{{ old('image') }}">
+                                    id="image" name="image" value="{{ old('image') }}">
                             </div>
                             @error('address')
                                 <p class="text-danger">{{ $message }}</p>
@@ -134,8 +133,7 @@
                             <div class="col-12">
                                 <label for="description" class="form-label">Descrizione</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" id="description"
-                                    placeholder="Inserisci una breve descrizione" minlength="10" name="description"
-                                    value="{{ old('description') }}"></textarea>
+                                    placeholder="Inserisci una breve descrizione" name="description" value="{{ old('description') }}"></textarea>
                             </div>
                             <span style="font-size: 0.8rem">(*) = campo obbligatorio;</span>
                             @error('description')
@@ -167,4 +165,40 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let timeOut;
+        const emailMessage = document.getElementById('email-message');
+        const vatNumberMessage = document.getElementById('vat-number-message');
+
+        emailMessage.classList.remove('d-none');
+        vatNumberMessage.classList.remove('d-none');
+
+        function hideEmailMessage() {
+            emailMessage.classList.add('d-none');
+        }
+
+        function hideVatNumberMessage() {
+            vatNumberMessage.classList.add('d-none');
+        }
+
+        function validatePassword() {
+            const password = document.getElementById("password").value;
+            const passwordConfirm = document.getElementById("password-confirm").value;
+            const messagePassword = document.getElementById("message-password");
+
+            if (password !== passwordConfirm) {
+                clearTimeout(timeOut);
+                messagePassword.classList.add('text-danger');
+                messagePassword.innerText = "Le password inserite sono diverse";
+            } else {
+                messagePassword.classList.remove('text-danger');
+                messagePassword.classList.add('text-success');
+                messagePassword.innerText = "Le password corrispondono!";
+                timeOut = setTimeout(() => {
+                    messagePassword.innerText = '';
+                }, 3000);
+            }
+        }
+    </script>
 @endsection

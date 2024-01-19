@@ -3,35 +3,40 @@
     <div class="container px-5 py-3">
 
         <h4 class="mb-4">Inserisci i dati del nuovo prodotto</h4>
+
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
                 <p>Uno o più campi non sono compilati correttamente</p>
             </div>
         @endif
+
         <form action="{{ route('admin.products.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
             @csrf
 
             <div class="col-md-6">
-                <label for="name" class="form-label">Nome prodotto</label>
+                <label for="name" class="form-label">Nome prodotto (*)</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                    value="{{ old('name') }}">
+                    autocomplete="name" autofocus required minlength="3" maxlength="254" value="{{ old('name') }}">
                 @error('name')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="col-md-2">
-                <label for="price" class="form-label">Prezzo</label>
-                <input type="number" step=0.01 min=0 class="form-control @error('price') is-invalid @enderror"
-                    id="price" name="price" value="{{ old('price') }}">
+                <label for="price" class="form-label">Prezzo (*)</label>
+                <input type="number" step=0.01 min=0 max=999.99 required
+                    class="form-control @error('price') is-invalid @enderror" id="price" name="price"
+                    value="{{ old('price') }}">
                 @error('price')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
             <div class="col-12">
-                <label for="ingredients" class="form-label @error('ingredients') is-invalid @enderror">Ingredienti</label>
-                <textarea class="form-control" id="ingredients" placeholder="Lista Ingredienti" name="ingredients">{{ old('ingredients') }}</textarea>
+                <label for="ingredients" class="form-label @error('ingredients') is-invalid @enderror">Ingredienti
+                    (*)</label>
+                <textarea class="form-control" id="ingredients" placeholder="Lista Ingredienti" name="ingredients" required
+                    minlength="8">{{ old('ingredients') }}</textarea>
                 @error('ingredients')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -49,7 +54,7 @@
 
 
             <div class="col-md-8">
-                <label for="category_id" class="form-label">Categoria</label>
+                <label for="category_id" class="form-label">Categoria (*)</label>
                 <select id="category_id" class="form-select @error('category_id') is-invalid @enderror" name="category_id">
                     <option value=0 selected>Seleziona</option>
 
@@ -80,6 +85,8 @@
                     </label>
                 </div>
             </div>
+
+            <span style="font-size: 0.8rem">(*) = campo obbligatorio;</span>
 
             <div class="col-12 mt-4">
                 <button type="submit" class="btn btn-primary">Crea</button>
