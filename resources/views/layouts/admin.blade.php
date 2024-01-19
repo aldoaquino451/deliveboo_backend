@@ -29,6 +29,8 @@
         </div>
     </main>
 
+    @yield('script')
+
 </body>
 
 </html>

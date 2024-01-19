@@ -15,36 +15,32 @@ use Laravel\Prompts\Prompt;
 
 class ProductController extends Controller
 {
-  public function productToDelete(Product $product)
-  {
-    $productToDelete = $product;
+  // public function productToDelete(Product $product)
+  // {
+  //   $productToDelete = $product;
 
-    $restaurant = Restaurant::where('user_id', Auth::id())->first();
+  //   $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-    if ($restaurant) {
-      $products = Product::where('restaurant_id', $restaurant->id)->get();
-    } else {
-      $products = null;
-    }
+  //   if ($restaurant) {
+  //     $products = Product::where('restaurant_id', $restaurant->id)->get();
+  //   } else {
+  //     $products = null;
+  //   }
 
-    return view('admin.products.index', compact('products', 'productToDelete'));
-  }
+  //   return view('admin.products.index', compact('products', 'productToDelete'));
+  // }
   /**
    * Display a listing of the resource.
    */
   public function index()
   {
-    $productToDelete = null;
 
     $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-    if ($restaurant) {
-      $products = Product::where('restaurant_id', $restaurant->id)->get();
-    } else {
-      $products = null;
-    }
+    $products = Product::where('restaurant_id', $restaurant->id)->get();
+    $productTrash = null;
 
-    return view('admin.products.index', compact('products', 'productToDelete'));
+    return view('admin.products.index', compact('products', 'productTrash'));
   }
 
   /**
