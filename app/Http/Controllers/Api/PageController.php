@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Typology;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -71,5 +72,13 @@ class PageController extends Controller
     $restaurant = Restaurant::where('slug', $slug)->with('products.category', 'typologies')->first();
 
     return response()->json($restaurant);
+  }
+
+  public function productByCategory(Request $request)
+  {
+    $restaurant_id = $request->query('restaurant_id');
+    $category_id = $request->query('category_id');
+    $products = Product::where('restaurant_id', $restaurant_id)->where('category_id', $category_id)->with('category')->get();
+    return response()->json($products);
   }
 }
