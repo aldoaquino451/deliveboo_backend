@@ -25,6 +25,8 @@ class ProductRequest extends FormRequest
       'name' => ['required', 'max:50'],
       'price' => ['required', 'min:0.01', 'max:999.99'],
       'ingredients' => ['required'],
+      'image' => ['max:10000'],
+      'image_original_name' => ['max:50'],
       'category_id' => ['required', 'not_in:0'],
     ];
   }

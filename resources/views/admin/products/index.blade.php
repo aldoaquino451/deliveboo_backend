@@ -14,6 +14,14 @@
         </a>
     </div>
 
+    @if (session('success'))
+        <div class="container d-flex justify-content-center">
+            <div class="alert alert-success text-center" role="alert">
+                {{ session('success') }}
+            </div>
+        </div>
+    @endif
+
     @if ($products->count() > 0)
         <div class="container d-flex flex-wrap justify-content-center">
             @foreach ($products as $product)
@@ -40,14 +48,6 @@
                         </div>
                     </div>
                 </a>
-                
-                        @if (session('success'))
-            <div class="container d-flex justify-content-center">
-                <div class="alert alert-success text-center" role="alert">
-                    {{ session('success') }}
-                </div>
-            </div>
-        @endif
 
                 <div class="modal fade" id="deleteModal{{ $product->id }}" tabindex="-1" role="dialog"
                     aria-labelledby="deleteModalLabel" aria-hidden="true">
