@@ -79,7 +79,7 @@ class ProductController extends Controller
     $new_product->fill($form_data);
     $new_product->save();
 
-    return redirect()->route('admin.products.index');
+    return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato creato correttamente');
     }
 
     /**
@@ -125,9 +125,21 @@ class ProductController extends Controller
         $form_data['is_visible'] = 0;
         }
 
+        if(array_key_exists('image', $form_data)){
+            if($product->image){
+                Storage::disk('public')->delete($product->image);
+            }
+
+            if (array_key_exists('image', $form_data)) {
+                $form_data['image'] = Storage::put('uploads/products', $form_data['image']);
+                $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+            }
+        }
+
+
         $product->update($form_data);
 
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato modificato correttamente');
     }
 
     /**
@@ -135,9 +147,13 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if ($product->image){
+            Storage::disk('public')->delete($product->image);
+        }
+
         $product->delete();
         // $productToDelete = $product->name;
         // dd($productToDelete);
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato eliminato correttamente');
     }
 }

@@ -37,14 +37,16 @@
                 @enderror
             </div>
 
-            <div class="col-12">
+            <div class="col-10">
                 <label for="image" class="form-label">Immagine</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" required
-                    name="image" value="{{ old('image') }}">
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                    name="image" value="{{ old('image') }}" onchange="showImage(event)">
             </div>
-            @error('address')
+            @error('image')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
+            <img id="thumb" style="width:150px; border-radius:30px;" src="/img/placeholder-image.jpg" />
+
 
             <div class="col-md-8">
                 <label for="category_id" class="form-label">Categoria</label>
@@ -86,4 +88,11 @@
         </form>
 
     </div>
+
+    <script>
+        function showImage(event) {
+            const thumb = document.getElementById('thumb');
+            thumb.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 @endsection

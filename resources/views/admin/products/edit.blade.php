@@ -52,15 +52,18 @@
 
             <div class="col-10">
                 <label for="image" class="form-label">Immagine</label>
-                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" required
-                    name="image" value="{{ old('image', $product?->image) }}">
+                <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                    name="image" value="{{ old('image', $product?->image) }}" onchange="showImage(event)">
             </div>
             @error('address')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
-            @if ($product)
-                <img style="width:150px" src="{{ asset('storage/' . $product?->image) }}" />
-            @endif
+            <div class="col-2">
+                <img id="thumb" class="img-fluid" style="border-radius:30px;"
+                    onerror="this.src='/img/placeholder-image.jpg'" src="{{ asset('storage/' . $product?->image) }}"
+                    alt="{{ $product->image_original_name }}" title="{{ $product->image_original_name }}" />
+            </div>
+
 
             {{-- <div class="col-md-8">
                 <label for="category_id" class="form-label">Categoria</label>
@@ -113,4 +116,11 @@
         </form>
 
     </div>
+
+    <script>
+        function showImage(event) {
+            const thumb = document.getElementById('thumb');
+            thumb.src = URL.createObjectURL(event.target.files[0]);
+        }
+    </script>
 @endsection

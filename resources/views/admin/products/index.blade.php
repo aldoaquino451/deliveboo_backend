@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-
     @if ($productToDelete)
         <div id="delete-modal-container" class="d-flex justify-content-center align-items-center">
             <div class="delete-modal d-flex flex-column align-items-center">
@@ -40,6 +39,15 @@
                 </div>
             </a>
         </div>
+
+        @if (session('success'))
+            <div class="container d-flex justify-content-center">
+                <div class="alert alert-success text-center" role="alert">
+                    {{ session('success') }}
+                </div>
+            </div>
+        @endif
+
 
         @if ($products->count() > 0)
             <div class="container d-flex flex-wrap justify-content-center">
