@@ -26,3 +26,5 @@ Route::get('restaurants', [PageController::class, 'restaurants']);
 Route::get('restaurants-by-typologies/{typologies}', [PageController::class, 'restaurantsByTypologies']);
 
 Route::get('restaurant/{restaurant}', [PageController::class, 'showRestaurant']);
+
+Route::get('restaurant/product-category/{restaurantAndCategoryId}', [PageController::class, 'productByCategory']);

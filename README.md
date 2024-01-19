@@ -13,7 +13,7 @@ Deliveboo
 
 **Front End**
 - Carrello: 
-  - posso scegliere un solo ristorante
+  - posso scegliere un solo ristorante 
   - se aggiungo i prodotti da un nuovo ristorante deve darmi errore (controllo restaurant id)
   - crea una pagina per i carrello con all'interno il form dati del cliente
   - se confermato parte la chiamata con brain tree ceh restituisce la conferma del pagamento 
