@@ -62,7 +62,7 @@ class ProductController extends Controller
     $new_product->fill($form_data);
     $new_product->save();
 
-    return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato creato correttamente');
+    return redirect()->route('admin.products.index')->with('success', $new_product->name . ': il prodotto è stato creato correttamente');
   }
 
   /**
@@ -117,7 +117,7 @@ class ProductController extends Controller
 
     $product->update($form_data);
 
-    return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato modificato correttamente');
+    return redirect()->route('admin.products.index')->with('success', $product->name . ': il prodotto è stato modificato correttamente');
   }
 
   /**
@@ -131,6 +131,6 @@ class ProductController extends Controller
 
     $product->delete();
 
-    return redirect()->route('admin.products.index')->with('success', 'Il prodotto è stato eliminato correttamente');
+    return redirect()->route('admin.products.index')->with('success', $product->name . ': il prodotto è stato eliminato correttamente');
   }
 }
