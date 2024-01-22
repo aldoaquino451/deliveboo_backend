@@ -150,10 +150,9 @@
                                             for="typology_{{ $typology->id }}">{{ $typology->name }}</label>
                                     @endforeach
                                 </div>
-                                <p class="text-danger-typologies d-none">Errore</p>
-                                {{-- @error('typologies')
-                                    <p class="text-danger-typologies d-none">{{ $message }}</p>
-                                @enderror --}}
+                                @error('typologies')
+                                    <p class="text-danger">{{ $message }}</p>
+                                @enderror
                             </div>
 
                             <div class="my-4 row">
@@ -211,17 +210,34 @@
         // francesco
         // const button = document.getElementById('btn-submit');
 
-        function addEvent() {
+        function addEvent(event) {
             event.preventDefault();
-            if (document.querySelectorAll('input[id^=typology_]:checked').length == 0) {
-                document.querySelector('.text-danger-typologies').classList.remove('d-none')
-                return false
+
+            const selectedTypologies = document.querySelectorAll('input[id^=typology_]:checked');
+
+            if (selectedTypologies.length === 0) {
+                document.querySelector('.text-danger-typologies').classList.remove('d-none');
             } else {
-                console.log('altro');
-                document.querySelector('.text-danger-typologies').classList.add('d-none')
+                console.log('Almeno una typology selezionata');
+                document.querySelector('.text-danger-typologies').classList.add('d-none');
+                document.querySelector('#my-form').submit();
             }
-            document.querySelector('#my-form').submit();
         }
+
+        document.getElementById('btn-submit').addEventListener('click', addEvent);
+
+
+        // function addEvent() {
+        //     event.preventDefault();
+        //     if (document.querySelectorAll('input[id^=typology_]:checked').length == 0) {
+        //         document.querySelector('.text-danger-typologies').classList.remove('d-none')
+        //         return false
+        //     } else {
+        //         console.log('altro');
+        //         document.querySelector('.text-danger-typologies').classList.add('d-none')
+        //     }
+        //     document.querySelector('#my-form').submit();
+        // }
 
         // button.addEventListner('click', function() {
         //     event.preventDefault();
