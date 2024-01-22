@@ -72,11 +72,11 @@ class PageController extends Controller
   {
     $restaurant = Restaurant::where('slug', $slug)->with('products.category', 'typologies')->first();
 
-    if($restaurant->image){
-        $restaurant->image = asset('storage/uploads/restaurant/' . $restaurant->image);
-    }else{
-        $restaurant->image = asset('storage/uploads/restaurant/placeholder_restaurant.png');
-    };
+    // if($restaurant->image){
+    //     $restaurant->image = asset('storage/uploads/restaurant/' . $restaurant->image);
+    // }else{
+    //     $restaurant->image = asset('storage/uploads/restaurant/placeholder_restaurant.png');
+    // };
 
 
 
@@ -88,11 +88,13 @@ class PageController extends Controller
     $restaurant_id = $request->query('restaurant_id');
     $category_id = $request->query('category_id');
     $products = Product::where('restaurant_id', $restaurant_id)->where('category_id', $category_id)->with('category')->get();
-    if($products->image){
-        $products->image = asset('storage/uploads/products/' . $products->image);
-    }else{
-        $products->image = asset('storage/uploads/products/placeholder.png');
-    };
+
+    $products = $products->map(function ($product) {
+        $product->image = $product->image
+            ? asset('storage/uploads/products/' . $product->image)
+            : asset('storage/uploads/products/placeholder.png');
+        return $product;
+    });
 
     return response()->json($products);
   }
