@@ -165,7 +165,9 @@
             </div>
         </div>
     </div>
+@endsection
 
+@section('script')
     <script>
         let timeOut;
         const emailMessage = document.getElementById('email-message');
