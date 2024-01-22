@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\Restaurant;
 use App\Models\Typology;
 use App\Models\Product;
@@ -80,5 +81,25 @@ class PageController extends Controller
     $category_id = $request->query('category_id');
     $products = Product::where('restaurant_id', $restaurant_id)->where('category_id', $category_id)->with('category')->get();
     return response()->json($products);
+  }
+
+  public function saveOrder($name, $lastname, $address, $phone_number, $total_price, $cart_string)
+  {
+    // $cart = json_decode($cart_string);
+    $order = new Order();
+
+    $order->restaurant_id = 3;
+    $order->order_number = 30;
+    $order->total_price = $total_price;
+    $order->name = $name;
+    $order->lastname = $lastname;
+    $order->email = 'admin3@admin3.com';
+    $order->address = $address;
+    $order->phone_number = $phone_number;
+
+
+    $order->save();
+
+    return [$name, $lastname, $address, $phone_number, $total_price];
   }
 }

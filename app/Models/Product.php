@@ -9,26 +9,33 @@ use App\Models\Category;
 
 class Product extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-        public function restaurant () {
-        return $this->belongsTo(Restaurant::class);
-    }
+  public function restaurant()
+  {
+    return $this->belongsTo(Restaurant::class);
+  }
 
-        public function category () {
-        return $this->belongsTo(Category::class);
-    }
+  public function category()
+  {
+    return $this->belongsTo(Category::class);
+  }
 
-    protected $fillable = [
-        'name',
-        'slug',
-        'price',
-        'image',
-        'image_original_name',
-        'is_visible',
-        'is_vegan',
-        'ingredients',
-        'restaurant_id',
-        'category_id'
-    ];
+  public function orders()
+  {
+    return $this->belongsToMany(Order::class);
+  }
+
+  protected $fillable = [
+    'name',
+    'slug',
+    'price',
+    'image',
+    'image_original_name',
+    'is_visible',
+    'is_vegan',
+    'ingredients',
+    'restaurant_id',
+    'category_id'
+  ];
 }

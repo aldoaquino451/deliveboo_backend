@@ -28,3 +28,5 @@ Route::get('restaurants-by-typologies/{typologies}', [PageController::class, 're
 Route::get('restaurant/{restaurant}', [PageController::class, 'showRestaurant']);
 
 Route::get('restaurant/product-category/{restaurantAndCategoryId}', [PageController::class, 'productByCategory']);
+
+Route::get('save-order/{name}/{lastname}/{address}/{phone_number}/{total_price}/{cart_string}', [PageController::class, 'saveOrder']);

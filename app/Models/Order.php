@@ -10,9 +10,15 @@ class Order extends Model
 {
   use HasFactory;
 
-     public function restaurant () {
+  public function restaurant()
+  {
     return $this->belongsTo(Restaurant::class);
-}
+  }
+
+  public function products()
+  {
+    return $this->belongsToMany(Product::class);
+  }
 
   protected $fillable = [
     'order_number',
