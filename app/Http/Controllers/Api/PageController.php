@@ -78,7 +78,16 @@ class PageController extends Controller
     //     $restaurant->image = asset('storage/uploads/restaurant/placeholder_restaurant.png');
     // };
 
+    $restaurant->image = $restaurant->image
+    ? asset('storage/uploads/restaurants/' . $restaurant->image)
+    : asset('storage/uploads/restaurants/placeholder_restaurant.png');
 
+// Modifica l'URL dell'immagine di ciascun prodotto
+    foreach ($restaurant->products as $product) {
+        $product->image = $product->image
+            ? asset('storage/uploads/products/' . $product->image)
+            : asset('storage/uploads/products/placeholder.png');
+    }
 
     return response()->json($restaurant);
   }
