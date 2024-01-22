@@ -29,4 +29,4 @@ Route::get('restaurant/{restaurant}', [PageController::class, 'showRestaurant'])
 
 Route::get('restaurant/product-category/{restaurantAndCategoryId}', [PageController::class, 'productByCategory']);
 
-Route::get('save-order/{name}/{lastname}/{address}/{phone_number}/{total_price}/{cart_string}', [PageController::class, 'saveOrder']);
+Route::get('save-order/{cart_string}/{name}/{lastname}/{address}/{phone_number}/{total_price}', [PageController::class, 'saveOrder']);

@@ -79,14 +79,14 @@ class PageController extends Controller
     // };
 
     $restaurant->image = $restaurant->image
-    ? asset('storage/uploads/restaurants/' . $restaurant->image)
-    : asset('storage/uploads/restaurants/placeholder_restaurant.png');
+      ? asset('storage/uploads/restaurants/' . $restaurant->image)
+      : asset('storage/uploads/restaurants/placeholder_restaurant.png');
 
-// Modifica l'URL dell'immagine di ciascun prodotto
+    // Modifica l'URL dell'immagine di ciascun prodotto
     foreach ($restaurant->products as $product) {
-        $product->image = $product->image
-            ? asset('storage/uploads/products/' . $product->image)
-            : asset('storage/uploads/products/placeholder.png');
+      $product->image = $product->image
+        ? asset('storage/uploads/products/' . $product->image)
+        : asset('storage/uploads/products/placeholder.png');
     }
 
     return response()->json($restaurant);
@@ -99,32 +99,46 @@ class PageController extends Controller
     $products = Product::where('restaurant_id', $restaurant_id)->where('category_id', $category_id)->with('category')->get();
 
     $products = $products->map(function ($product) {
-        $product->image = $product->image
-            ? asset('storage/uploads/products/' . $product->image)
-            : asset('storage/uploads/products/placeholder.png');
-        return $product;
+      $product->image = $product->image
+        ? asset('storage/uploads/products/' . $product->image)
+        : asset('storage/uploads/products/placeholder.png');
+      return $product;
     });
 
     return response()->json($products);
   }
 
-  public function saveOrder($name, $lastname, $address, $phone_number, $total_price, $cart_string)
+  public function saveOrder($cart_string, $name, $lastname, $address, $phone_number, $total_price)
   {
-    // $cart = json_decode($cart_string);
-    $order = new Order();
+    // trasformo in json la stringa
+    $cart = json_decode($cart_string, true);
 
-    $order->restaurant_id = 3;
-    $order->order_number = 30;
+    // salvo in un array associativo id prodotto e quantità
+    $product_quantity = [];
+    foreach ($cart as $item) {
+      $product_quantity[] = [
+        'product' => $item['product']['id'],
+        'quantity' => $item['quantity'],
+      ];
+    };
+
+    // salvo il record del nuovo ordine
+    $order = new Order();
+    $order->restaurant_id = 5;
+    $order->order_number = random_int(1, 100000);
     $order->total_price = $total_price;
     $order->name = $name;
     $order->lastname = $lastname;
-    $order->email = 'admin3@admin3.com';
+    $order->email = 'admin4@admin3.com';
     $order->address = $address;
     $order->phone_number = $phone_number;
-
-
     $order->save();
 
-    return [$name, $lastname, $address, $phone_number, $total_price];
+    // popolo la tabella pivot
+    foreach ($product_quantity as $item) {
+      $order->products()->attach($item['product'], ['quantity' => $item['quantity']]);
+    }
+
+    return 'success';
   }
 }
