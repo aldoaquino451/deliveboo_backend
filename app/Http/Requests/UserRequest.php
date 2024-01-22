@@ -33,7 +33,7 @@ class UserRequest extends FormRequest
       'address' => ['required', 'string', 'max:120'],
       'vat_number' => ['required', 'string', 'min:11', 'max:11', 'unique:' . Restaurant::class],
       // 'description' => ['min:10', 'max:255'],
-      'typologies' => ['array', 'min:1'],
+      'typologies' => ['required', 'array', 'min:1'],
     ];
   }
 
@@ -52,6 +52,7 @@ class UserRequest extends FormRequest
       'vat_number.min' => 'Questo campo deve essere composto da 11 numeri',
       'vat_number.max' => 'Questo campo deve essere composto da 11 numeri',
       'vat_number.unique' => 'Questa partita iva è già presente',
+      'typologies' => 'Selezionare almeno una tipologia'
       // 'description.min' => 'Questo campo deve essere composto almeno da 10 caratteri',
       // 'description.max' => 'Questo campo deve essere lungo massimo 255 caratteri',
     ];
