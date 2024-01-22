@@ -14,7 +14,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" id="my-form">
                             @csrf
                             <div class="mb-4 row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}
@@ -140,7 +140,6 @@
                                 <p class="text-danger">{{ $message }}</p>
                             @enderror
 
-
                             <div class="text-center mt-3">
                                 <p>Selezione una o più tipologie per il tuo ristorante:</p>
                                 <div role="group" aria-label="Small button group">
@@ -151,14 +150,20 @@
                                             for="typology_{{ $typology->id }}">{{ $typology->name }}</label>
                                     @endforeach
                                 </div>
+                                <p class="text-danger-typologies d-none">Errore</p>
+                                {{-- @error('typologies')
+                                    <p class="text-danger-typologies d-none">{{ $message }}</p>
+                                @enderror --}}
                             </div>
+
                             <div class="my-4 row">
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" onclick="addEvent()" id="btn-submit" class="btn btn-primary">
                                         {{ __('Registrati') }}
                                     </button>
                                 </div>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -202,5 +207,32 @@
                 }, 3000);
             }
         }
+
+        // francesco
+        // const button = document.getElementById('btn-submit');
+
+        function addEvent() {
+            event.preventDefault();
+            if (document.querySelectorAll('input[id^=typology_]:checked').length == 0) {
+                document.querySelector('.text-danger-typologies').classList.remove('d-none')
+                return false
+            } else {
+                console.log('altro');
+                document.querySelector('.text-danger-typologies').classList.add('d-none')
+            }
+            document.querySelector('#my-form').submit();
+        }
+
+        // button.addEventListner('click', function() {
+        //     event.preventDefault();
+        //     if (document.querySelectorAll('input[id^=typology_]:checked').length == 0) {
+        //         document.querySelector('.text-danger-typologies').classList.remove('d-none')
+        //         return false
+        //     } else {
+        //         console.log('altro');
+        //         document.querySelector('.text-danger-typologies').classList.add('d-none')
+        //     }
+        //     document.querySelector('#my-form').submit();
+        // })
     </script>
 @endsection
