@@ -123,7 +123,7 @@
 
                             <div class="col-12">
                                 <label for="image" class="form-label">Immagine</label>
-                                <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                <input type="file" class="form-control @error('image') is-invalid @enderror" required
                                     id="image" name="image" value="{{ old('image') }}">
                             </div>
                             @error('address')
