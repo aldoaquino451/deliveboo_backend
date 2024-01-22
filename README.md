@@ -8,7 +8,7 @@ Deliveboo
 ### To Do List
 
 **Back End**
-- Va aggiunta la validazione delle tipologie dei ristoranti
+- Chiamata API: da aggiugnere mail e numero ordine
 
 **Front End**
 - Carrello: 
