@@ -40,7 +40,7 @@ class PageController extends Controller
       ->whereIn('restaurant_typology.typology_id', $typologies_arr)
       ->groupBy('restaurants.id')
       ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
-      ->paginate(4);
+      ->get();
 
     // $restaurants = $restaurants->map(function ($restaurant) {
     //   $restaurant->typologies = json_decode($restaurant->typologies);
@@ -109,19 +109,10 @@ class PageController extends Controller
     return response()->json($products);
   }
 
-  public function saveOrder($name, $lastname, $address, $email, $phone_number, $total_price)
+  public function saveOrder($cart_string, $name, $lastname, $address, $email, $phone_number, $total_price)
   {
     // trasformo in json la stringa
-    // $cart = json_decode($cart_string, true);
-
-    // salvo in un array associativo id prodotto e quantità
-    // $product_quantity = [];
-    // foreach ($cart as $item) {
-    //   $product_quantity[] = [
-    //     'product' => $item['product']['id'],
-    //     'quantity' => $item['quantity'],
-    //   ];
-    // };
+    $cart = json_decode($cart_string, true);
 
     // salvo il record del nuovo ordine
     $order = new Order();
@@ -136,10 +127,10 @@ class PageController extends Controller
     $order->save();
 
     // popolo la tabella pivot
-    // foreach ($product_quantity as $item) {
-    //   $order->products()->attach($item['product'], ['quantity' => $item['quantity']]);
-    // }
+    foreach ($cart as $item) {
+      $order->products()->attach($item['id'], ['quantity' => $item['quantity']]);
+    }
 
-    return 'success';
+    return $order->id;
   }
 }
