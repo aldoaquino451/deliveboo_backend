@@ -85,7 +85,7 @@ class PageController extends Controller
     // Modifica l'URL dell'immagine di ciascun prodotto
     foreach ($restaurant->products as $product) {
       $product->image = $product->image
-        ? asset('storage/uploads/products/' . $product->image)
+        ? asset('storage/' . $product->image)
         : asset('storage/uploads/products/placeholder.png');
     }
 
@@ -100,7 +100,7 @@ class PageController extends Controller
 
     $products = $products->map(function ($product) {
       $product->image = $product->image
-        ? asset('storage/uploads/products/' . $product->image)
+        ? asset('storage/' . $product->image)
         : asset('storage/uploads/products/placeholder.png');
       return $product;
     });
