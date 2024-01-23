@@ -108,19 +108,19 @@ class PageController extends Controller
     return response()->json($products);
   }
 
-  public function saveOrder($cart_string, $name, $lastname, $address, $phone_number, $total_price)
+  public function saveOrder($name, $lastname, $address, $phone_number, $total_price)
   {
     // trasformo in json la stringa
-    $cart = json_decode($cart_string, true);
+    // $cart = json_decode($cart_string, true);
 
     // salvo in un array associativo id prodotto e quantità
-    $product_quantity = [];
-    foreach ($cart as $item) {
-      $product_quantity[] = [
-        'product' => $item['product']['id'],
-        'quantity' => $item['quantity'],
-      ];
-    };
+    // $product_quantity = [];
+    // foreach ($cart as $item) {
+    //   $product_quantity[] = [
+    //     'product' => $item['product']['id'],
+    //     'quantity' => $item['quantity'],
+    //   ];
+    // };
 
     // salvo il record del nuovo ordine
     $order = new Order();
@@ -129,15 +129,15 @@ class PageController extends Controller
     $order->total_price = $total_price;
     $order->name = $name;
     $order->lastname = $lastname;
-    $order->email = 'admin4@admin3.com';
+    $order->email = 'admin@admin.com';
     $order->address = $address;
     $order->phone_number = $phone_number;
     $order->save();
 
     // popolo la tabella pivot
-    foreach ($product_quantity as $item) {
-      $order->products()->attach($item['product'], ['quantity' => $item['quantity']]);
-    }
+    // foreach ($product_quantity as $item) {
+    //   $order->products()->attach($item['product'], ['quantity' => $item['quantity']]);
+    // }
 
     return 'success';
   }
