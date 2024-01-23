@@ -10,6 +10,7 @@ use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Random\Randomizer;
 
 class PageController extends Controller
 {
@@ -22,7 +23,7 @@ class PageController extends Controller
 
   public function restaurants()
   {
-    $restaurants = Restaurant::with('typologies')->get();
+    $restaurants = Restaurant::inRandomOrder()->take(4)->with('typologies')->get();
 
     return response()->json($restaurants);
   }
@@ -39,12 +40,12 @@ class PageController extends Controller
       ->whereIn('restaurant_typology.typology_id', $typologies_arr)
       ->groupBy('restaurants.id')
       ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
-      ->get();
+      ->paginate(4);
 
-    $restaurants = $restaurants->map(function ($restaurant) {
-      $restaurant->typologies = json_decode($restaurant->typologies);
-      return $restaurant;
-    });
+    // $restaurants = $restaurants->map(function ($restaurant) {
+    //   $restaurant->typologies = json_decode($restaurant->typologies);
+    //   return $restaurant;
+    // });
 
     return response()->json($restaurants);
   }
