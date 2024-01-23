@@ -76,7 +76,7 @@
                             </div>
                             <div class="mb-4 row">
                                 <label for="password-confirm"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }} (*)</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }} (*)</label>
                                 <div class="col-md-8">
                                     <input id="password-confirm" type="password"
                                         class="form-control @error('password-confirm') is-invalid @enderror"
@@ -85,12 +85,12 @@
                                     <p id="message-password"></p>
                                 </div>
                             </div>
-                            <h5 class="text-center my-3">Dati relativi al ristorante</h5>
+                            <h5 class="text-center mt-5 mb-4">Dati relativi al ristorante</h5>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="name_restaurant">Nome ristorante (*)</label>
                                     <input type="text"
-                                        class="form-control @error('name_restaurant') is-invalid @enderror"
+                                        class="form-control mt-2 @error('name_restaurant') is-invalid @enderror"
                                         id="name_restaurant" required name="name_restaurant"
                                         value="{{ old('name_restaurant') }}">
                                     @error('name_restaurant')
@@ -100,7 +100,7 @@
 
                                 <div class="col-md-6">
                                     <label for="vat_number">Partita IVA (*)</label>
-                                    <input type="text" class="form-control @error('vat_number') is-invalid @enderror"
+                                    <input type="text" class="form-control mt-2 @error('vat_number') is-invalid @enderror"
                                         id="vat_number" required minlength="11" maxlength="11" name="vat_number"
                                         value="{{ old('vat_number') }}" onfocus="hideVatNumberMessage()">
                                     @error('vat_number')
@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="col-12">
-                                <label for="address" class="form-label">Indirizzo (*)</label>
+                                <label for="address" class="form-label mt-3">Indirizzo (*)</label>
                                 <input type="text" class="form-control @error('address') is-invalid @enderror"
                                     id="address" required name="address" placeholder="Indirizzo, CAP, Città, Provincia"
                                     value="{{ old('address') }}">
@@ -122,7 +122,7 @@
                             @enderror
 
                             <div class="col-12">
-                                <label for="image" class="form-label">Immagine</label>
+                                <label for="image" class="form-label mt-3">Immagine</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" required
                                     id="image" name="image" value="{{ old('image') }}">
                             </div>
@@ -131,7 +131,7 @@
                             @enderror
 
                             <div class="col-12">
-                                <label for="description" class="form-label">Descrizione</label>
+                                <label for="description" class="form-label mt-3">Descrizione</label>
                                 <textarea class="form-control @error('description') is-invalid @enderror" id="description"
                                     placeholder="Inserisci una breve descrizione" name="description" value="{{ old('description') }}"></textarea>
                             </div>
