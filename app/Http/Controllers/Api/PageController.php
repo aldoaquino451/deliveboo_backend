@@ -109,7 +109,7 @@ class PageController extends Controller
     return response()->json($products);
   }
 
-  public function saveOrder($cart_string, $name, $lastname, $address, $email, $phone_number, $total_price)
+  public function saveOrder($cart_string, $name, $lastname, $address, $email, $phone_number, $total_price, $restaurant_id)
   {
     // trasformo in json la stringa
     $cart = json_decode($cart_string, true);
@@ -120,7 +120,7 @@ class PageController extends Controller
 
     // salvo il record del nuovo ordine
     $order = new Order();
-    $order->restaurant_id = 5;
+    $order->restaurant_id = $restaurant_id;
     $order->order_number = $order_number;
     $order->total_price = $total_price;
     $order->name = $name;
