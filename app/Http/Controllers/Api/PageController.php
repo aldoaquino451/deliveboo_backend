@@ -40,12 +40,12 @@ class PageController extends Controller
       ->whereIn('restaurant_typology.typology_id', $typologies_arr)
       ->groupBy('restaurants.id')
       ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
-      ->get();
+      ->paginate(4);
 
-    // $restaurants = $restaurants->map(function ($restaurant) {
-    //   $restaurant->typologies = json_decode($restaurant->typologies);
-    //   return $restaurant;
-    // });
+    $restaurants = $restaurants->map(function ($restaurant) {
+        $restaurant->typologies = json_decode($restaurant->typologies);
+        return $restaurant;
+        });
 
     return response()->json($restaurants);
   }
