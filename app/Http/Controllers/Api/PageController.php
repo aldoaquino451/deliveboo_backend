@@ -43,9 +43,9 @@ class PageController extends Controller
       ->paginate(4);
 
     $restaurants = $restaurants->map(function ($restaurant) {
-        $restaurant->typologies = json_decode($restaurant->typologies);
-        return $restaurant;
-        });
+      $restaurant->typologies = json_decode($restaurant->typologies);
+      return $restaurant;
+    });
 
     return response()->json($restaurants);
   }
@@ -114,10 +114,14 @@ class PageController extends Controller
     // trasformo in json la stringa
     $cart = json_decode($cart_string, true);
 
+    // ultimo ordine
+    $lastOrder = Order::latest('order_number')->first();
+    $order_number = $lastOrder ? $lastOrder->order_number + 1 : 1000;
+
     // salvo il record del nuovo ordine
     $order = new Order();
     $order->restaurant_id = 5;
-    $order->order_number = random_int(1, 100000);
+    $order->order_number = $order_number;
     $order->total_price = $total_price;
     $order->name = $name;
     $order->lastname = $lastname;
