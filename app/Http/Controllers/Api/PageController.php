@@ -108,7 +108,7 @@ class PageController extends Controller
     return response()->json($products);
   }
 
-  public function saveOrder($name, $lastname, $address, $phone_number, $total_price)
+  public function saveOrder($name, $lastname, $address, $email, $phone_number, $total_price)
   {
     // trasformo in json la stringa
     // $cart = json_decode($cart_string, true);
@@ -129,7 +129,7 @@ class PageController extends Controller
     $order->total_price = $total_price;
     $order->name = $name;
     $order->lastname = $lastname;
-    $order->email = 'admin@admin.com';
+    $order->email = $email;
     $order->address = $address;
     $order->phone_number = $phone_number;
     $order->save();
