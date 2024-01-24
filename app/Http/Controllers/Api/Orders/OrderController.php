@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Api\Orders;
 
 use Braintree\Gateway;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\OrderRequest;
 
 class OrderController extends Controller
 {
-    public function generate(OrderRequest $request, Gateway $gateway){
+    public function generate(Request $request, Gateway $gateway){
         $token = $gateway->clientToken()->generate();
 
         $data = [
@@ -21,8 +22,11 @@ class OrderController extends Controller
     }
 
     public function makePayment(OrderRequest $request, Gateway $gateway){
+
+        $product = Product::find($request->product);
+
         $result = $gateway->transaction()->sale([
-            'amount' => '10.00',
+            'amount' => $product->price,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true,
