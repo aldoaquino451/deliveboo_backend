@@ -30,24 +30,23 @@ class PageController extends Controller
 
   public function restaurantsByTypologies($typologies)
   {
-    $typologies_arr = explode('-', $typologies);
+      $typologies_arr = explode('-', $typologies);
 
-    $restaurants = DB::table('restaurants')
-      ->select('restaurants.*')
-      ->addSelect(DB::raw('JSON_ARRAYAGG(JSON_OBJECT("id", typologies.id, "name", typologies.name)) as typologies'))
-      ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
-      ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
-      ->whereIn('restaurant_typology.typology_id', $typologies_arr)
-      ->groupBy('restaurants.id')
-      ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
-      ->paginate(4);
+        $restaurants = DB::table('restaurants')
+            ->select('restaurants.*')
+            ->addSelect(DB::raw('JSON_ARRAYAGG(JSON_OBJECT("id", typologies.id, "name", typologies.name)) as typologies'))
+            ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
+            ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
+            ->whereIn('restaurant_typology.typology_id', $typologies_arr)
+            ->groupBy('restaurants.id')
+            ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
+            ->paginate(4);
 
-    $restaurants = $restaurants->map(function ($restaurant) {
-      $restaurant->typologies = json_decode($restaurant->typologies);
-      return $restaurant;
-    });
+        $restaurants->each(function ($restaurant) {
+            $restaurant->typologies = json_decode($restaurant->typologies);
+        });
 
-    return response()->json($restaurants);
+      return response()->json($restaurants);
   }
 
   // public function restaurantsByTypologies($typologies)
