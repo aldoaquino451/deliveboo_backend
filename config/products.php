@@ -10,7 +10,7 @@ return [
     'ingredients' => 'Quinoa, Pomodori Ciliegini, Cetriolo, Avocado, Vinaigrette al Limone',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg'
   ],
   [
     'category_id' => 3,
@@ -20,7 +20,7 @@ return [
     'ingredients' => 'Zucchine a Julienne, Pesto di Avocado, Pomodorini, Noci',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg'
   ],
   [
     'category_id' => 9,
@@ -30,7 +30,7 @@ return [
     'ingredients' => 'Piatto di Lenticchie, Cipolla Caramellata, Lattuga, Pomodoro, Pane Integrale',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/21An0ghJQjrY1Cxahpk536p6UD83oVzTnKGY6VCA.jpg'
   ],
   [
     'category_id' => 3,
@@ -40,7 +40,7 @@ return [
     'ingredients' => 'Quinoa, Avocado, Ceci, Carote, Cavolo Rosso, Salsa Tahini',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/ynVAgYIA9zdyIPnAzxQREQdzvP2SMx04RHizNkCC.avif'
   ],
   [
     'category_id' => 7,
@@ -50,7 +50,7 @@ return [
     'ingredients' => 'Impasto per Pizza Vegana, Salsa di Pomodoro, Funghi Misti, Cipolla Rossa, Rucola',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/YHQSB8M9DjOVIfwBMP51pfP6Wil5T8pLJQLGbBC8.jpg'
   ],
   [
     'category_id' => 10,
@@ -60,7 +60,7 @@ return [
     'ingredients' => 'Farina, Cacao in Polvere, Zucchero di Cocco, Olio di Cocco, Latte di Mandorla',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/GxcktYbyKDfrPG9Icf37LqHb6zuhmTyIuYsV8AbO.jpg'
   ],
   [
     'category_id' => 8,
@@ -70,7 +70,7 @@ return [
     'ingredients' => 'Riso per Sushi, Avocado, Cetriolo, Carota, Alga Nori',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/MGQqB3DfN7ECjXx2SiHWWdWCVFf3UnSbRdyOB45D.jpg'
   ],
   [
     'category_id' => 6,
@@ -80,7 +80,7 @@ return [
     'ingredients' => 'Ananas, Mango, Kiwi, Melograno, Menta Fresca',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/pGpBR3bKmhzgxPXm3kDVMvJbjBxTvFKFk9qGnugs.webp'
   ],
   [
     'category_id' => 4,
@@ -90,7 +90,7 @@ return [
     'ingredients' => 'Tagliata di Manzo, Rucola, Parmigiano Reggiano',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/bnGo1RgfqrU680yPGFrKpuVFnsxAdTGhTcavJGNJ.jpg'
   ],
   [
     'category_id' => 4,
@@ -100,7 +100,7 @@ return [
     'ingredients' => 'Braciola di Maiale, Pomodoro, Aglio, Rosmarino',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/6X9uVHXNa0wrxsbnh0LxRq73mDhk5hnpRTcaIkzR.jpg'
   ],
   [
     'category_id' => 4,
@@ -110,7 +110,7 @@ return [
     'ingredients' => 'Pollo, Erbe Aromatiche, Limone',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/wTjzodKdwgjKYLjcXJGQQB12oK3NBGk2vPIOTa7P.jpg'
   ],
   [
     'category_id' => 4,
@@ -120,7 +120,7 @@ return [
     'ingredients' => 'Bistecca di Manzo, Sale, Pepe, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/x9iWQuVDz7S3pOTPJGSPWERCKZvwb71I575ODDqP.jpg'
   ],
   [
     'category_id' => 5,
@@ -130,7 +130,7 @@ return [
     'ingredients' => 'Funghi, Aglio, Prezzemolo, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/3oQubINI9EFbIS1yV2VKLkvvrZ8Tfz5sRDE6o2hV.jpg'
   ],
   [
     'category_id' => 10,
@@ -140,7 +140,7 @@ return [
     'ingredients' => 'Savoiardi, Mascarpone, Caffè, Cacao',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/Ws50OLD3QWO1NoY38dRHKaxtiEvFHlqQydMmhD6C.avif'
   ],
   [
     'category_id' => 3,
@@ -150,7 +150,7 @@ return [
     'ingredients' => 'Pasta, Cozze, Vongole, Sale, Pepe, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/lpWegmSSvWarQC5lRswFerjWzRv5O201uRFjl78p.avif'
   ],
   [
     'category_id' => 4,
@@ -160,7 +160,7 @@ return [
     'ingredients' => 'Filetto di Salmone, Limone, Erbe Aromatiche',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/pELdo8APhRuuq8pbPNpWozZcCGdSy3S7ZLaVQ67z.jpg'
   ],
   [
     'category_id' => 4,
@@ -170,7 +170,7 @@ return [
     'ingredients' => 'Calamari, Olio d\'Oliva, Aglio, Prezzemolo',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/ESsK0DRlGFP074MLyb4ciQceTwO7F0OKpKG5ghBF.jpg'
   ],
   [
     'category_id' => 4,
@@ -180,7 +180,7 @@ return [
     'ingredients' => 'Spaghetti, Vongole, Aglio, Peperoncino',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/lRIYV38qGwuOnfI4dIduj5m6EvfC7XFJD2T783vL.jpg'
   ],
   [
     'category_id' => 4,
@@ -190,7 +190,7 @@ return [
     'ingredients' => 'Pesce Spada, Sale, Pepe, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/hUuIimMCdjBnX4QFim9BKVRwCAoWNyR9uo0VIacp.png'
   ],
   [
     'category_id' => 5,
@@ -200,7 +200,7 @@ return [
     'ingredients' => 'Misto di Frutti di Mare, Pomodorini, Olive, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/IV5bKAjdVGChLWKnUpGk3EMdyxm1kjuHYBemeEAb.avif'
   ],
   [
     'category_id' => 10,
@@ -210,7 +210,7 @@ return [
     'ingredients' => 'Cioccolato Bianco, Nocciola, Gelato',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/w6aegHymaPqOkqgMi9PSeJKW07xIsBJsmPeXB2SZ.jpg'
   ],
   [
     'category_id' => 9,
@@ -220,7 +220,7 @@ return [
     'ingredients' => 'Mozzarella, Pomodoro, Basilico, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/oGwFOeKCgkA5FcbR5OrpbYgNC5qfSTuFewNdTYp3.jpg'
   ],
   [
     'category_id' => 9,
@@ -230,7 +230,7 @@ return [
     'ingredients' => 'Prosciutto Crudo, Formaggio, Lattuga, Pomodoro',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/vvuP2O6V9ehKIsyWnwkG3zMty2rhX0ng0FvWkwNZ.jpg'
   ],
   [
     'category_id' => 9,
@@ -240,7 +240,7 @@ return [
     'ingredients' => 'Hummus, Verdure Grigliate, Rucola, Pomodoro',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/HzuJtlnhpB3fNNBrjh1meMHHYWYIwdE0lGgIkRWy.jpg'
   ],
   [
     'category_id' => 9,
@@ -250,7 +250,7 @@ return [
     'ingredients' => 'Salsiccia, Peperoni, Formaggio, Cipolla Caramellata',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/MkSooCDHDyRvB1jX1kL9u9dOTAQM75wLQEhcfJ7r.jpg'
   ],
   [
     'category_id' => 9,
@@ -260,7 +260,7 @@ return [
     'ingredients' => 'Tonno, Cipolla, Maionese, Lattuga',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/lt2AHla2jue7JMGC0sZp6aQY5ZeEnSIdvlRqwTfW.webp'
   ],
   [
     'category_id' => 9,
@@ -270,7 +270,7 @@ return [
     'ingredients' => 'Manzo, Lattuga, Pomodoro, Cipolla, Formaggio, Maionese',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/mJhVp0Ov7BZgmGZBAkZGCAruwaCg4RVioIlRW0pQ.jpg'
   ],
   [
     'category_id' => 9,
@@ -280,7 +280,7 @@ return [
     'ingredients' => 'Manzo, Bacon, Formaggio Cheddar, Cipolla Caramellata, Salsa BBQ',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/VvRwX8LYo8Tg92jwYHUzb84GLeeJfTtPRjLILIjF.jpg'
   ],
   [
     'category_id' => 9,
@@ -290,7 +290,7 @@ return [
     'ingredients' => 'Patty di Verdure, Lattuga, Pomodoro, Cipolla, Salsa Vegana',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/mGttcFsz3B7PeoWRTSItxL6B9PY16PM5HwcHNehi.jpg'
   ],
   [
     'category_id' => 9,
@@ -300,7 +300,7 @@ return [
     'ingredients' => 'Manzo, Jalapeños, Formaggio Pepper Jack, Lattuga, Salsa Piccante',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/ki7FBhhlvefOvba6d2vQ0Z8yIWPajQmEzvWKLr2z.jpg'
   ],
   [
     'category_id' => 9,
@@ -310,7 +310,7 @@ return [
     'ingredients' => 'Manzo, Funghi, Formaggio Swiss, Lattuga, Maionese',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/cAjR0qtmlE41cD0QZqfRcgQSILHnlkr4Kzv9mZeE.jpg'
   ],
   [
     'category_id' => 7,
@@ -320,7 +320,7 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Basilico, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'SushiVegano.jpg',
+    'image' => 'uploads/products/PmdwxSwWuNwB6jYx841fpJHpoqgjQtNucGXdufKO.webp'
   ],
   [
     'category_id' => 7,
@@ -330,7 +330,7 @@ return [
     'ingredients' => 'Pomodoro, Aglio, Origano, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => null,
+    'image' => 'uploads/products/o8bWXQ7TwVdFuqpuyfjt2oiXpv2n3bVByh1vQMcl.jpg'
   ],
   [
     'category_id' => 7,
@@ -340,7 +340,7 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Funghi, Prosciutto Cotto, Carciofi, Olive Nere',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/T8WWwy4pgyf0rk0iy2BpvOkDNHrwQ35mxxHCHwjd.jpg'
   ],
   [
     'category_id' => 7,
@@ -350,7 +350,7 @@ return [
     'ingredients' => 'Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/8rUAKALBkQkY6AYhnr4wOcvHDZGRJiJlwh3UHQju.webp'
   ],
   [
     'category_id' => 7,
@@ -360,7 +360,7 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Acciughe, Olive Nere, Origano',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/umjrEWqzA3L8mFJv6CLb90OFeKoF8jUeyCRAp1YB.jpg'
   ],
   [
     'category_id' => 4,
@@ -370,7 +370,7 @@ return [
     'ingredients' => 'Pollo intero, Sale, Pepe, Erbe aromatiche',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/0D8bWn5MBxDNwYUOqQSjZuupB5CYA1hk0ALLUKxW.avif'
   ],
   [
     'category_id' => 4,
@@ -380,7 +380,7 @@ return [
     'ingredients' => 'Ali di pollo, Salsa BBQ, Spezie',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/Sg51ivbxoUox9VLY0IQ7LDWZC2FQhQVUgPrgq04m.jpg'
   ],
   [
     'category_id' => 4,
@@ -390,7 +390,7 @@ return [
     'ingredients' => 'Petto di pollo, Olio d\'oliva, Aglio, Rosmarino',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/V6JaQ8IjXXnXkHlNKz5VRQq44FL39VIDUgO0dHNA.jpg'
   ],
   [
     'category_id' => 4,
@@ -400,7 +400,7 @@ return [
     'ingredients' => 'Pezzi di pollo, Farina, Uova, Spezie, Olio per friggere',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/uOr1Z25ixPC9tIkZKgMZdqkg2smpeDOSRdnlEG7E.jpg'
   ],
   [
     'category_id' => 6,
@@ -410,6 +410,228 @@ return [
     'ingredients' => 'Petto di pollo grigliato, Lattuga romana, Crostini, Parmigiano, Salsa Caesar',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => null,
+    'image' => 'uploads/products/S0v3OjxvOw1PIHIxcMFdyq1P5e8bm2oRCnBazpBS.avif',
+  ],
+  [
+    'category_id' => 3,
+    'restaurant_id' => 3,
+    'name' => 'Pasta cacio e pepe',
+    'price' => 9.00,
+    'ingredients' => 'Pecorino, Pepe',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/HbwqxS2t5IiUIcIuLk5pdlFTJxZdF79i8zVN7dvr.avif',
+  ],
+  [
+    'category_id' => 6,
+    'restaurant_id' => 5,
+    'name' => 'Insalata di polpo alla siciliana',
+    'price' => 11.00,
+    'ingredients' => 'Polpo, Carote, Sedano, rucola',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/KUmQZr8ghl1o1ffGXPJtWn3sTW78rvxJxcXHRr3g.jpg',
+  ],
+  [
+    'category_id' => 3,
+    'restaurant_id' => 5,
+    'name' => 'Pasta chi sardia',
+    'price' => 12.00,
+    'ingredients' => 'Bucatini con sarde, finocchietto, zafferano, pinoli, concentrato di pomodoro, pangrattato e uvetta passa',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/c1foagIB5yTm1oOk2ffnLzUFYQbO52sSdtVSU5bl.jpg',
+  ],
+  [
+    'category_id' => 4,
+    'restaurant_id' => 5,
+    'name' => 'Spada alla pantesca',
+    'price' => 18.00,
+    'ingredients' => 'Trancio di spada, spadellato con pomodorini, olive, capperi, menta fresca, servito con misticanza e pomodorini',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/o3Y9YtCI6jQ90txyuQKTZ8OVzO8MJEFsJupNfuCy.jpg',
+  ],
+  [
+    'category_id' => 1,
+    'restaurant_id' => 7,
+    'name' => 'Burrata pomodorini e acciughe',
+    'price' => 8.00,
+    'ingredients' => 'Burrata con pomodorini, misticaza, acciughe e origano',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/W1Fs6buDczvH93OyphYtmfocqrsRAAzDBoxdElTg.jpg',
+  ],
+  [
+    'category_id' => 3,
+    'restaurant_id' => 7,
+    'name' => 'Rigatoni alla Norma',
+    'price' => 9.00,
+    'ingredients' => 'Salsa di pomodoro, melanzane, ricotta salata e basilico',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/1QhYTkLwGtOqmqa0uS8UcEUiGokfr1O7iQTIcS4x.webp',
+  ],
+  [
+    'category_id' => 4,
+    'restaurant_id' => 7,
+    'name' => 'Tagliata di pollo agli agrumi',
+    'price' => 13.00,
+    'ingredients' => 'Tagliata di pollo con salsa agli agrumi, olio EVO e prezzemolo,
+    servita con misticanza e pomodorini',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/zISgaZBlW57xlefPJTLRW05sUh06MRhjnJ0Jswqx.jpg',
+  ],
+  [
+    'category_id' => 7,
+    'restaurant_id' => 8,
+    'name' => 'Napoli',
+    'price' => 12.00,
+    'ingredients' => 'passata di pomodoro, mozzarella di bufala, acciughe, origano',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/MctltmBPr5TXjFuiLIJ27GTPG5ycsXEygeRMQxRU.webp',
+  ],
+  [
+    'category_id' => 7,
+    'restaurant_id' => 8,
+    'name' => 'Arrabbiata',
+    'price' => 12.00,
+    'ingredients' => 'salsa piccante della casa, passata di pomodoro, mozzarella di bufala, cipolla, pesto, pinoli, peperoncino',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/IGcPGSoGiN1bgZW1JQ2pmIq859TLQ0YahkrAzIW6.webp',
+  ],
+  [
+    'category_id' => 7,
+    'restaurant_id' => 8,
+    'name' => 'Ai Funghi Porcini',
+    'price' => 13.00,
+    'ingredients' => 'passata di pomodoro, mozzarella di bufala, funghi porcini di stagione',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/3hmL8AUAgL5MiBtG99cWcUSBkHZxpOTBsDfiZryr.jpg',
+  ],
+  [
+    'category_id' => 9,
+    'restaurant_id' => 9,
+    'name' => 'Panino di falafel',
+    'price' => 4.00,
+    'ingredients' => 'panino con verdure secche e ceci',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/T4OkhZKO7vlkP6Wy4OCpnVWuJlzqZYPuWaA1fv4k.webp',
+  ],
+  [
+    'category_id' => 9,
+    'restaurant_id' => 9,
+    'name' => 'Panino con cotoletta',
+    'price' => 5.00,
+    'ingredients' => 'Pollo, pangrattato, insalata mista, pomodoro',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/2vIbV03J2kKYZw3Dr8pNILo5bYKr9oNY31wGP9A8.webp',
+  ],
+  [
+    'category_id' => 9,
+    'restaurant_id' => 9,
+    'name' => 'Panino kebab',
+    'price' => 5.00,
+    'ingredients' => 'kebab, insalata mista, pomodoro, riso, peperoncino, maionese',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/y8TV7Gp7ptxaOtMp0QLovip6yIjnahyrYFLSmrwg.jpg',
+  ],
+  [
+    'category_id' => 10,
+    'restaurant_id' => 11,
+    'name' => 'Torta meringata',
+    'price' => 18.00,
+    'ingredients' => 'Crema di latte, zucchero, crema pasticcera, uova',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/ZUPOphAANqHRa3Wy79rdDBn39JZ34cdbjGi7Rtwb.jpg',
+  ],
+  [
+    'category_id' => 10,
+    'restaurant_id' => 11,
+    'name' => 'Torta sacher al Pistacchio',
+    'price' => 25.00,
+    'ingredients' => 'Zucchero, uova, sciroppo di glucosio-fruttosio, cacao in polvere, amido di mais, pistacchio, cioccolato',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/KM2OZuNClaIFrH41IYGlp31uEd8qZhtZimGHEuz2.jpg',
+  ],
+  [
+    'category_id' => 10,
+    'restaurant_id' => 11,
+    'name' => 'Baci di dama',
+    'price' => 10.00,
+    'ingredients' => 'Farina, burro, nocciole, cacao amaro, latte, uova, zucchero',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/huuNavmC4n0CjD0DAwtrt5Od4C6eGl6hjNWIyfLg.avifg',
+  ],
+  [
+    'category_id' => 8,
+    'restaurant_id' => 12,
+    'name' => 'Mango roll',
+    'price' => 5.00,
+    'ingredients' => 'Salmone, philadelphia, sesamo, mango, salsa mango',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/W28PVzA9EEet1xBab825s8Lp1uDiqtfGVar95cES.jpg',
+  ],
+  [
+    'category_id' => 8,
+    'restaurant_id' => 12,
+    'name' => 'Vegetarian roll',
+    'price' => 6.00,
+    'ingredients' => 'Avocado, cetriolo, indivia, burrata fresca',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/rv0x4uMZ7N5Wb2JHUQbC42D69FYeXr3AaI5p6VXz.jpg',
+  ],
+  [
+    'category_id' => 8,
+    'restaurant_id' => 12,
+    'name' => 'Demon roll',
+    'price' => 6.00,
+    'ingredients' => 'Gambero, polpa di granchio, cetriolo, salsa piccante',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/ryKBwjH5u92oiMCXjkbBnzuuvjHQc09GcgYiJvKO.jpg',
+  ],
+  [
+    'category_id' => 1,
+    'restaurant_id' => 13,
+    'name' => 'Crispy rice',
+    'price' => 4.50,
+    'ingredients' => 'Riso croccante, tartar di salmone, erba cipollina, salsa di mango',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/yppYJgfbgBXzMAdDqtSCo7aDsKPGT1iwgc6qeCm8.jpg',
+
+  ],
+  [
+    'category_id' => 3,
+    'restaurant_id' => 13,
+    'name' => 'Yakiudon',
+    'price' => 8.00,
+    'ingredients' => 'Spaghetti giapponesi saltati alla piastra con frutti di mare',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/MIeBu0w3Wy0EF3pph6KOI6q9fuxy5xvAjMwzFdFj.jpg',
+  ],
+  [
+    'category_id' => 4,
+    'restaurant_id' => 13,
+    'name' => 'Pollo alle mandorle',
+    'price' => 7.00,
+    'ingredients' => 'Polllo, mandorle, peperoni, erba cipollina',
+    'is_visible' => 1,
+    'is_vegan' => 0,
+    'image' => 'uploads/products/DsHt8yKxILm6MAdXtCaigMetoeq2ccWcHjGEoPIt.jpg',
   ],
 ];
