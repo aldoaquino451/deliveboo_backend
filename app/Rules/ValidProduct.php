@@ -17,4 +17,8 @@ class ValidProduct implements ValidationRule
     {
         Product::find($value) ? true : false;
     }
+
+    public function message(){
+        return 'Il prodotto non esiste';
+    }
 }

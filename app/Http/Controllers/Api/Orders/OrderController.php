@@ -26,7 +26,7 @@ class OrderController extends Controller
         $product = Product::find($request->product);
 
         $result = $gateway->transaction()->sale([
-            'amount' => $product->price,
+            'amount' => $product?->price,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true,
