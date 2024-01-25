@@ -1,18 +1,16 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h2 class="mb-3 text-capitalize text-center">Lista Prodotti</h2>
+    <h2 class="mb-3 text-capitalizte text-center">Lista Prodotti</h2>
 
-    <div class="my-4 d-flex justify-content-center">
-        <a class="p-0 btn btn-primary fs-2" href="{{ route('admin.products.create') }}">
-            <div class="py-0 px-2 btn btn-primary d-flex align-items-center gap-3">
-                <span>Crea un nuovo prodotto</span>
-                <span class=" fs-2">
-                    <i class="fa-solid fa-circle-plus"></i>
-                </span>
+    {{-- <div class="my-4 d-flex justify-content-center">
+        <a class="btn-fr" href="{{ route('admin.products.create') }}">
+            <div class="btn-message d-flex align-items-center gap-2 p-2">
+                <span class="message text-uppercase">Crea prodotto</span>
+                <i class="fa-solid fa-circle-plus"></i>
             </div>
         </a>
-    </div>
+    </div> --}}
 
     @if (session('success'))
         <div class="container d-flex justify-content-center">
@@ -22,8 +20,19 @@
         </div>
     @endif
 
+
+    <ul class="wrapper">
+        <a href="{{ route('admin.products.create') }}">
+            <li class="icon new_product">
+                <p class="tooltip">Aggiungi</p>
+                <span><i class="fa-solid fa-circle-plus"></i></span>
+            </li>
+        </a>
+    </ul>
+
+
     @if ($products->count() > 0)
-        <div class="container d-flex flex-wrap justify-content-center">
+        <div class="container d-flex flex-wrap justify-content-center" style="flex-wrap: flex-start;">
             @foreach ($products as $product)
                 <a class="product-card d-inline-block text-decoration-none"
                     href="{{ route('admin.products.edit', $product) }}">

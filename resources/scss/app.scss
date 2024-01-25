@@ -1,12 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 @import "partials/header";
-@import "partials/product";
 @import "partials/delete-modal";
+@import "partials/main";
+@import "partials/aside";
+@import "partials/product-index";
 
-header#admin {
-    height: 70px;
-}
-
-main#admin {
-    min-height: calc(100vh - 70px);
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f2f0e4;
+    font-family: "Lato", sans-serif;
 }

@@ -35,7 +35,7 @@ class OrderController extends Controller
             'paymentMethodNonce' => $nonceFromTheClient,
             'deviceData' => $deviceDataFromTheClient,
             'options' => [
-              'submitForSettlement' => True
+            'submitForSettlement' => True
             ]
         ]);
 
