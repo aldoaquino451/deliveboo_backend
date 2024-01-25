@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Api\PageController;
+use App\Http\Controllers\Api\Orders\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,7 @@ Route::get('restaurant/{restaurant}', [PageController::class, 'showRestaurant'])
 Route::get('restaurant/product-category/{restaurantAndCategoryId}', [PageController::class, 'productByCategory']);
 
 Route::get('save-order/{cart_string}/{name}/{lastname}/{address}/{email}/{phone_number}/{total_price}/{restaurant_id}', [PageController::class, 'saveOrder']);
+
+Route::get('orders/generate', [OrderController::class, 'generate']);
+
+Route::POST('orders/make-payment', [OrderController::class, 'makePayment']);
