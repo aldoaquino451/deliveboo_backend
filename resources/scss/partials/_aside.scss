@@ -1,9 +1,8 @@
 aside {
     background-color: #a73922;
     width: 100px;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 90px);
     margin: auto 0;
-    padding: 10px 0;
     border-radius: 0 20px 20px 0;
     box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
 
@@ -29,8 +28,18 @@ aside {
         font-size: 0.8rem;
         &:hover {
             text-decoration: none;
-            background-color: rgb(133, 117, 117);
+            background-color: white;
+            border-radius: 0 15px 15px 0;
+            i,
+            span {
+                color: #a73922;
+            }
         }
+        // &:hover i {
+        //     text-decoration: none;
+        //     background-color: white;
+        //     border-radius: 0 15px 15px 0;
+        // }
         i {
             font-size: 2rem;
             margin-bottom: 3px;
@@ -38,6 +47,7 @@ aside {
         span {
             width: 100%;
             font-weight: bold;
+            color: white;
         }
     }
 }
