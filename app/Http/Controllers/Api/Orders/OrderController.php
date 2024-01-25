@@ -13,6 +13,10 @@ class OrderController extends Controller
     public function generate(Request $request, Gateway $gateway){
         $token = $gateway->clientToken()->generate();
 
+        $clientToken = $gateway->clientToken()->generate([
+            "customerId" => $aCustomerId
+        ]);
+
         $data = [
             'success' => true,
             'token' => $token
@@ -23,13 +27,15 @@ class OrderController extends Controller
 
     public function makePayment(OrderRequest $request, Gateway $gateway){
 
-        $product = Product::find($request->product);
+        $nonceFromTheClient = $_POST["payment_method_nonce"];
+        $deviceDataFromTheClient = $_POST["payment_method_deviceData"];
 
         $result = $gateway->transaction()->sale([
-            'amount' => $product?->price,
-            'paymentMethodNonce' => $request->token,
+            'amount' => '10.00',
+            'paymentMethodNonce' => $nonceFromTheClient,
+            'deviceData' => $deviceDataFromTheClient,
             'options' => [
-                'submitForSettlement' => true,
+              'submitForSettlement' => True
             ]
         ]);
 
