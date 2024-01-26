@@ -52,7 +52,7 @@
                                             {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            <span>{{ __('Mantieni collegato') }}</span>
                                         </label>
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-<header class="text-white d-flex align-items-center">
+<header class="dashboard-header text-white d-flex align-items-center">
 
     <div class="container d-flex justify-content-between align-items-center">
 

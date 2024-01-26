@@ -36,6 +36,15 @@
         position: absolute;
         bottom: 20px;
         right: 20px;
+        .btn-edit {
+            border-radius: 50%;
+            color: #260d09;
+        }
+        .btn-trash {
+            border-radius: 50%;
+            color: white;
+            background-color: #260d09;
+        }
     }
     &:hover {
         text-decoration: none;

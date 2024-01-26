@@ -4,10 +4,10 @@
     color: #a73922;
 }
 .login-btn {
-    background-color: #a73922;
-    color: white;
-}
-.btn-link {
-    text-decoration: none;
-    color: black;
+    border-color: #a73922;
+    color: #a73922;
+    &:hover {
+        background-color: #a73922;
+        color: white;
+    }
 }

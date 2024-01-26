@@ -50,13 +50,15 @@
 
             <div class="container d-flex justify-content-between align-items-center">
 
-                <a href="{{ url('http://localhost:5174/') }}"" class="link-light fs-4 home"><i
-                        class="fa-solid fa-house"></i></a>
+                <a href="{{ url('http://localhost:5174/') }}"" class="home fs-4"><i class="fa-solid fa-house"></i></a>
 
                 <h1 class="logo text-center">Deliveboo</h2>
 
                     <div class="d-flex justify-content-end action">
-                        <a class="nav-link me-3 btn p-1" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                        @if (!Route::is('login'))
+                            <a class="nav-link me-3 btn p-1" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                        @endif
+
                         @if (Route::has('register'))
                             <a class="nav-link  btn p-1" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         @endif

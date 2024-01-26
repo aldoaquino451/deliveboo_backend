@@ -1,11 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
-@import "partials/header";
-@import "partials/delete-modal";
-@import "partials/main";
-@import "partials/aside";
-@import "partials/product-index";
-@import "partials/btn-create";
-@import "partials/auth/header";
+@import "partials/admin/header";
+@import "partials/admin/delete-modal";
+@import "partials/admin/main";
+@import "partials/admin/aside";
+@import "partials/admin/product-index";
+@import "partials/admin/btn-create";
+@import "partials/auth/header-login";
 @import "partials/auth/login";
 @import "partials/auth/register";
 
@@ -15,6 +15,7 @@ body {
     box-sizing: border-box;
     background-color: #f2f0e4;
     font-family: "Lato", sans-serif;
+    height: 100vh;
 }
 
 .logo {

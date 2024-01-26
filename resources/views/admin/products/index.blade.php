@@ -36,10 +36,10 @@
                             </ul>
                             <div class="action-product d-flex">
                                 <a href="{{ route('admin.products.edit', $product) }}"
-                                    class="btn btn-warning button-trash me-2">
+                                    class="btn btn-warning btn-edit me-2">
                                     <i class="fa-solid fa-pencil"></i>
                                 </a>
-                                <button class="btn btn-danger button-trash" data-toggle="modal"
+                                <button class="btn btn-trash" data-toggle="modal"
                                     data-target="#deleteModal{{ $product->id }}">
                                     <i class="fa-solid fa-trash"></i>
                                 </button>
@@ -52,7 +52,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content my-modal-content py-4 px-4">
                                     <div class="d-flex justify-content-center mb-3">
-                                        <i class="fa-solid fa-triangle-exclamation fs-1 text-danger"></i>
+                                        <i class="fa-solid fa-triangle-exclamation fs-1" style="color: #a73922"></i>
                                     </div>
                                     <div>
                                         <p class="mb-2 text-center">Sei sicuro di eliminare questo prodotto dal tuo
@@ -64,10 +64,11 @@
                                         <form action="{{ route('admin.products.destroy', $product) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Conferma</button>
+                                            <button type="submit" class="btn"
+                                                style="background-color: #a73922; color: white">Conferma</button>
                                         </form>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-dismiss="modal">Annulla</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annulla
+                                        </button>
                                     </div>
                                 </div>
                             </div>

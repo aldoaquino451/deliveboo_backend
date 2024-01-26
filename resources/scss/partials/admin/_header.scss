@@ -1,4 +1,4 @@
-.header-login {
+.dashboard-header {
     padding: 5px;
     height: 60px;
     background-color: #260d08;
@@ -11,20 +11,19 @@
     }
     a:hover {
         text-decoration: none;
-        background-color: white;
-        color: #260d08;
     }
     .home {
-        flex-basis: 25%;
+        flex-basis: 30%;
     }
     .logo {
         margin: 0;
-        flex-basis: 50%;
+        flex-basis: 40%;
     }
     .action {
-        flex-basis: 25%;
+        flex-basis: 30%;
         a {
             text-align: end;
+            color: white;
         }
     }
 }
