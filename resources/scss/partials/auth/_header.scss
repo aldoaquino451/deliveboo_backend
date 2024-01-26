@@ -1,4 +1,4 @@
-header {
+.header-login {
     padding: 5px;
     height: 60px;
     background-color: #260d08;
@@ -11,6 +11,8 @@ header {
     }
     a:hover {
         text-decoration: none;
+        background-color: white;
+        color: #260d08;
     }
     .home {
         flex-basis: 25%;
@@ -23,7 +25,6 @@ header {
         flex-basis: 25%;
         a {
             text-align: end;
-            color: white;
         }
     }
 }

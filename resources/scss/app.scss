@@ -5,6 +5,9 @@
 @import "partials/aside";
 @import "partials/product-index";
 @import "partials/btn-create";
+@import "partials/auth/header";
+@import "partials/auth/login";
+@import "partials/auth/register";
 
 body {
     margin: 0;
@@ -12,4 +15,8 @@ body {
     box-sizing: border-box;
     background-color: #f2f0e4;
     font-family: "Lato", sans-serif;
+}
+
+.logo {
+    font-family: "Lobster", sans-serif;
 }
