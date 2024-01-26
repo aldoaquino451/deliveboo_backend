@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1 class="mb-3 text-capitalize text-center">Home</h1>
+    <h1 class="mb-3 text-center">Il tuo ristorante</h1>
 
     <div class="px-5">
         <h3 class="mb-3 text-capitalize">{{ $restaurant->name_restaurant }}</h3>

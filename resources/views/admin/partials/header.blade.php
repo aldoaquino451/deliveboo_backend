@@ -1,36 +1,25 @@
-<header id="admin" class="bg-dark text-white">
-    <div class="container h-100 py-2 d-flex justify-content-between">
+<header class="dashboard-header text-white d-flex align-items-center">
 
-        <div class="d-flex gap-5 align-items-center">
-            <h3 class="m-0">LOGO</h3>
-            <ul class="m-0 list-unstyled d-flex gap-4">
-                <li>
-                    <a href="{{ route('admin.index') }}" class="link-light">HOME</a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.products.index') }}" class="link-light">PRODOTTI</a>
-                </li>
-                <li>
-                    <a href="{{ route('admin.dashboard') }}" class="link-light">DASHBOARD</a>
-                </li>
-            </ul>
-        </div>
+    <div class="container d-flex justify-content-between align-items-center">
 
-        <div class="d-flex align-items-center gap-3">
-            <a href="{{ route('admin.index') }}" class="link-light  text-decoration-none text-capitalize fs-5">
-                {{ Auth::user()->name }}
-            </a>
+        <a href="{{ route('admin.index') }}" class="link-light fs-4 home"><i class="fa-solid fa-house"></i></a>
 
-            <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                 document.getElementById('logout-form').submit();">
-                <i class="fa-solid fa-right-from-bracket ms-2"></i>
-            </a>
+        <h1 class="logo text-center">Deliveboo</h2>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-        </div>
+            <div class="d-flex align-items-center justify-content-end action">
+                <span class="admin-name text-capitalize me-2">{{ Auth::user()->name }}</span>
+
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+
+            </div>
 
     </div>
+
 </header>

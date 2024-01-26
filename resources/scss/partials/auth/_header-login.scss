@@ -1,0 +1,33 @@
+#app {
+    .header-login {
+        padding: 5px;
+        height: 60px;
+        background-color: #260d08;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-family: "Lato", sans-serif;
+        }
+
+        a:hover {
+            text-decoration: none;
+            background-color: white;
+            color: #260d08;
+        }
+        .home {
+            color: white;
+            flex-basis: 30%;
+        }
+        .logo {
+            margin: 0;
+            flex-basis: 40%;
+        }
+        .action {
+            flex-basis: 30%;
+            a {
+                text-align: end;
+            }
+        }
+    }
+}
