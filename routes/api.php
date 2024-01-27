@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\PageController;
-use App\Http\Controllers\Api\Orders\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LeadController;
+use App\Http\Controllers\Api\PageController;
+use App\Http\Controllers\Api\Orders\OrderController;
+
 
 
 // Rotte del per stampare i dati, con Page Controller
@@ -25,6 +27,9 @@ Route::get('orders/generate', [OrderController::class, 'generate']);
 
 Route::POST('orders/make-payment', [OrderController::class, 'makePayment']);
 
+// Rotta per mandare la mail al cliente e al ristoratore
+Route::post('/send-email', [LeadController::class, 'send']);
 
 // Rotta per stampare le info dell'ultimo ordine effettuato
 Route::get('order/{order_id}', [PageController::class, 'getOrder']);
+
