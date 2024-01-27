@@ -1,0 +1,26 @@
+.main-register {
+    height: calc(100vh - 60px);
+}
+.card-header,
+.title-restaurant {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #a73922;
+}
+#btn-submit {
+    border-color: #a73922;
+    color: #a73922;
+    &:hover {
+        background-color: #a73922;
+        color: white;
+    }
+}
+.btn-link {
+    text-decoration: none;
+    color: black;
+}
+
+label,
+p {
+    font-weight: bold;
+}
