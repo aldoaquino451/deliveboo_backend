@@ -11,21 +11,21 @@ use App\Mail\NewOrderRestaurant;
 class LeadController extends Controller
 {
 
-    public function store(Order $order){
+    public function send($order){
 
-        $data = $order->all();
+        // $data = $order->all();
 
-        $email_user = $data->email;
-        $email_restaurant = $data->restaurant->user->email;
+        // $email_user = $order->email;
+        // $email_restaurant = $order->restaurant->user->email;
 
         // invio l'email
-        Mail::to('info@deliveboo.com')->send(new NewOrderClient($email_user));
-        Mail::to('info@deliveboo.com')->send(new NewOrderRestaurant($email_restaurant));
+        Mail::to('info@deliveboo.com')->send(new NewOrderClient($order));
+        Mail::to('info@deliveboo.com')->send(new NewOrderRestaurant($order));
 
 
         // restituisco success = true
-        // $success = true;
-        // return response()->json(compact('success'));
+        $success = true;
+        return response()->json(compact('success'));
     }
 
 

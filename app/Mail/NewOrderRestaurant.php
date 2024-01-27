@@ -13,15 +13,15 @@ class NewOrderRestaurant extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $lead_restaurant;
+    public $order;
 
 
     /**
      * Create a new message instance.
      */
-    public function __construct($_lead_restaurant)
+    public function __construct($_order)
     {
-        $this->lead_restaurant = $_lead_restaurant;
+        $this->order = $_order;
     }
 
     /**
@@ -30,7 +30,7 @@ class NewOrderRestaurant extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            replyTo: $this->lead_restaurant->email,
+            replyTo: $this->order->restaurant->email,
             subject: 'New Order Restaurant',
         );
     }

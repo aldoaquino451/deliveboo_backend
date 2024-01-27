@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\PageController;
-use App\Http\Controllers\Api\Orders\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LeadController;
+use App\Http\Controllers\Api\PageController;
+use App\Http\Controllers\Api\Orders\OrderController;
+
 
 
 /*
@@ -36,3 +38,7 @@ Route::get('save-order/{cart_string}/{name}/{lastname}/{address}/{email}/{phone_
 Route::get('orders/generate', [OrderController::class, 'generate']);
 
 Route::POST('orders/make-payment', [OrderController::class, 'makePayment']);
+
+Route::post('/send-email', [LeadController::class, 'send']);
+
+

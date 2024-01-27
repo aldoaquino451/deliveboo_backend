@@ -13,15 +13,15 @@ class NewOrderClient extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $lead_client;
+    public $order;
 
 
     /**
      * Create a new message instance.
      */
-    public function __construct($_lead_client)
+    public function __construct($_order)
     {
-        $this->lead_client = $_lead_client;
+        $this->order = $_order;
     }
 
     /**
@@ -30,7 +30,7 @@ class NewOrderClient extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            replyTo: $this->lead_client->email,
+            replyTo: $this->order->email,
             subject: 'New Order Client',
 
         );
