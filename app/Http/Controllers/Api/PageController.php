@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
+  // Stampa le info dell'ultimo ordine effettuato 
+  public function getOrder($order_id)
+  {
+    $order = Order::with('products')->where('id', $order_id)->first();
+
+    return response()->json($order);
+  }
 
   // Stampa tutte le tipologie nella Home
   public function typologies()

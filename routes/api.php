@@ -24,3 +24,7 @@ Route::get('save-order/{cart_string}/{name}/{lastname}/{address}/{email}/{phone_
 Route::get('orders/generate', [OrderController::class, 'generate']);
 
 Route::POST('orders/make-payment', [OrderController::class, 'makePayment']);
+
+
+// Rotta per stampare le info dell'ultimo ordine effettuato
+Route::get('order/{order_id}', [PageController::class, 'getOrder']);
