@@ -1,9 +1,15 @@
-<p>
-    Hai ricevuto un nuovo messaggio: <br>
+<div>
+    Le confermiamo l'invio dell'ordine al ristoratore, di seguito troverà il riepilogo dell'ordine.
 
-    Nome: {{ $lead->name }}<br>
-    Email: {{ $lead->email }}<br>
-    Messaggio: <br>
-    {{ $lead->message }}
+    Ordine numero: {{ $order->order_number }} <br>
 
-</p>
+    Dati consegna:
+    Nome: {{ $order->name }}<br>
+    Cognome: {{ $order->lastname }}<br>
+    Indirizzo: {{ $order->address }}<br>
+    Numero di telefono: {{ $order->phone_number }}<br>
+
+    Ordine:
+
+
+</div>
