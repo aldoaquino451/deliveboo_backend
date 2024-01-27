@@ -7,76 +7,62 @@ use App\Models\Order;
 use App\Models\Restaurant;
 use App\Models\Typology;
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Random\Randomizer;
 
 class PageController extends Controller
 {
+  // Stampa le info dell'ultimo ordine effettuato 
+  public function getOrder($order_id)
+  {
+    $order = Order::with('products')->where('id', $order_id)->first();
 
+    return response()->json($order);
+  }
+
+  // Stampa tutte le tipologie nella Home
   public function typologies()
   {
     $typologies = Typology::all();
     return response()->json($typologies);
   }
 
+
+  // Stampa tutti i ristoranti nella Home
   public function restaurants()
   {
     $restaurants = Restaurant::inRandomOrder()->take(4)->with('typologies')->get();
+    return response()->json($restaurants);
+  }
+
+
+  // Stampa solo i ristoranti associati alle tipologie scelte, nella Home 
+  public function restaurantsByTypologies($typologies)
+  {
+    $typologies_arr = explode('-', $typologies);
+
+    $restaurants = DB::table('restaurants')
+      ->select('restaurants.*')
+      ->addSelect(DB::raw('JSON_ARRAYAGG(JSON_OBJECT("id", typologies.id, "name", typologies.name)) as typologies'))
+      ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
+      ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
+      ->whereIn('restaurant_typology.typology_id', $typologies_arr)
+      ->groupBy('restaurants.id')
+      ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
+      ->paginate(4);
+
+    $restaurants->each(function ($restaurant) {
+      $restaurant->typologies = json_decode($restaurant->typologies);
+    });
 
     return response()->json($restaurants);
   }
 
-  public function restaurantsByTypologies($typologies)
-  {
-      $typologies_arr = explode('-', $typologies);
 
-        $restaurants = DB::table('restaurants')
-            ->select('restaurants.*')
-            ->addSelect(DB::raw('JSON_ARRAYAGG(JSON_OBJECT("id", typologies.id, "name", typologies.name)) as typologies'))
-            ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
-            ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
-            ->whereIn('restaurant_typology.typology_id', $typologies_arr)
-            ->groupBy('restaurants.id')
-            ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
-            ->paginate(4);
-
-        $restaurants->each(function ($restaurant) {
-            $restaurant->typologies = json_decode($restaurant->typologies);
-        });
-
-      return response()->json($restaurants);
-  }
-
-  // public function restaurantsByTypologies($typologies)
-  // {
-  // $restaurants = DB::select('SELECT `restaurants`.* , count(restaurants.id) FROM `restaurants`, `typologies`, `restaurant_typology` WHERE restaurants.id = restaurant_typology.restaurant_id AND  typologies.id = restaurant_typology.typology_id AND restaurant_typology.typology_id IN (5, 6, 11) GROUP BY restaurants.id HAVING count(restaurants.id) = 3;');
-
-  // $typologies_arr = explode('-', $typologies);
-
-  // $restaurants = DB::table('restaurants')
-  //     ->select('restaurants.*', DB::raw('COUNT(restaurants.id) as restaurant_count'))
-  //     ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
-  //     ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
-  //     ->whereIn('restaurant_typology.typology_id', $typologies_arr)
-  //     ->groupBy('restaurants.id')
-  //     ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
-  //     ->get();
-
-  // return response()->json($restaurants);
-  // }
-
-
+  // Stampa tutti i prodotti del ristorante selezionato, in Detail Restaurant
   public function showRestaurant($slug)
   {
     $restaurant = Restaurant::where('slug', $slug)->with('products.category', 'typologies')->first();
-
-    // if($restaurant->image){
-    //     $restaurant->image = asset('storage/uploads/restaurant/' . $restaurant->image);
-    // }else{
-    //     $restaurant->image = asset('storage/uploads/restaurant/placeholder_restaurant.png');
-    // };
 
     $restaurant->image = $restaurant->image
       ? asset('storage/uploads/restaurants/' . $restaurant->image)
@@ -92,6 +78,8 @@ class PageController extends Controller
     return response()->json($restaurant);
   }
 
+
+  // Stampa solo i prodotti di una determinata categoria, in Detail Restaurant
   public function productByCategory(Request $request)
   {
     $restaurant_id = $request->query('restaurant_id');
@@ -108,6 +96,9 @@ class PageController extends Controller
     return response()->json($products);
   }
 
+
+  // Dopo l'avvenuto pagamento, salva nel database il nuovo ordine effettuato
+  // Restituisce l'id dell'ordine, da uare dentro Post Payment
   public function saveOrder($cart_string, $name, $lastname, $address, $email, $phone_number, $total_price, $restaurant_id)
   {
     // trasformo in json la stringa
@@ -137,3 +128,25 @@ class PageController extends Controller
     return $order->id;
   }
 }
+
+
+
+
+
+// public function restaurantsByTypologies($typologies)
+// {
+// $restaurants = DB::select('SELECT `restaurants`.* , count(restaurants.id) FROM `restaurants`, `typologies`, `restaurant_typology` WHERE restaurants.id = restaurant_typology.restaurant_id AND  typologies.id = restaurant_typology.typology_id AND restaurant_typology.typology_id IN (5, 6, 11) GROUP BY restaurants.id HAVING count(restaurants.id) = 3;');
+
+// $typologies_arr = explode('-', $typologies);
+
+// $restaurants = DB::table('restaurants')
+//     ->select('restaurants.*', DB::raw('COUNT(restaurants.id) as restaurant_count'))
+//     ->join('restaurant_typology', 'restaurants.id', '=', 'restaurant_typology.restaurant_id')
+//     ->join('typologies', 'typologies.id', '=', 'restaurant_typology.typology_id')
+//     ->whereIn('restaurant_typology.typology_id', $typologies_arr)
+//     ->groupBy('restaurants.id')
+//     ->havingRaw('COUNT(restaurants.id) = ?', [count($typologies_arr)])
+//     ->get();
+
+// return response()->json($restaurants);
+// }
