@@ -22,3 +22,12 @@ Deliveboo
   - Trova software per presentazione su dispositivo mobile (Screen Fly)
   - Preparare un block note con i dati da inserire come test dentro al form
   - Ricorda di usare modalità incognita per evitare autocompilazione
+
+
+### To Fix 28/01
+
+  - Far stampare correttamente la quantità dei prodotti ordinati nel PostPayment
+  - Far stampare correttamente la quantità dei prodotti ordinati e sistemare le informazione da mandare via mail al cliente e al ristoratore (view/mail/)
+  - Sistemare il numero di ordine da passare al postPayment per stampare i dati dell'ultimo ordine del database
+  - Far partire la creazione dell'ordine nel database solo dopo il aver completato il pagamento
+

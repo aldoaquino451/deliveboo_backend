@@ -30,8 +30,8 @@ class NewOrderClient extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            replyTo: $this->order->email,
-            subject: 'New Order Client',
+            replyTo: 'info@deliveboo.it',
+            subject: 'Conferma Ordine Deliveboo - Numero: ' . $this->order->order_number,
 
         );
     }

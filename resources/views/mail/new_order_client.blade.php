@@ -1,15 +1,19 @@
 <div>
-    Le confermiamo l'invio dell'ordine al ristoratore, di seguito troverà il riepilogo dell'ordine.
 
-    Ordine numero: {{ $order->order_number }} <br>
-
-    Dati consegna:
-    Nome: {{ $order->name }}<br>
-    Cognome: {{ $order->lastname }}<br>
-    Indirizzo: {{ $order->address }}<br>
-    Numero di telefono: {{ $order->phone_number }}<br>
-
-    Ordine:
-
+    <p>Grazie per il tuo ordine!</p>
+    
+    <p>Dettagli dell'ordine:</p>
+    
+    <ul>
+        @foreach($order->products as $product)
+            <li>{{ $product->name }} - €{{ $product->price }} </li>
+        @endforeach
+    </ul>
+    
+    <p>Totale: €{{ $order->total_price }}</p>
+    
+    <p>Riceverai una conferma quando il tuo ordine sarà spedito.</p>
+    
+    <p>Grazie per aver scelto il nostro servizio di delivery!</p>
 
 </div>

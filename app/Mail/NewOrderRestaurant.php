@@ -30,8 +30,8 @@ class NewOrderRestaurant extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            replyTo: $this->order->restaurant->email,
-            subject: 'New Order Restaurant',
+            replyTo: 'info@deliveboo.it',
+            subject: 'Nuovo Ordine Deliveboo - Numero: ' . $this->order->order_number,
         );
     }
 
