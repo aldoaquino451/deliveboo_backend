@@ -11,24 +11,18 @@ use App\Mail\NewOrderRestaurant;
 
 class LeadController extends Controller
 {
-    public function send($order_id){
-        
-        $order = Order::with('products')->where('id', $order_id)->first();
-       
-        
-        // $data = $order->all();
+  public function send($order_id)
+  {
 
-        // $email_user = $order->email;
-        // $email_restaurant = $order->restaurant->user->email;
+    $order = Order::with('products')->where('id', $order_id)->first();
 
-        // invio l'email
-        Mail::to($order->email)->send(new NewOrderClient($order));
-        Mail::to($order->restaurant->user->email)->send(new NewOrderRestaurant($order));
+    // invio l'email
+    Mail::to($order->email)->send(new NewOrderClient($order));
+    Mail::to($order->restaurant->user->email)->send(new NewOrderRestaurant($order));
 
 
-        // restituisco success = true
-        $success = true;
-        return response()->json(compact('success'));
-    }
-
+    // restituisco success = true
+    $success = true;
+    return response()->json(compact('success'));
+  }
 }
