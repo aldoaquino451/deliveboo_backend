@@ -31,3 +31,15 @@ Deliveboo
   - Sistemare il numero di ordine da passare al postPayment per stampare i dati dell'ultimo ordine del database
   - Far partire la creazione dell'ordine nel database solo dopo il aver completato il pagamento
 
+
+lancia composer install per installare le altre dipendenze
+
+da modifcare questa parte:
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=e6ae69374cf9c8
+MAIL_PASSWORD=1cb316186bb516
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="${APP_NAME}"
