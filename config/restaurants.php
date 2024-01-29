@@ -6,7 +6,7 @@ return [
         "name_restaurant" => "Cerino d'oro",
         "address" => "Corso Calatafimi 400, 90129, Palermo, PA",
         "vat_number" => "25684951356",
-        "image" => "cerinodoro.webp",
+        "image" => "cerino_oro.jpeg",
         "description" => "Locale specializzato in pizze e polli"
     ],
     [
@@ -14,7 +14,7 @@ return [
         "name_restaurant" => "Cuma",
         "address" => "Via Giovan Battista Guccia 26, 90141, Palermo, PA",
         "vat_number" => "48579488514",
-        "image" => "cuma.jpg",
+        "image" => "cuma.jpeg",
         "description" => "Locale specializzato in prodotti bio e vegani",
     ],
     [
@@ -22,7 +22,7 @@ return [
         "name_restaurant" => "La Traviata",
         "address" => "Piazza Olivella 16, 90133, Palermo, PA",
         "vat_number" => "22356448557",
-        "image" => "latraviata.jpg",
+        "image" => "la_traviata.jpeg",
         "description" => "Locale con specialità di pesce",
     ],
     [
@@ -30,7 +30,7 @@ return [
         "name_restaurant" => "Zangaloro Meat Factory",
         "address" => "Via Isidoro la Lumia 15/17, 90139, Palermo, PA",
         "vat_number" => "32223555492",
-        "image" => "zangaloro.jpg",
+        "image" => "zangaloro_meat_factory.jpeg",
         "description" => "Hamburgeria con panini di carne e di pollo",
     ],
     [
@@ -38,7 +38,7 @@ return [
         "name_restaurant" => "Antica Focacceria San Francesco",
         "address" => "Via A. Paternostro 58, 90133, Palermo, PA",
         "vat_number" => "75046356308",
-        "image" => "anticafocacceria.jpg",
+        "image" => "antica_focacceria_san_francesco",
         "description" => "Storica focacceria palermitana con specialità tipiche siciliane.",
     ],
     [
@@ -46,7 +46,7 @@ return [
         "name_restaurant" => "Ristorante Ferro di Cavallo",
         "address" => "Via Vittorio Emanuele 140, 90133, Palermo, PA",
         "vat_number" => "23032189508",
-        "image" => null,
+        "image" => "ferro_di_cavallo.jpeg",
         "description" => "Specialità di carne e cucina tipica siciliana.",
     ],
     [
@@ -54,7 +54,7 @@ return [
         "name_restaurant" => "Verdechiaro",
         "address" => "Via Giuseppe Alessi 40/42, 90143, Palermo, PA",
         "vat_number" => "55662341891",
-        "image" => "verdechiaro.jpg",
+        "image" => "verdechiaro.jpeg",
         "description" => "Specialità di carne e cucina tipica siciliana.",
     ],
     [
@@ -62,7 +62,7 @@ return [
         "name_restaurant" => "Pizzeria Natalino",
         "address" => "Via Capitano Emanuele Basile 24/26, 90135, Palermo, PA",
         "vat_number" => "89554174456",
-        "image" => "pizzerianatalino.jpg",
+        "image" => "pizzeria_natalino.jpeg",
         "description" => "Pizzeria moderna.",
     ],
     [
@@ -70,7 +70,7 @@ return [
         "name_restaurant" => "SKK Doner House",
         "address" => "Via dei Nebrodi 1, 90144, Palermo, PA",
         "vat_number" => "89965633234",
-        "image" => "skk.jpg",
+        "image" => "skk_donar_house.jpeg",
         "description" => "Panini kebab e altri prodotti tipici.",
     ],
     [
@@ -78,7 +78,7 @@ return [
         "name_restaurant" => "Hungry Polly",
         "address" => "Via Isidoro la Lumia 50, 90139, Palermo, PA",
         "vat_number" => "56555411284",
-        "image" => "hungrypollo.webp",
+        "image" => "hungry_polly.jpeg",
         "description" => "Hamburgeria immersa nella movida di Palermo.",
     ],
     [
@@ -86,7 +86,7 @@ return [
         "name_restaurant" => "Grace Coffee Corner",
         "address" => "Viale Venere 1/B, 90149, Palermo, PA",
         "vat_number" => "77884566329",
-        "image" => "grace.jpg",
+        "image" => "grace_coffee_corner.jpeg",
         "description" => "Bakery con dolci e piatti per la prima colazione.",
     ],
     [
@@ -94,7 +94,7 @@ return [
         "name_restaurant" => "Sushi Lab",
         "address" => "Via Quintino Sella 48/a, 90139, Palermo, PA",
         "vat_number" => "12133622356",
-        "image" => "sushilab.jpg",
+        "image" => "sushi_lab.jpeg",
         "description" => "Ristorante giapponese con cucina innovativa.",
     ],
     [
@@ -102,7 +102,7 @@ return [
         "name_restaurant" => "Yoshi",
         "address" => "Via Principe di Granatelli 29, 90139, Palermo, PA",
         "vat_number" => "36639656849",
-        "image" => "yoshi.webp",
+        "image" => "yoshi.jpeg",
         "description" => "Ristorante giapponese tradizionale.",
     ],
 ];
