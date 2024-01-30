@@ -122,4 +122,31 @@ class OrderController extends Controller
         return response()->json($amount_month->toArray());
     }
 
+    public function getAmountChartYear(){
+
+        // Esegue la query per ottenere i dati degli ordini per anno
+        $orders_year = Order::
+            select([
+                DB::raw('YEAR(`created_at`) as year'),
+                DB::raw('SUM(total_price) as amount')
+            ])
+            ->where('restaurant_id', Auth::id())
+            ->groupBy(DB::raw('YEAR(`created_at`)'))
+            ->orderBy(DB::raw('YEAR(`created_at`)'))
+            ->get();
+
+        // Estrae gli anni dalla collezione di risultati
+        $years = $orders_year->pluck('year')->toArray();
+
+        // Costruisce un array contenente sia i dati degli ordini che gli anni
+        $data = [
+            'amount' => $orders_year->toArray(),
+            'years' => $years
+        ];
+
+        // Restituisce la risposta JSON
+        return response()->json($data);
+    }
+
+
     };

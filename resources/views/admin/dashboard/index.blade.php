@@ -102,7 +102,6 @@
             /////////////////////////////////////////////
             /////////////////////////////////////////////
 
-
             // Grafico linear per totale ordini annuo
             const resultAPIyear = await fetch('/admin/charts/order/year', {
                 method: 'GET',
@@ -148,6 +147,7 @@
             /////////////////////////////////////////////
             /////////////////////////////////////////////
 
+            // Grafico linear per totale amount mensile
             const resultAmountMonth = await fetch('/admin/charts/amount/month', {
                 method: 'GET',
             }).then(response => response.json())
@@ -186,6 +186,50 @@
                 }
             });
 
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+
+            // Grafico linear per totale amount annuo
+            const resultAmountYear = await fetch('/admin/charts/amount/year', {
+                method: 'GET',
+            }).then(response => response.json())
+            console.log(resultAmountYear);
+            const ctxBarAmount = document.getElementById('barChartAmount');
+
+            let array_amount = [];
+            for (let c = 0; c < resultAmountYear.amount.length; c++) {
+                array_amount.push(resultAmountYear.amount[c].amount)
+            }
+
+            new Chart(ctxBarAmount, {
+                type: 'bar',
+                data: {
+                    labels: resultAmountYear.years,
+                    datasets: [{
+                        label: 'Amount',
+                        data: array_amount,
+                        parsing: {
+                            yAxisKey: 'amount',
+                        }
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    aspectRatio: 1,
+                    backgroundColor: 'rgba(241, 48, 5, 0.2)',
+                    borderColor: 'rgba(241, 48, 5, 1)',
+                    borderWidth: 1,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
 
         })
     </script>
