@@ -32,6 +32,13 @@ class PageController extends Controller
   public function restaurants()
   {
     $restaurants = Restaurant::inRandomOrder()->take(4)->with('typologies')->get();
+
+    foreach ($restaurants as $restaurant) {
+      $restaurant->image = $restaurant->image
+        ? asset('storage/uploads/restaurants/' . $restaurant->image)
+        : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
+    }
+
     return response()->json($restaurants);
   }
 
@@ -55,6 +62,12 @@ class PageController extends Controller
       $restaurant->typologies = json_decode($restaurant->typologies);
     });
 
+    foreach ($restaurants as $restaurant) {
+      $restaurant->image = $restaurant->image
+        ? asset('storage/uploads/restaurants/' . $restaurant->image)
+        : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
+    }
+
     return response()->json($restaurants);
   }
 
@@ -66,7 +79,7 @@ class PageController extends Controller
 
     $restaurant->image = $restaurant->image
       ? asset('storage/uploads/restaurants/' . $restaurant->image)
-      : asset('storage/uploads/restaurants/placeholder_restaurant.png');
+      : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
 
     // Modifica l'URL dell'immagine di ciascun prodotto
     foreach ($restaurant->products as $product) {
