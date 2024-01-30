@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>{{ $monthlyTotal }}</h1>
+    {{-- <h1>{{ $monthlyTotal }}</h1> --}}
     <h2 class="mb-3 text-capitalize text-center">dashboard</h2>
     <P class="text-center">Qui potrai visualizzare tutte le statistiche e i grafici degli ordini!</P>
 
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             </tr>
-            @foreach ($orders as $order)
+            @foreach ($orders_list as $order)
                 <tr class="text-center">
                     <th>#{{ $order->order_number }}</th>
                     <td>{{ $order->name }} {{ $order->lastname }}</td>
@@ -39,10 +39,16 @@
 
         <div class="charts-container row row-cols-1 row-cols-lg-2">
             <div class="chart col">
-                <canvas id="barChart"></canvas>
+                <canvas id="lineChartOrders"></canvas>
             </div>
             <div class="chart col">
-                <canvas id="lineChart"></canvas>
+                <canvas id="barChartOrders"></canvas>
+            </div>
+            <div class="chart col">
+                <canvas id="lineChartAmount"></canvas>
+            </div>
+            <div class="chart col">
+                <canvas id="barChartAmount"></canvas>
             </div>
         </div>
     </div>
@@ -52,72 +58,21 @@
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
 
-
-            const resultAPI = await fetch('/api/charts/order', {
+            // Grafico linear per totale ordini mensile
+            const resultAPI = await fetch('/admin/charts/order/month', {
                 method: 'GET',
             }).then(response => response.json())
 
-            console.log(resultAPI);
-
-            const ctxBar = document.getElementById('barChart');
-            // const data = [{
-            //         x: 'Jan',
-            //         orders: 95
-            //     },
-            //     {
-            //         x: 'Feb',
-            //         orders: 105
-            //     },
-            //     {
-            //         x: 'Mar',
-            //         orders: 62
-            //     },
-            //     {
-            //         x: 'Apr',
-            //         orders: 25
-            //     },
-            //     {
-            //         x: 'May',
-            //         orders: 42
-            //     },
-            //     {
-            //         x: 'Jun',
-            //         orders: 50
-            //     },
-            //     {
-            //         x: 'Jul',
-            //         orders: 73
-            //     },
-            //     {
-            //         x: 'Aug',
-            //         orders: 86
-            //     },
-            //     {
-            //         x: 'Sep',
-            //         orders: 90
-            //     },
-            //     {
-            //         x: 'Oct',
-            //         orders: 62
-            //     },
-            //     {
-            //         x: 'Nov',
-            //         orders: 71
-            //     },
-            //     {
-            //         x: 'Dec',
-            //         orders: 90
-            //     }
-            // ];
-
+            const ctxLine = document.getElementById('lineChartOrders');
             const data = resultAPI
 
-            new Chart(ctxBar, {
+            new Chart(ctxLine, {
                 type: 'line',
                 data: {
-                    labels: ['January', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct',
-                        'Nov', 'Dec'
+                    labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio',
+                        'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
                     ],
+
                     datasets: [{
                         label: 'Ordini',
                         data: data,
@@ -141,38 +96,34 @@
                 }
             });
 
-            const ctxLine = document.getElementById('lineChart');
-            const data2 = [{
-                    x: '2019',
-                    tot_orders: 250
-                },
-                {
-                    x: '2020',
-                    tot_orders: 189
-                },
-                {
-                    x: '2021',
-                    tot_orders: 162
-                },
-                {
-                    x: '2022',
-                    tot_orders: 225
-                },
-                {
-                    x: '2023',
-                    tot_orders: 142
-                }
-            ];
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
 
-            new Chart(ctxLine, {
+
+            // Grafico linear per totale ordini annuo
+            const resultAPIyear = await fetch('/admin/charts/order/year', {
+                method: 'GET',
+            }).then(response => response.json())
+
+            const ctxBar = document.getElementById('barChartOrders');
+
+            let array_orders = [];
+            for (let i = 0; i < resultAPIyear.orders.length; i++) {
+                array_orders.push(resultAPIyear.orders[i].orders)
+            }
+
+            new Chart(ctxBar, {
                 type: 'bar',
                 data: {
-                    labels: ['2019', '2020', '2021', '2022', '2023'],
+                    labels: resultAPIyear.years,
                     datasets: [{
                         label: 'Ordini',
-                        data: data2,
+                        data: array_orders,
                         parsing: {
-                            yAxisKey: 'tot_orders'
+                            yAxisKey: 'orders'
                         }
                     }]
                 },
@@ -190,6 +141,51 @@
                     }
                 }
             });
+
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+            /////////////////////////////////////////////
+
+            const resultAmountMonth = await fetch('/admin/charts/amount/month', {
+                method: 'GET',
+            }).then(response => response.json())
+
+            console.log(resultAmountMonth);
+            const ctxLineAmount = document.getElementById('lineChartAmount');
+            const dataAmount = resultAmountMonth
+
+            new Chart(ctxLineAmount, {
+                type: 'line',
+                data: {
+                    labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio',
+                        'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'
+                    ],
+
+                    datasets: [{
+                        label: 'Totale incassi',
+                        data: dataAmount,
+                        parsing: {
+                            yAxisKey: 'total'
+                        }
+                    }]
+                },
+                options: {
+                    backgroundColor: 'rgba(241, 48, 5, 0.2)',
+                    borderColor: 'rgba(241, 48, 5, 1)',
+                    borderWidth: 1,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    aspectRatio: 1,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
 
         })
     </script>

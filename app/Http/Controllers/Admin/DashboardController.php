@@ -14,12 +14,12 @@ class DashboardController extends Controller
 {
   public function index()
   {
-    $orders = Order::where('restaurant_id', Auth::id())->get();
+    $orders_list = Order::where('restaurant_id', Auth::id())->get();
 
-    $monthlyTotal = Order::selectRaw('SUM(total_price) as total, MONTH(created_at) as month')
-    ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
-    ->get();
+    // $monthTotal = Order::selectRaw('SUM(total_price) as total, MONTH(created_at) as month')
+    // ->groupBy(DB::raw('YEAR(created_at)'), DB::raw('MONTH(created_at)'))
+    // ->get();
 
-    return view('admin.dashboard.index', compact('orders','monthlyTotal'));
+    return view('admin.dashboard.index', compact('orders_list'));
   }
 }
