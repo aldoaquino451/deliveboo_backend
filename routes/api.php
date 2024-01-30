@@ -33,3 +33,6 @@ Route::get('/send-email/{order_id}', [LeadController::class, 'send']);
 // Rotta per stampare le info dell'ultimo ordine effettuato
 Route::get('order/{order_id}', [PageController::class, 'getOrder']);
 
+// Rotta per dati grafico
+Route::get('charts/order', [OrderController::class, 'getDataChart'])->name('getDataChart');
+
