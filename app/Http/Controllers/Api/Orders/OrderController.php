@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Api\Orders;
 
+use App\Models\Order;
 use Braintree\Gateway;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Orders\OrderRequest;
 
@@ -14,7 +16,7 @@ class OrderController extends Controller
         $token = $gateway->clientToken()->generate();
 
         $clientToken = $gateway->clientToken()->generate([
-            "customerId" => $aCustomerId
+            "customerId" => $CustomerId
         ]);
 
         $data = [
@@ -56,6 +58,24 @@ class OrderController extends Controller
             return response()->json($data, 401);
 
         }
+
+    }
+
+    public function getDataChart(){
+        $orders = Order::
+        select([
+            // 'created_at',
+            DB::raw('MONTHNAME(`created_at`) as x'),
+            // DB::raw('DATE_FORMAT("created_at", "%m") as x'),
+            DB::raw('COUNT(0) as orders')])
+        // ->groupBy(DB::raw('created_at'))
+        ->groupBy(DB::raw('MONTHNAME(`created_at`)'))
+        // ->groupBy(DB::raw('DATE_FORMAT("created_at", "%m")'))
+        ->get();
+
+        return response()->json($orders->toArray());
+
+        // ORDINI CI SONO ? 2 in un ristorante solo,
 
     }
 }
