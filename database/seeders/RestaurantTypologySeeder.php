@@ -20,9 +20,7 @@ class RestaurantTypologySeeder extends Seeder
 
       foreach ($item['typology_id'] as $index) {
         $restaurant = Restaurant::where('id', $item['restaurant_id'])->first();
-
         $typology_id = $index;
-        // dd($restaurant, $typology_id);
         $restaurant->typologies()->attach($typology_id);
       }
     };

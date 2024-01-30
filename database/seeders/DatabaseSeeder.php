@@ -23,9 +23,11 @@ class DatabaseSeeder extends Seeder
       // tabelle con id
       RestaurantsSeeder::class,
       ProductsSeeder::class,
+      OrdersSeeder::class,
 
       // tabella pivot
-      RestaurantTypologySeeder::class
+      RestaurantTypologySeeder::class,
+      OrderProductSeeder::class,
     ]);
   }
 }
