@@ -13,7 +13,7 @@ return new class extends Migration
   {
     Schema::create('orders', function (Blueprint $table) {
       $table->id();
-      $table->integer('order_number')->unique()->unsigned();
+      $table->integer('order_number')->unsigned();
       // $table->dateTime('date_delivery');
       $table->decimal('total_price', 6, 2);
       $table->string('name', 45);
