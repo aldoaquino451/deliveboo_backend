@@ -2,13 +2,12 @@
 
 @section('content')
     {{-- <h1>{{ $monthlyTotal }}</h1> --}}
-    <h2 class="mb-3 text-capitalize text-center fw-bold">Statistiche</h2>
-    <p class="text-center">Qui potrai visualizzare tutte le statistiche e i grafici degli ordini!</p>
+    <h2 class="text-capitalize text-center fw-bold">Statistiche</h2>
 
     <div class="container-fluid">
 
         <div class="charts-container row row-cols-1 row-cols-lg-2">
-            <div class="chart col p-4  mt-2">
+            <div class="chart col p-4 mt-2">
                 <canvas id="lineChartOrders"></canvas>
             </div>
             <div class="chart col p-4 mt-2">
@@ -44,7 +43,7 @@
                     ],
 
                     datasets: [{
-                        label: 'Ordini',
+                        label: 'Ordini mensili',
                         data: data,
                         parsing: {
                             yAxisKey: 'orders'
@@ -89,7 +88,7 @@
                 data: {
                     labels: resultAPIyear.years,
                     datasets: [{
-                        label: 'Ordini',
+                        label: 'Ordini annui',
                         data: array_orders,
                         parsing: {
                             yAxisKey: 'orders'
@@ -134,7 +133,7 @@
                     ],
 
                     datasets: [{
-                        label: 'Totale incassi',
+                        label: 'Incassi mensili',
                         data: dataAmount,
                         parsing: {
                             yAxisKey: 'total'
@@ -179,7 +178,7 @@
                 data: {
                     labels: resultAmountYear.years,
                     datasets: [{
-                        label: 'Amount',
+                        label: 'Incassi annui',
                         data: array_amount,
                         parsing: {
                             yAxisKey: 'amount',

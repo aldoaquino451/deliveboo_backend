@@ -24,10 +24,10 @@
                     <th>#{{ $order->order_number }}</th>
                     <td>{{ $order->name }} {{ $order->lastname }}</td>
                     <td colspan="2">{{ $order->address }}</td>
-                    <td>{{ $order->created_at }}</td>
+                    <td>{{ $order->formatted_created_at }}</td>
                     <td>&euro; {{ $order->total_price }}</td>
                     <td>
-                        <a href="{{ route('admin.orders.show', $order ) }}" class="card-link btn btn-success d-inline-block"><i
+                        <a href="{{ route('admin.orders.show', $order ) }}" class="card-link btn btn-secondary d-inline-block"><i
                                 class="fa-regular fa-eye"></i></a>
                     </td>
 

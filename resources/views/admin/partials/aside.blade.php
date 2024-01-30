@@ -12,7 +12,7 @@
         </li>
         <li>
             <a href="{{ route('admin.orders.index') }}"
-                class="{{ Route::is('admin.orders') ? 'active' : '' }} link-light "><i class="fa-solid fa-clipboard-list"></i><span>Ordini</span></a>
+                class="{{ Route::is('admin.orders.index') ? 'active' : '' }} link-light "><i class="fa-solid fa-clipboard-list"></i><span>Ordini</span></a>
         </li>
     </ul>
 </aside>

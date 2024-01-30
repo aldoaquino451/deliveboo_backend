@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\Order;
 use App\Models\Typology;
 use Illuminate\Support\Facades\Auth;
 use App\Functions\Helper;
@@ -19,7 +20,20 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::where('user_id', Auth::id())->first();
 
-        return view('admin.restaurants.index', compact('restaurant'));
+        $restaurant->image = $restaurant->image
+            ? asset('storage/uploads/restaurants/' . $restaurant->image)
+            : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
+          
+      
+
+        $orders = Order::orderBy('created_at', 'desc')->take(5)->get();
+
+        foreach ($orders as $order) {
+            $order->formatted_created_at = $order->created_at->format('d/m/Y  -  H:i');
+            };
+    
+
+        return view('admin.restaurants.index', compact('restaurant', 'orders'));
     }
 
     /**
