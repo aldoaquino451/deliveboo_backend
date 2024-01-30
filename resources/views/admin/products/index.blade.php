@@ -2,6 +2,9 @@
 
 @section('content')
 
+    <h2 class="mb-3 text-capitalize text-center fw-bold">Gestione Prodotti</h2>
+    <p class="text-center">Qui potrai visualizzare e modificare i prodotti del tuo ristorante!</p>
+
     @if (session('success'))
         <div class="container d-flex justify-content-center">
             <div class="alert alert-success text-center" role="alert">
