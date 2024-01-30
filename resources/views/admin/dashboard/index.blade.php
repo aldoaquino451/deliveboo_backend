@@ -2,52 +2,22 @@
 
 @section('content')
     {{-- <h1>{{ $monthlyTotal }}</h1> --}}
-    <h2 class="mb-3 text-capitalize text-center">dashboard</h2>
-    <P class="text-center">Qui potrai visualizzare tutte le statistiche e i grafici degli ordini!</P>
+    <h2 class="mb-3 text-capitalize text-center fw-bold">Statistiche</h2>
+    <p class="text-center">Qui potrai visualizzare tutte le statistiche e i grafici degli ordini!</p>
 
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr class="text-center">
-                <th scope="col">Numero Ordine</th>
-                <th scope="col">Cliente</th>
-                <th scope="col" colspan="2">Indirizzo di consegna</th>
-                <th scope="col">Data</th>
-                <th scope="col">Spesa Totale</th>
-                <th scope="col">Azioni</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            </tr>
-            @foreach ($orders_list as $order)
-                <tr class="text-center">
-                    <th>#{{ $order->order_number }}</th>
-                    <td>{{ $order->name }} {{ $order->lastname }}</td>
-                    <td colspan="2">{{ $order->address }}</td>
-                    <td>{{ $order->created_at }}</td>
-                    <td>&euro; {{ $order->total_price }}</td>
-                    <td>
-                        <a href="#" class="card-link btn btn-success d-inline-block"><i
-                                class="fa-regular fa-eye"></i></a>
-                    </td>
-
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
     <div class="container-fluid">
 
         <div class="charts-container row row-cols-1 row-cols-lg-2">
-            <div class="chart col">
+            <div class="chart col p-4  mt-2">
                 <canvas id="lineChartOrders"></canvas>
             </div>
-            <div class="chart col">
+            <div class="chart col p-4 mt-2">
                 <canvas id="barChartOrders"></canvas>
             </div>
-            <div class="chart col">
+            <div class="chart col p-4 mt-2">
                 <canvas id="lineChartAmount"></canvas>
             </div>
-            <div class="chart col">
+            <div class="chart col p-4 mt-2">
                 <canvas id="barChartAmount"></canvas>
             </div>
         </div>

@@ -10,5 +10,9 @@
                 class="{{ Route::is('admin.dashboard') ? 'active' : '' }} link-light "><i
                     class="fa-solid fa-square-poll-vertical"></i><span>Statistiche</span></a>
         </li>
+        <li>
+            <a href="{{ route('admin.orders.index') }}"
+                class="{{ Route::is('admin.orders') ? 'active' : '' }} link-light "><i class="fa-solid fa-clipboard-list"></i><span>Ordini</span></a>
+        </li>
     </ul>
 </aside>
