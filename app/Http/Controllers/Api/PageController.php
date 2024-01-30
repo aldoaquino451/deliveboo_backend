@@ -23,7 +23,7 @@ class PageController extends Controller
   // Stampa tutte le tipologie nella Home
   public function typologies()
   {
-    $typologies = Typology::all();
+    $typologies = Typology::with('restaurants')->get();
     return response()->json($typologies);
   }
 
