@@ -70,20 +70,20 @@ aside {
   }
 }
 
-.btn-aside {
-  position: absolute;
-  left: 10px;
-  top: 70px;
-  display: none;
-}
+// .btn-aside {
+//   position: absolute;
+//   left: 10px;
+//   top: 70px;
+//   display: none;
+// }
 
-@media screen and (max-width: 576px) {
+// @media screen and (max-width: 576px) {
 
-  aside {
-    display: none;
-  }
+//   aside {
+//     display: none;
+//   }
 
-  .btn-aside {
-    display: block;
-  }
-}
+//   .btn-aside {
+//     display: block;
+//   }
+// }

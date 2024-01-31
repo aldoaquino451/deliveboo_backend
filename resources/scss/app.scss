@@ -8,28 +8,29 @@
 @import "partials/auth/header-login";
 @import "partials/auth/login";
 @import "partials/auth/register";
+@import "partials/admin/home";
 
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f2f0e4;
-    font-family: "Lato", sans-serif;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f2f0e4;
+  font-family: "Lato", sans-serif;
+  height: 100vh;
 }
 
 .logo {
-    font-family: "Lobster", sans-serif;
+  font-family: "Lobster", sans-serif;
 }
 
 @media (max-width: 767px) {
-    .md-visible {
-        display: none;
-    }
+  .md-visible {
+    display: none;
+  }
 }
 
 @media (max-width: 1439px) {
-    .lg-visible {
-        display: none;
-    }
+  .lg-visible {
+    display: none;
+  }
 }
