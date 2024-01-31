@@ -27,6 +27,7 @@ class OrdersSeeder extends Seeder
       $new_order->email = $order['email'];
       $new_order->address = $order['address'];
       $new_order->phone_number = $order['phone_number'];
+      $new_order->created_at = $order['created_at'];
 
       $new_order->save();
     };
