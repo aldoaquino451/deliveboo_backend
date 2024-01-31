@@ -2,15 +2,15 @@
 
 return [
   [
-    "name" => 'admin',
-    "lastname" => 'admin',
-    "email" => 'admin@admin.com',
+    "name" => 'Cerino D\'oro',
+    "lastname" => 'Cerino D\'oro',
+    "email" => 'cerinodoro@admin.com',
     "password" => '$2y$12$Ahb/YI0e03H3bckT0hQQtOzl/1UE0YghimZrMuR0OcFOW9Si8k1yS',
   ],
   [
-    "name" => 'admin2',
-    "lastname" => 'admin2',
-    "email" => 'admin2@admin2.com',
+    "name" => 'Cuma',
+    "lastname" => 'Cuma',
+    "email" => 'cuma@admin.com',
     "password" => '$2y$12$Ahb/YI0e03H3bckT0hQQtOzl/1UE0YghimZrMuR0OcFOW9Si8k1yS',
   ],
   [
