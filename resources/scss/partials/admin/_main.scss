@@ -1,10 +1,22 @@
 main {
-    .main-wrapper {
-        height: calc(100vh - 60px);
-        .main-content {
-            width: calc(100% - 100px);
-            overflow: auto;
-            padding: 15px;
-        }
+  .main-wrapper {
+    height: calc(100vh - 60px);
+
+    .main-content {
+      width: calc(100% - 100px);
+      overflow: auto;
+      padding: 15px;
     }
+  }
 }
+
+// @media screen and (max-width: 576px) {
+//   main {
+//     .main-wrapper {
+
+//       .main-content {
+//         width: calc(100%);
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,38 @@
+.restaurant-details {
+  width: 50%;
+  padding: 0 1rem 1.5rem;
+}
+
+.restaurant-image {
+  width: 50%;
+  padding: 0 1rem 1.5rem;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+
+  .restaurant-details {
+    width: 100%;
+  }
+
+  .restaurant-image {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .restaurant-image {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .restaurant-image {
+    width: 100%;
+  }
+}
