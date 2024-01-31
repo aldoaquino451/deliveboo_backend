@@ -1,6 +1,11 @@
 <aside>
     <ul>
         <li>
+            <a href="{{ route('admin.index') }}" class="{{ Route::is('admin.index') ? 'active' : '' }} link-light ">
+                <i class="fa-solid fa-house"></i><span>Home </span>
+            </a>
+        </li>
+        <li>
             <a href="{{ route('admin.products.index') }}"
                 class="{{ Route::is('admin.products.index') ? 'active' : '' }} link-light ">
                 <i class="fa-solid fa-list-ul"></i><span>Prodotti</span>
@@ -18,10 +23,5 @@
                 <i class="fa-solid fa-square-poll-vertical"></i><span>Statistiche</span>
             </a>
         </li>
-
     </ul>
 </aside>
-
-{{-- <div class="btn-aside">
-    <button class="btn btn-danger">ciao</button>
-</div> --}}
