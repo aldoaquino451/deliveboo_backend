@@ -15,10 +15,10 @@
 
     @if ($products->count() > 0)
         <div class="container d-flex flex-wrap justify-content-center">
-            <div class="row">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
 
                 @foreach ($products as $product)
-                    <div class="col col-3">
+                    <div class="col">
 
                         <div class="card d-inline-block mb-4">
 
