@@ -10,7 +10,7 @@ return [
     'ingredients' => 'Quinoa, Pomodori Ciliegini, Cetriolo, Avocado, Vinaigrette al Limone',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg'
+    'image' => 'uploads/products/t5ZIdtLc1Km2lZXDR95U4VTh2YKjGzQ9RWKtiEDo.jpg'
   ],
   [
     'category_id' => 3,
@@ -20,7 +20,7 @@ return [
     'ingredients' => 'Zucchine a Julienne, Pesto di Avocado, Pomodorini, Noci',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg'
+    'image' => 'uploads/products/sBGFsjNElaSFIDr4iRnZH0H9eVYWTNds8CwSf5d7.webp'
   ],
   [
     'category_id' => 9,
