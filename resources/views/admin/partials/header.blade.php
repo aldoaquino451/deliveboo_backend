@@ -1,5 +1,7 @@
 <header class="dashboard-header text-white d-flex align-items-center">
+
     <div class="container-header d-flex justify-content-between align-items-center">
+
         <h1 class="logo text-center">Deliveboo</h1>
         <div class="d-flex align-items-center justify-content-end action">
             <span class="admin-name text-capitalize me-2">{{ Auth::user()->name }}</span>
