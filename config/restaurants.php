@@ -6,7 +6,7 @@ return [
     "name_restaurant" => "Cerino d'oro",
     "address" => "Corso Calatafimi 400, 90129, Palermo, PA",
     "vat_number" => "25684951356",
-    "image" => "cerino_oro.jpeg",
+    "image" => "cerino-doro.jpg",
     "description" => "Locale specializzato in pizze e polli"
   ],
   [
@@ -14,7 +14,7 @@ return [
     "name_restaurant" => "Cuma",
     "address" => "Via Giovan Battista Guccia 26, 90141, Palermo, PA",
     "vat_number" => "48579488514",
-    "image" => "cuma.jpeg",
+    "image" => "cuma-vegano.jpg",
     "description" => "Locale specializzato in prodotti bio e vegani",
   ],
   [
