@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -26,11 +27,31 @@ class OrderController extends Controller
     public function show(Order $order)
     {
 
+        $order = Order::with('products')->where('id', $order->id)->first();
+
         if($order->restaurant->user_id != Auth::id()){
             abort('404');
         }
 
-      return view('admin.orders.show', compact('order'));
+        $products = $order->products;
+
+        $totalSum = $products->sum(function ($product) {
+          return $product->pivot->quantity * $product->price;
+      });
+
+        
+
+
+        // $apartments = DB::table('apartments')
+        //     ->join('apartment_sponsor', function ($join) {
+        //         $join->on('apartments.id', '=', 'apartment_sponsor.apartment_id');
+        //     })
+        //     ->where('end_date', '>=', Carbon::now())
+        //     ->inRandomOrder()
+        //     ->get();
+
+  
+      return view('admin.orders.show', compact('order', 'products'));
     }
 
 
