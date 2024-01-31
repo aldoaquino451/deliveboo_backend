@@ -1,7 +1,6 @@
 <?php
 
 return [
-
   [
     'category_id' => 6,
     'restaurant_id' => 2,
@@ -10,7 +9,8 @@ return [
     'ingredients' => 'Quinoa, Pomodori Ciliegini, Cetriolo, Avocado, Vinaigrette al Limone',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg'
+    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg',
+    'allergen_id' => [3]
   ],
   [
     'category_id' => 3,
@@ -20,7 +20,8 @@ return [
     'ingredients' => 'Zucchine a Julienne, Pesto di Avocado, Pomodorini, Noci',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg'
+    'image' => 'uploads/products/CBdOapM6AykhXr6g1cevTRcoUuiAEZ9J2Ikgn8vR.jpg',
+    'allergen_id' => [2]
   ],
   [
     'category_id' => 9,
@@ -30,7 +31,8 @@ return [
     'ingredients' => 'Piatto di Lenticchie, Cipolla Caramellata, Lattuga, Pomodoro, Pane Integrale',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/21An0ghJQjrY1Cxahpk536p6UD83oVzTnKGY6VCA.jpg'
+    'image' => 'uploads/products/21An0ghJQjrY1Cxahpk536p6UD83oVzTnKGY6VCA.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 3,
@@ -40,7 +42,8 @@ return [
     'ingredients' => 'Quinoa, Avocado, Ceci, Carote, Cavolo Rosso, Salsa Tahini',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/ynVAgYIA9zdyIPnAzxQREQdzvP2SMx04RHizNkCC.avif'
+    'image' => 'uploads/products/ynVAgYIA9zdyIPnAzxQREQdzvP2SMx04RHizNkCC.avif',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 7,
@@ -50,7 +53,8 @@ return [
     'ingredients' => 'Impasto per Pizza Vegana, Salsa di Pomodoro, Funghi Misti, Cipolla Rossa, Rucola',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/YHQSB8M9DjOVIfwBMP51pfP6Wil5T8pLJQLGbBC8.jpg'
+    'image' => 'uploads/products/YHQSB8M9DjOVIfwBMP51pfP6Wil5T8pLJQLGbBC8.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 10,
@@ -60,7 +64,8 @@ return [
     'ingredients' => 'Farina, Cacao in Polvere, Zucchero di Cocco, Olio di Cocco, Latte di Mandorla',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/GxcktYbyKDfrPG9Icf37LqHb6zuhmTyIuYsV8AbO.jpg'
+    'image' => 'uploads/products/GxcktYbyKDfrPG9Icf37LqHb6zuhmTyIuYsV8AbO.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 8,
@@ -70,7 +75,8 @@ return [
     'ingredients' => 'Riso per Sushi, Avocado, Cetriolo, Carota, Alga Nori',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/MGQqB3DfN7ECjXx2SiHWWdWCVFf3UnSbRdyOB45D.jpg'
+    'image' => 'uploads/products/MGQqB3DfN7ECjXx2SiHWWdWCVFf3UnSbRdyOB45D.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 6,
@@ -80,7 +86,8 @@ return [
     'ingredients' => 'Ananas, Mango, Kiwi, Melograno, Menta Fresca',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/pGpBR3bKmhzgxPXm3kDVMvJbjBxTvFKFk9qGnugs.webp'
+    'image' => 'uploads/products/pGpBR3bKmhzgxPXm3kDVMvJbjBxTvFKFk9qGnugs.webp',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -90,7 +97,8 @@ return [
     'ingredients' => 'Tagliata di Manzo, Rucola, Parmigiano Reggiano',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/bnGo1RgfqrU680yPGFrKpuVFnsxAdTGhTcavJGNJ.jpg'
+    'image' => 'uploads/products/bnGo1RgfqrU680yPGFrKpuVFnsxAdTGhTcavJGNJ.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -100,7 +108,8 @@ return [
     'ingredients' => 'Braciola di Maiale, Pomodoro, Aglio, Rosmarino',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/6X9uVHXNa0wrxsbnh0LxRq73mDhk5hnpRTcaIkzR.jpg'
+    'image' => 'uploads/products/6X9uVHXNa0wrxsbnh0LxRq73mDhk5hnpRTcaIkzR.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -110,7 +119,8 @@ return [
     'ingredients' => 'Pollo, Erbe Aromatiche, Limone',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/wTjzodKdwgjKYLjcXJGQQB12oK3NBGk2vPIOTa7P.jpg'
+    'image' => 'uploads/products/wTjzodKdwgjKYLjcXJGQQB12oK3NBGk2vPIOTa7P.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -120,7 +130,8 @@ return [
     'ingredients' => 'Bistecca di Manzo, Sale, Pepe, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/x9iWQuVDz7S3pOTPJGSPWERCKZvwb71I575ODDqP.jpg'
+    'image' => 'uploads/products/x9iWQuVDz7S3pOTPJGSPWERCKZvwb71I575ODDqP.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 5,
@@ -130,7 +141,8 @@ return [
     'ingredients' => 'Funghi, Aglio, Prezzemolo, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/3oQubINI9EFbIS1yV2VKLkvvrZ8Tfz5sRDE6o2hV.jpg'
+    'image' => 'uploads/products/3oQubINI9EFbIS1yV2VKLkvvrZ8Tfz5sRDE6o2hV.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 10,
@@ -140,7 +152,8 @@ return [
     'ingredients' => 'Savoiardi, Mascarpone, Caffè, Cacao',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/Ws50OLD3QWO1NoY38dRHKaxtiEvFHlqQydMmhD6C.avif'
+    'image' => 'uploads/products/Ws50OLD3QWO1NoY38dRHKaxtiEvFHlqQydMmhD6C.avif',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 3,
@@ -150,7 +163,8 @@ return [
     'ingredients' => 'Pasta, Cozze, Vongole, Sale, Pepe, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/lpWegmSSvWarQC5lRswFerjWzRv5O201uRFjl78p.avif'
+    'image' => 'uploads/products/lpWegmSSvWarQC5lRswFerjWzRv5O201uRFjl78p.avif',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -160,7 +174,8 @@ return [
     'ingredients' => 'Filetto di Salmone, Limone, Erbe Aromatiche',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/pELdo8APhRuuq8pbPNpWozZcCGdSy3S7ZLaVQ67z.jpg'
+    'image' => 'uploads/products/pELdo8APhRuuq8pbPNpWozZcCGdSy3S7ZLaVQ67z.jpg',
+    'allergen_id' => [7]  // Contiene pesce
   ],
   [
     'category_id' => 4,
@@ -170,7 +185,8 @@ return [
     'ingredients' => 'Calamari, Olio d\'Oliva, Aglio, Prezzemolo',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/ESsK0DRlGFP074MLyb4ciQceTwO7F0OKpKG5ghBF.jpg'
+    'image' => 'uploads/products/ESsK0DRlGFP074MLyb4ciQceTwO7F0OKpKG5ghBF.jpg',
+    'allergen_id' => [6]  // Contiene molluschi
   ],
   [
     'category_id' => 4,
@@ -180,7 +196,8 @@ return [
     'ingredients' => 'Spaghetti, Vongole, Aglio, Peperoncino',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/lRIYV38qGwuOnfI4dIduj5m6EvfC7XFJD2T783vL.jpg'
+    'image' => 'uploads/products/lRIYV38qGwuOnfI4dIduj5m6EvfC7XFJD2T783vL.jpg',
+    'allergen_id' => [6]  // Contiene molluschi
   ],
   [
     'category_id' => 4,
@@ -190,7 +207,8 @@ return [
     'ingredients' => 'Pesce Spada, Sale, Pepe, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/hUuIimMCdjBnX4QFim9BKVRwCAoWNyR9uo0VIacp.png'
+    'image' => 'uploads/products/hUuIimMCdjBnX4QFim9BKVRwCAoWNyR9uo0VIacp.png',
+    'allergen_id' => [7]  // Contiene pesce
   ],
   [
     'category_id' => 5,
@@ -200,7 +218,8 @@ return [
     'ingredients' => 'Misto di Frutti di Mare, Pomodorini, Olive, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/IV5bKAjdVGChLWKnUpGk3EMdyxm1kjuHYBemeEAb.avif'
+    'image' => 'uploads/products/IV5bKAjdVGChLWKnUpGk3EMdyxm1kjuHYBemeEAb.avif',
+    'allergen_id' => [6, 7]  // Contiene molluschi e pesce
   ],
   [
     'category_id' => 10,
@@ -210,7 +229,8 @@ return [
     'ingredients' => 'Cioccolato Bianco, Nocciola, Gelato',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/w6aegHymaPqOkqgMi9PSeJKW07xIsBJsmPeXB2SZ.jpg'
+    'image' => 'uploads/products/w6aegHymaPqOkqgMi9PSeJKW07xIsBJsmPeXB2SZ.jpg',
+    'allergen_id' => [2, 4]  // Contiene frutta secca e latticini
   ],
   [
     'category_id' => 9,
@@ -220,7 +240,8 @@ return [
     'ingredients' => 'Mozzarella, Pomodoro, Basilico, Olio d\'Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/oGwFOeKCgkA5FcbR5OrpbYgNC5qfSTuFewNdTYp3.jpg'
+    'image' => 'uploads/products/oGwFOeKCgkA5FcbR5OrpbYgNC5qfSTuFewNdTYp3.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -230,7 +251,8 @@ return [
     'ingredients' => 'Prosciutto Crudo, Formaggio, Lattuga, Pomodoro',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/vvuP2O6V9ehKIsyWnwkG3zMty2rhX0ng0FvWkwNZ.jpg'
+    'image' => 'uploads/products/vvuP2O6V9ehKIsyWnwkG3zMty2rhX0ng0FvWkwNZ.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -240,7 +262,8 @@ return [
     'ingredients' => 'Hummus, Verdure Grigliate, Rucola, Pomodoro',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/HzuJtlnhpB3fNNBrjh1meMHHYWYIwdE0lGgIkRWy.jpg'
+    'image' => 'uploads/products/HzuJtlnhpB3fNNBrjh1meMHHYWYIwdE0lGgIkRWy.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 9,
@@ -250,7 +273,8 @@ return [
     'ingredients' => 'Salsiccia, Peperoni, Formaggio, Cipolla Caramellata',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/MkSooCDHDyRvB1jX1kL9u9dOTAQM75wLQEhcfJ7r.jpg'
+    'image' => 'uploads/products/MkSooCDHDyRvB1jX1kL9u9dOTAQM75wLQEhcfJ7r.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -260,7 +284,8 @@ return [
     'ingredients' => 'Tonno, Cipolla, Maionese, Lattuga',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/lt2AHla2jue7JMGC0sZp6aQY5ZeEnSIdvlRqwTfW.webp'
+    'image' => 'uploads/products/lt2AHla2jue7JMGC0sZp6aQY5ZeEnSIdvlRqwTfW.webp',
+    'allergen_id' => [7]  // Contiene pesce
   ],
   [
     'category_id' => 9,
@@ -270,7 +295,8 @@ return [
     'ingredients' => 'Manzo, Lattuga, Pomodoro, Cipolla, Formaggio, Maionese',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/mJhVp0Ov7BZgmGZBAkZGCAruwaCg4RVioIlRW0pQ.jpg'
+    'image' => 'uploads/products/mJhVp0Ov7BZgmGZBAkZGCAruwaCg4RVioIlRW0pQ.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -280,7 +306,8 @@ return [
     'ingredients' => 'Manzo, Bacon, Formaggio Cheddar, Cipolla Caramellata, Salsa BBQ',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/VvRwX8LYo8Tg92jwYHUzb84GLeeJfTtPRjLILIjF.jpg'
+    'image' => 'uploads/products/VvRwX8LYo8Tg92jwYHUzb84GLeeJfTtPRjLILIjF.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -290,7 +317,8 @@ return [
     'ingredients' => 'Patty di Verdure, Lattuga, Pomodoro, Cipolla, Salsa Vegana',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/mGttcFsz3B7PeoWRTSItxL6B9PY16PM5HwcHNehi.jpg'
+    'image' => 'uploads/products/mGttcFsz3B7PeoWRTSItxL6B9PY16PM5HwcHNehi.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 9,
@@ -300,7 +328,8 @@ return [
     'ingredients' => 'Manzo, Jalapeños, Formaggio Pepper Jack, Lattuga, Salsa Piccante',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/ki7FBhhlvefOvba6d2vQ0Z8yIWPajQmEzvWKLr2z.jpg'
+    'image' => 'uploads/products/ki7FBhhlvefOvba6d2vQ0Z8yIWPajQmEzvWKLr2z.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -310,7 +339,8 @@ return [
     'ingredients' => 'Manzo, Funghi, Formaggio Swiss, Lattuga, Maionese',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/cAjR0qtmlE41cD0QZqfRcgQSILHnlkr4Kzv9mZeE.jpg'
+    'image' => 'uploads/products/cAjR0qtmlE41cD0QZqfRcgQSILHnlkr4Kzv9mZeE.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 7,
@@ -320,7 +350,8 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Basilico, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/PmdwxSwWuNwB6jYx841fpJHpoqgjQtNucGXdufKO.webp'
+    'image' => 'uploads/products/PmdwxSwWuNwB6jYx841fpJHpoqgjQtNucGXdufKO.webp',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 7,
@@ -330,7 +361,8 @@ return [
     'ingredients' => 'Pomodoro, Aglio, Origano, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/o8bWXQ7TwVdFuqpuyfjt2oiXpv2n3bVByh1vQMcl.jpg'
+    'image' => 'uploads/products/o8bWXQ7TwVdFuqpuyfjt2oiXpv2n3bVByh1vQMcl.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 7,
@@ -340,7 +372,8 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Funghi, Prosciutto Cotto, Carciofi, Olive Nere',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/T8WWwy4pgyf0rk0iy2BpvOkDNHrwQ35mxxHCHwjd.jpg'
+    'image' => 'uploads/products/T8WWwy4pgyf0rk0iy2BpvOkDNHrwQ35mxxHCHwjd.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 7,
@@ -350,7 +383,8 @@ return [
     'ingredients' => 'Mozzarella, Gorgonzola, Fontina, Parmigiano Reggiano',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/8rUAKALBkQkY6AYhnr4wOcvHDZGRJiJlwh3UHQju.webp'
+    'image' => 'uploads/products/8rUAKALBkQkY6AYhnr4wOcvHDZGRJiJlwh3UHQju.webp',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 7,
@@ -360,7 +394,8 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Acciughe, Olive Nere, Origano',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/umjrEWqzA3L8mFJv6CLb90OFeKoF8jUeyCRAp1YB.jpg'
+    'image' => 'uploads/products/umjrEWqzA3L8mFJv6CLb90OFeKoF8jUeyCRAp1YB.jpg',
+    'allergen_id' => [7, 4]  // Contiene pesce e latticini
   ],
   [
     'category_id' => 4,
@@ -370,7 +405,8 @@ return [
     'ingredients' => 'Pollo intero, Sale, Pepe, Erbe aromatiche',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/0D8bWn5MBxDNwYUOqQSjZuupB5CYA1hk0ALLUKxW.avif'
+    'image' => 'uploads/products/0D8bWn5MBxDNwYUOqQSjZuupB5CYA1hk0ALLUKxW.avif',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -380,7 +416,8 @@ return [
     'ingredients' => 'Ali di pollo, Salsa BBQ, Spezie',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/Sg51ivbxoUox9VLY0IQ7LDWZC2FQhQVUgPrgq04m.jpg'
+    'image' => 'uploads/products/Sg51ivbxoUox9VLY0IQ7LDWZC2FQhQVUgPrgq04m.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -390,7 +427,8 @@ return [
     'ingredients' => 'Petto di pollo, Olio d\'oliva, Aglio, Rosmarino',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/V6JaQ8IjXXnXkHlNKz5VRQq44FL39VIDUgO0dHNA.jpg'
+    'image' => 'uploads/products/V6JaQ8IjXXnXkHlNKz5VRQq44FL39VIDUgO0dHNA.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -400,7 +438,8 @@ return [
     'ingredients' => 'Pezzi di pollo, Farina, Uova, Spezie, Olio per friggere',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/uOr1Z25ixPC9tIkZKgMZdqkg2smpeDOSRdnlEG7E.jpg'
+    'image' => 'uploads/products/uOr1Z25ixPC9tIkZKgMZdqkg2smpeDOSRdnlEG7E.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 6,
@@ -411,6 +450,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/S0v3OjxvOw1PIHIxcMFdyq1P5e8bm2oRCnBazpBS.avif',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 3,
@@ -421,6 +461,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/HbwqxS2t5IiUIcIuLk5pdlFTJxZdF79i8zVN7dvr.avif',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 6,
@@ -431,6 +472,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/KUmQZr8ghl1o1ffGXPJtWn3sTW78rvxJxcXHRr3g.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 3,
@@ -441,6 +483,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/c1foagIB5yTm1oOk2ffnLzUFYQbO52sSdtVSU5bl.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 4,
@@ -451,6 +494,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/o3Y9YtCI6jQ90txyuQKTZ8OVzO8MJEFsJupNfuCy.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 1,
@@ -461,6 +505,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/W1Fs6buDczvH93OyphYtmfocqrsRAAzDBoxdElTg.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 3,
@@ -471,17 +516,18 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/1QhYTkLwGtOqmqa0uS8UcEUiGokfr1O7iQTIcS4x.webp',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 4,
     'restaurant_id' => 7,
     'name' => 'Tagliata di pollo agli agrumi',
     'price' => 13.00,
-    'ingredients' => 'Tagliata di pollo con salsa agli agrumi, olio EVO e prezzemolo,
-    servita con misticanza e pomodorini',
+    'ingredients' => 'Tagliata di pollo con salsa agli agrumi, olio EVO e prezzemolo, servita con misticanza e pomodorini',
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/zISgaZBlW57xlefPJTLRW05sUh06MRhjnJ0Jswqx.jpg',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 7,
@@ -492,6 +538,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/MctltmBPr5TXjFuiLIJ27GTPG5ycsXEygeRMQxRU.webp',
+    'allergen_id' => [4, 7]  // Contiene latticini e pesce
   ],
   [
     'category_id' => 7,
@@ -502,6 +549,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/IGcPGSoGiN1bgZW1JQ2pmIq859TLQ0YahkrAzIW6.webp',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 7,
@@ -512,6 +560,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/3hmL8AUAgL5MiBtG99cWcUSBkHZxpOTBsDfiZryr.jpg',
+    'allergen_id' => [4]  // Contiene latticini
   ],
   [
     'category_id' => 9,
@@ -522,6 +571,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/T4OkhZKO7vlkP6Wy4OCpnVWuJlzqZYPuWaA1fv4k.webp',
+    'allergen_id' => ['frutta a guscio']  // Contiene frutta a guscio
   ],
   [
     'category_id' => 9,
@@ -532,6 +582,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/2vIbV03J2kKYZw3Dr8pNILo5bYKr9oNY31wGP9A8.webp',
+    'allergen_id' => []  // Nessun allergene specificato
   ],
   [
     'category_id' => 9,
@@ -542,6 +593,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/y8TV7Gp7ptxaOtMp0QLovip6yIjnahyrYFLSmrwg.jpg',
+    'allergen_id' => ['frutta a guscio']  // Contiene frutta a guscio
   ],
   [
     'category_id' => 10,
@@ -552,6 +604,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/ZUPOphAANqHRa3Wy79rdDBn39JZ34cdbjGi7Rtwb.jpg',
+    'allergen_id' => [13, 4]  // Contiene uova e latticini
   ],
   [
     'category_id' => 10,
@@ -562,6 +615,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/KM2OZuNClaIFrH41IYGlp31uEd8qZhtZimGHEuz2.jpg',
+    'allergen_id' => [13],
   ],
   [
     'category_id' => 10,
@@ -572,6 +626,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/huuNavmC4n0CjD0DAwtrt5Od4C6eGl6hjNWIyfLg.avifg',
+    'allergen_id' => [13],
   ],
   [
     'category_id' => 8,
@@ -582,6 +637,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/W28PVzA9EEet1xBab825s8Lp1uDiqtfGVar95cES.jpg',
+    'allergen_id' => [7, 4, 10],
   ],
   [
     'category_id' => 8,
@@ -592,6 +648,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/rv0x4uMZ7N5Wb2JHUQbC42D69FYeXr3AaI5p6VXz.jpg',
+    'allergen_id' => [4],
   ],
   [
     'category_id' => 8,
@@ -602,6 +659,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/ryKBwjH5u92oiMCXjkbBnzuuvjHQc09GcgYiJvKO.jpg',
+    'allergen_id' => [1, 6],
   ],
   [
     'category_id' => 1,
@@ -612,7 +670,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/yppYJgfbgBXzMAdDqtSCo7aDsKPGT1iwgc6qeCm8.jpg',
-
+    'allergen_id' => [7],
   ],
   [
     'category_id' => 3,
@@ -623,6 +681,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/MIeBu0w3Wy0EF3pph6KOI6q9fuxy5xvAjMwzFdFj.jpg',
+    'allergen_id' => [1, 6, 7],
   ],
   [
     'category_id' => 4,
@@ -633,6 +692,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/DsHt8yKxILm6MAdXtCaigMetoeq2ccWcHjGEoPIt.jpg',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 10,
@@ -643,6 +703,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/6dLbD1fFTyo1aiN3SBMPzJlYGemnEcc8NadbpcwM.avif',
+    'allergen_id' => [2],
   ],
   [
     'category_id' => 10,
@@ -653,6 +714,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/0sjNFi6mdjZR5sF4o2y1RYmVl6xrUBr4ou2JrQCf.jpg',
+    'allergen_id' => [13],
   ],
   [
     'category_id' => 10,
@@ -663,6 +725,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/1Ntw2YsN5eWKROkXdpWujTBJTCtSW8GhZH6JZt9X.avif',
+    'allergen_id' => ['Glutine', 'Uova', 'Latticini'],
   ],
   [
     'category_id' => 10,
@@ -673,6 +736,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/Cii57VUTvtyz3tR8tGQf4fTABudntnsTRHh9aNnt.avif',
+    'allergen_id' => ['Glutine', 'Uova', 'Latticini'],
   ],
   [
     'category_id' => 10,
@@ -683,6 +747,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/caYocjhGyGkbuE3XKLMV53KryAkla3B5AyPGOlc0.jpg',
+    'allergen_id' => ['Glutine', 'Frutta a guscio'],
   ],
   [
     'category_id' => 10,
@@ -693,17 +758,18 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/d3P8whXCZeyBR2tmfGl55fbO5QrfwzB56JZVYZB1.jpg',
+    'allergen_id' => ['Glutine', 'Uova', 'Latticini'],
   ],
   [
     'category_id' => 10,
     'restaurant_id' => 11,
     'name' => 'Torta della nonna',
     'price' => 11.00,
-    'ingredients' => 'Farina, uova, burro, latte, zucchero, vaniglia
-    ',
+    'ingredients' => 'Farina, uova, burro, latte, zucchero, vaniglia',
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/v0U173H5BNuUK0RZxfuyZvpKSKc9sNAnSLXnZ9bt.jpg',
+    'allergen_id' => ['Glutine', 'Uova', 'Latticini'],
   ],
   [
     'category_id' => 10,
@@ -714,6 +780,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/eRjvJox2uwXyt9iZaJMF0etTtZ6mT5Tn7ivZR8R7.jpg',
+    'allergen_id' => ['Glutine', 'Uova', 'Latticini', 'Frutta a guscio'],
   ],
   [
     'category_id' => 10,
@@ -724,6 +791,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/8q7nLAWlNhDtWv8uk1gc0Zh6xTaHSB7FnIuKYGG1.jpg',
+    'allergen_id' => ['Glutine', 'Uova', 'Latticini', 'Frutta a guscio'],
   ],
   [
     'category_id' => 7,
@@ -734,7 +802,9 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/eQWaiSc8XjOigPY0N86FoGXGZn7kRFn6wXz5WSWn.jpg',
+    'allergen_id' => ['Glutine', 'Pesce'],
   ],
+
   [
     'category_id' => 6,
     'restaurant_id' => 1,
@@ -744,6 +814,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/DE5GYqFHiEYncnTnMSMTUvto6mi4qsVkzfeYEiQ6.webp',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 9,
@@ -754,6 +825,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 1,
     'image' => 'uploads/products/jPid6A4xLh5ZXYAvSMkKuOEyiacg9oQN9IDHAEmb.avif',
+    'allergen_id' => ['Glutine'],
   ],
   [
     'category_id' => 7,
@@ -764,6 +836,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 1,
     'image' => 'uploads/products/pNqYi9Z6lByUfEMWMKY7EPl08ZonabSN1LiwWqpq.avif',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 10,
@@ -774,6 +847,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 1,
     'image' => 'uploads/products/DpTvJdkZAgE8uzG8woVDOmbkBOxYEhsgS2PBUHYp.jpg',
+    'allergen_id' => ['Glutine', 'Soia'],
   ],
   [
     'category_id' => 10,
@@ -784,6 +858,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 1,
     'image' => 'uploads/products/4FjirDTfIy0Sm7JVzRc5FaButXFYhACWfZH7oRTF.avif',
+    'allergen_id' => ['Glutine', 'Soia'],
   ],
   [
     'category_id' => 10,
@@ -794,6 +869,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 1,
     'image' => 'uploads/products/I9M98euNp3nzaiuQIkFZMNVJU9uIKztG1GpYAvPl.avif',
+    'allergen_id' => ['Soia'],
   ],
   [
     'category_id' => 8,
@@ -804,6 +880,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 1,
     'image' => 'uploads/products/ub4YWLIn30LqhVI9NoX54OvLx9XMRB34TNC0XMuV.jpg',
+    'allergen_id' => ['Glutine', 'Soia'],
   ],
   [
     'category_id' => 3,
@@ -814,6 +891,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/1AArYipvgzSzspmNIhGlNnlH13oHpqnKW2nAfBAC.avif',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 4,
@@ -824,6 +902,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/DDM2egFNyshaLMRBpl62ZVAtYnNBMJHTpPjPhKHR.webp',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 5,
@@ -834,6 +913,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/9L9h6C3zjpikvo8spGHxGpH4e8FjMsJiwBOSKTCm.webp',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 5,
@@ -844,6 +924,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/zVJGum4LZQgrkPS1S4GqVckvZ5wubEFfC6eNk4cx.jpg',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 5,
@@ -854,6 +935,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/qkjqEqVTOImKSP73W6vLmG5lXvh57Z25knjhJDVM.avif',
+    'allergen_id' => [],
   ],
   [
     'category_id' => 10,
@@ -864,6 +946,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/2FCk8FFSXOtzUh4Dok23etumuRi268dwYAsiHHtT.avif',
+    'allergen_id' => ['Glutine', 'Frutta a guscio'],
   ],
   [
     'category_id' => 9,
@@ -874,6 +957,7 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/Q2CKGR4d994LEcfpzAGfKmyKbN4T938Wud7rYUvN.jpg',
+    'allergen_id' => ['Glutine', 'Uova'],
   ],
   [
     'category_id' => 9,
@@ -884,5 +968,6 @@ return [
     'is_visible' => 1,
     'is_vegan' => 0,
     'image' => 'uploads/products/805X9fcVLNZ5tghcpY20N9uwpCqZRfl4KDE6HnQ1.avif',
+    'allergen_id' => ['Glutine', 'Uova'],
   ],
 ];

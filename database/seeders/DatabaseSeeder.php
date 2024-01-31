@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
       UsersSeeder::class,
       TypologiesSeeder::class,
       CategoriesSeeder::class,
+      AllergensSeeder::class,
 
       // tabelle con id
       RestaurantsSeeder::class,
