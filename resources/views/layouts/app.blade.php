@@ -50,7 +50,7 @@
 
             <div class="container d-flex justify-content-between align-items-center">
 
-                <a href="{{ url('http://localhost:5174/') }}"" class="home fs-4"><i class="fa-solid fa-house"></i></a>
+                <a href="{{ url('http://localhost:5174/') }}" class="home fs-4"><i class="fa-solid fa-house"></i></a>
 
                 <h1 class="logo text-center">Deliveboo</h2>
 
