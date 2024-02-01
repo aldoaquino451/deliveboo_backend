@@ -19,20 +19,13 @@ class RestaurantController extends Controller
   public function index()
   {
     $restaurant = Restaurant::where('user_id', Auth::id())->first();
-
     $restaurant->image = $restaurant->image
-      ? asset('storage/uploads/restaurants/' . $restaurant->image)
-      : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
-
-
-
+      ? asset('storage/' . $restaurant->image)
+      : asset('storage/uploads/placeholder_restaurant.jpg');
     $orders = Order::where('restaurant_id', $restaurant->id)->orderBy('created_at', 'desc')->take(5)->get();
-
     foreach ($orders as $order) {
       $order->formatted_created_at = $order->created_at->format('d/m/Y  -  H:i');
     };
-
-    // dd($orders);
     return view('admin.restaurants.index', compact('restaurant', 'orders'));
   }
 
