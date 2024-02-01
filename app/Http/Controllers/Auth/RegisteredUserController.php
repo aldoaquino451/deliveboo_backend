@@ -58,11 +58,13 @@ class RegisteredUserController extends Controller
 
         //Salvataggio dell'immagine
         if (array_key_exists('image', $form_data)) {
-            $form_data['image'] = Storage::put('uploads/restaurants', $form_data['image']);
+            $form_data['image'] = Storage::put('uploads', $form_data['image']);
             $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
         }
         $new_restaurant->fill($form_data);
+
         $new_restaurant->save();
+
 
         if (array_key_exists('typologies', $form_data)) {
         $new_restaurant->typologies()->attach($form_data['typologies']);
