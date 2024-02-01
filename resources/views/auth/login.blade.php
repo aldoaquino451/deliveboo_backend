@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <div class="card-fr">
                     <div class="card-header text-center mb-3">Accedi al tuo ristorante</div>
 
@@ -58,15 +58,14 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row mb-0">
-                                <div class="col-4 offset-4 text-center">
+                            <div class="mb-4 row justify-content-center">
                                     <button type="submit" class="btn login-btn mb-3">
                                         {{ __('Login') }}
                                     </button>
 
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            <span>Hai dimenticato la tua password?</span>
+                                            <span class="text-center">Hai dimenticato la tua password?</span>
                                         </a>
                                     @endif
                                 </div>

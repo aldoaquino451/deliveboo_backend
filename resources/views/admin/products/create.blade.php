@@ -90,7 +90,7 @@
 
             <div class="col-12 mt-4">
                 <button type="submit" class="btn btn-primary">Crea</button>
-                <button type="reset" class="btn btn-secondary ">Annulla</button>
+                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Annulla</a>
             </div>
         </form>
 
