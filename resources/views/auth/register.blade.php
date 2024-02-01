@@ -120,7 +120,7 @@
                             @enderror
 
                             <div class="col-12 p-0">
-                                <label for="image" class="form-label mt-3">Immagine</label>
+                                <label for="image" class="form-label mt-3">Immagine(*)</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" required
                                     id="image" name="image" value="{{ old('image') }}">
                             </div>

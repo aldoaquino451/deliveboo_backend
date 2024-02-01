@@ -36,6 +36,7 @@
                     @endforeach
                 </tbody>
             </table>
+            {{ $orders_list->links() }}
         @else
             <p class=" text-center">Non ci sono ordini!</p>
         @endif

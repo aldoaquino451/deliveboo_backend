@@ -44,7 +44,7 @@
                 @enderror
             </div>
 
-            <div class="col-10">
+            <div class="col-12 col-lg-10">
                 <label for="image" class="form-label my-2">Immagine</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                     name="image" value="{{ old('image', $product?->image) }}" onchange="showImage(event)">
@@ -52,11 +52,9 @@
             @error('address')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
-            <div class="col-2">
-                <img id="thumb" class="img-fluid" style="border-radius:30px;"
-                    onerror="this.src='/img/placeholder-image.jpg'" src="{{ asset('storage/' . $product?->image) }}"
-                    alt="{{ $product->image_original_name }}" title="{{ $product->image_original_name }}" />
-            </div>
+            <img id="thumb" class="img-fluid d-none d-lg-block" style="width:150px; border-radius:30px;"
+                onerror="this.src='/img/placeholder-image.jpg'" src="{{ asset('storage/' . $product?->image) }}"
+                alt="{{ $product->image_original_name }}" title="{{ $product->image_original_name }}" />
 
             <div class="col-md-8">
                 <label for="category_id" class="form-label my-2">Categoria (*)</label>

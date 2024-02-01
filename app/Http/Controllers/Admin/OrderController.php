@@ -15,7 +15,7 @@ class OrderController extends Controller
   {
     $restaurant = Restaurant::where('user_id', Auth::id())->first();
     $orders_list = Order::where('restaurant_id', $restaurant->id)
-      ->orderBy('created_at', 'desc')->get();
+      ->orderBy('created_at', 'desc')->paginate(15);
 
     // Formatta la data in italiano
     foreach ($orders_list as $order) {

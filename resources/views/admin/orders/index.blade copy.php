@@ -32,7 +32,7 @@
 
                     </tr>
 
-                    <div class="modal d-none fade" id="deleteModal{{ $order->id }}" tabindex="-1" role="dialog"
+                    <!-- <div class="modal d-none fade" id="deleteModal{{ $order->id }}" tabindex="-1" role="dialog"
                         aria-labelledby="deleteModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content my-modal-content py-4 px-4">
@@ -59,10 +59,10 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
-                    @foreach ($order->products as $product)
+                    <!-- @foreach ($order->products as $product)
                         <div class="d-none products_{{ $order_watch->order_number }}">
                             <ul>
                                 <li>
@@ -80,17 +80,17 @@
                                 </li>
                             </ul>
                         </div>
-                    @endforeach
+                    @endforeach -->
                 @endforeach
             </tbody>
         </table>
         {{ $orders_list->links() }}
     </div>
 
-    <script>
+    <!-- <script>
         function toggleOrder(orderNumber) {
             const classtr = `.products_${orderNumber}`;
             $(classtr).toggleClass('d-none');
         }
-    </script>
+    </script> -->
 @endsection

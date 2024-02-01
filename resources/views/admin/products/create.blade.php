@@ -42,7 +42,7 @@
                 @enderror
             </div>
 
-            <div class="col-10">
+            <div class="col-12 col-lg-10">
                 <label for="image" class="form-label">Immagine</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                     name="image" value="{{ old('image') }}" onchange="showImage(event)">
@@ -50,7 +50,8 @@
             @error('image')
                 <p class="text-danger">{{ $message }}</p>
             @enderror
-            <img id="thumb" style="width:150px; border-radius:30px;" src="/img/placeholder-image.jpg" />
+            <img id="thumb" style="width:150px; border-radius:30px;" class="d-none d-lg-block"
+                src="/img/placeholder-image.jpg" />
 
 
             <div class="col-md-8">
@@ -88,8 +89,8 @@
 
             <span style="font-size: 0.8rem">(*) = campo obbligatorio;</span>
 
-            <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-primary">Crea</button>
+            <div class="col-12 mt-4 text-center">
+                <button type="submit" class="btn me-3" style="background-color: #a73922; color: white">Crea</button>
                 <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Annulla</a>
             </div>
         </form>
