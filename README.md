@@ -43,3 +43,27 @@ MAIL_PASSWORD=1cb316186bb516
 MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS="hello@example.com"
 MAIL_FROM_NAME="${APP_NAME}"
+
+0. 
+1. home:
+  - logo 
+  - titolo 
+  - utente
+  - carrello
+  - tipologie hover/active
+  - ristoranti generici/specifici
+    - immagine
+    - titolo
+    - tipoogie 
+  - paginazione
+  - 
+2. fai l'ordine validazione pagamento 
+  - selezionare il ristorante dalla home
+  - visualizza i prodotti
+  - mostrare solo prodotti per categoria
+  - aprire nuovo ristorante per scegliere un modale ristorante sbagliato 
+  - svuotare il carrello con modale svuota e elimina
+  - validazione form
+  - pagamento
+
+selezionato il ristorante... 
