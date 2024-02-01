@@ -43,36 +43,40 @@
         </div>
 
 
-        <table style="max-width: 1000px" class="table table-striped table-hover mt-3 mx-auto shadow rounded">
-            <thead>
-                <tr class="text-center">
-                    <th scope="col" class="col-5 col-md-2">Numero Ordine</th>
-                    <th scope="col" class="d-none d-md-table-cell col-md-2">Cliente</th>
-                    <th scope="col" colspan="2" class="d-none d-md-table-cell col-md-2">Indirizzo di consegna</th>
-                    <th scope="col" class="col-5 col-md-2">Data</th>
-                    <th scope="col" class="d-none d-md-table-cell col-md-2">Spesa Totale</th>
-                    <th scope="col" class="col-2 col-md-2">Azioni</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                </tr>
-                @foreach ($orders as $order)
+        @if (count($orders) > 0)
+            <table style="max-width: 1000px" class="table table-striped table-hover mt-3 mx-auto shadow rounded">
+                <thead>
                     <tr class="text-center">
-                        <th>#{{ $order->order_number }}</th>
-                        <td class="d-none d-md-table-cell">{{ $order->name }} {{ $order->lastname }}</td>
-                        <td class="d-none d-md-table-cell" colspan="2">{{ $order->address }}</td>
-                        <td>{{ $order->formatted_created_at }}</td>
-                        <td class="d-none d-md-table-cell">&euro; {{ $order->total_price }}</td>
-                        <td>
-                            <a href="{{ route('admin.orders.show', $order) }}"
-                                class="card-link btn btn-secondary d-inline-block"><i class="fa-regular fa-eye"></i></a>
-                        </td>
+                        <th scope="col" class="col-5 col-md-2">Numero Ordine</th>
+                        <th scope="col" class="d-none d-md-table-cell col-md-2">Cliente</th>
+                        <th scope="col" colspan="2" class="d-none d-md-table-cell col-md-2">Indirizzo di consegna</th>
+                        <th scope="col" class="col-5 col-md-2">Data</th>
+                        <th scope="col" class="d-none d-md-table-cell col-md-2">Spesa Totale</th>
+                        <th scope="col" class="col-2 col-md-2">Azioni</th>
 
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    </tr>
+                    @foreach ($orders as $order)
+                        <tr class="text-center">
+                            <th>#{{ $order->order_number }}</th>
+                            <td class="d-none d-md-table-cell">{{ $order->name }} {{ $order->lastname }}</td>
+                            <td class="d-none d-md-table-cell" colspan="2">{{ $order->address }}</td>
+                            <td>{{ $order->formatted_created_at }}</td>
+                            <td class="d-none d-md-table-cell">&euro; {{ $order->total_price }}</td>
+                            <td>
+                                <a href="{{ route('admin.orders.show', $order) }}"
+                                    class="card-link btn btn-secondary d-inline-block"><i class="fa-regular fa-eye"></i></a>
+                            </td>
+
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>Non è stato effettuato nessun ordine negli ultimi giorni.</p>
+        @endif
 
     </div>
 @endsection
