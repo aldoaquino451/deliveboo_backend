@@ -35,8 +35,8 @@ class PageController extends Controller
 
     foreach ($restaurants as $restaurant) {
       $restaurant->image = $restaurant->image
-        ? asset('storage/uploads/restaurants/' . $restaurant->image)
-        : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
+        ? asset('storage/' . $restaurant->image)
+        : asset('storage/uploads/placeholder_restaurant.jpg');
     }
 
     return response()->json($restaurants);
@@ -64,8 +64,8 @@ class PageController extends Controller
 
     foreach ($restaurants as $restaurant) {
       $restaurant->image = $restaurant->image
-        ? asset('storage/uploads/restaurants/' . $restaurant->image)
-        : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
+        ? asset('storage/' . $restaurant->image)
+        : asset('storage/uploads/placeholder_restaurant.jpg');
     }
 
     return response()->json($restaurants);
@@ -78,8 +78,8 @@ class PageController extends Controller
     $restaurant = Restaurant::where('slug', $slug)->with('products.category', 'typologies')->first();
 
     $restaurant->image = $restaurant->image
-      ? asset('storage/uploads/restaurants/' . $restaurant->image)
-      : asset('storage/uploads/restaurants/placeholder_restaurant.jpg');
+      ? asset('storage/' . $restaurant->image)
+      : asset('storage/uploads/placeholder_restaurant.jpg');
 
     // Modifica l'URL dell'immagine di ciascun prodotto
     foreach ($restaurant->products as $product) {
