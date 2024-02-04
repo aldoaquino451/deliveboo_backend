@@ -68,7 +68,7 @@
 
         </header>
 
-        <main>
+        <main style="padding-bottom: 100px">
             @yield('content')
         </main>
 
