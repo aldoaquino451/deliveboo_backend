@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container px-5 py-3">
+    <div class="container px-3 py-2 p-md-4 " style="max-width: 1000px">
 
-        <h4 class="mb-5 text-uppercase text-center">Salva un nuovo prodotto</h4>
+        <h4 class="mb-3 mb-md-5 text-uppercase text-center">Salva un nuovo prodotto</h4>
 
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -26,7 +26,7 @@
 
 
             {{-- Prezzo prodotto --}}
-            <div class="col-md-2">
+            <div class="col-6 col-md-3">
                 <label for="price" class="form-label">Prezzo *</label>
                 <input type="number" step=0.01 min=0 max=999.99 required
                     class="form-control @error('price') is-invalid @enderror" id="price" name="price"
@@ -48,15 +48,21 @@
                 @enderror
             </div>
 
+
             {{-- Immagine prodotto --}}
-            <div class="col-10">
+            <div class="col-12 col-lg-9 col-xl-10 pt-lg-1">
                 <label for="image" class="form-label">Immagine</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                     name="image" value="{{ old('image') }}" onchange="showImage(event)">
             </div>
 
+
             {{-- Anteprima prodotto --}}
-            <img id="thumb" style="width:150px; border-radius:30px;" src="/img/placeholder-image.jpg" />
+            <div class="col-12 col-lg-3 col-xl-2 pt-lg-2">
+                <img id="thumb" style="width:150px; height:100px; object-fit:cover; border-radius:30px;"
+                    src="/img/placeholder-image.jpg" />
+            </div>
+
 
             {{-- Categoria prodotto --}}
             <div class="col-md-8">
@@ -73,9 +79,10 @@
                 @enderror
             </div>
 
+
             {{-- Visibile - Vegano prodotto --}}
-            <div class="col-md-12 ">
-                <div class="form-check mb-2">
+            <div class="d-flex gap-4 py-3">
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="is_visible" name="is_visible" value="1"
                         {{ old('is_visible') ? 'checked' : '' }}>
                     <label class="form-check-label" for="is_visible">
@@ -93,10 +100,11 @@
 
             <span style="font-size: 0.8rem">* : campo obbligatorio;</span>
 
+
             {{-- Bottoni prodotto --}}
-            <div class="col-12 mt-4">
-                <button type="submit" class="btn btn-primary">Crea</button>
-                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Annulla</a>
+            <div class="col-12 py-1 py-md-3">
+                <button type="submit" class="btn" style="background-color: #a73922; color: white">Salva</button>
+                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary ms-3">Annulla</a>
             </div>
         </form>
 

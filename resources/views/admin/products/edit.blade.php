@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="container px-5 py-3">
+    <div class="container px-3 py-2 p-md-4 " style="max-width: 1000px">
 
-        <h4 class="mb-5 text-uppercase text-center">Modifica il prodotto</h4>
+        <h4 class="mb-3 mb-md-5 text-uppercase text-center">Modifica il prodotto</h4>
 
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -28,7 +28,7 @@
 
 
             {{-- Prezzo prodotto --}}
-            <div class="col-md-2">
+            <div class="col-6 col-md-3">
                 <label for="price" class="form-label">Prezzo *</label>
                 <input type="number" step=0.01 min=0 class="form-control @error('price') is-invalid @enderror"
                     id="price" name="price" value="{{ old('price', $product->price) }}" required max="999.99">
@@ -51,18 +51,18 @@
 
 
             {{-- Immagine prodotto --}}
-            <div class="col-12 col-xl-10">
-                <label for="image" class="form-label mb-2">Immagine</label>
+            <div class="col-12 col-lg-9 col-xl-10 pt-lg-1">
+                <label for="image" class="form-label">Immagine</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                     name="image" value="{{ old('image', $product?->image) }}" onchange="showImage(event)">
             </div>
 
 
             {{-- Anteprima prodotto --}}
-            <div class="col-12 col-xl-2">
-                <img id="thumb" style="width:150px; border-radius:30px;" onerror="this.src='/img/placeholder-image.jpg'"
-                    src="{{ asset('storage/' . $product?->image) }}" alt="{{ $product->image_original_name }}"
-                    title="{{ $product->image_original_name }}" />
+            <div class="col-12 col-lg-3 col-xl-2 pt-lg-2">
+                <img id="thumb" style="width:150px; height:100px; object-fit:cover; border-radius:30px;"
+                    onerror="this.src='/img/placeholder-image.jpg'" src="{{ asset('storage/' . $product?->image) }}"
+                    alt="{{ $product->image_original_name }}" title="{{ $product->image_original_name }}" />
             </div>
 
 
@@ -84,15 +84,15 @@
 
 
             {{-- Visibile - Vegano prodotto --}}
-            <div class="d-flex">
-                <div class="form-check m-3">
+            <div class="d-flex gap-4 py-3">
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="is_visible" name="is_visible" value="1"
                         @checked(old('is_visible', $product->is_visible))>
                     <label class="form-check-label" for="is_visible">
                         Visibile
                     </label>
                 </div>
-                <div class="form-check m-3">
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="is_vegan" name="is_vegan" value="1"
                         @checked(old('is_vegan', $product->is_vegan))>
                     <label class="form-check-label" for="is_vegan">
@@ -105,9 +105,9 @@
 
 
             {{-- Bottoni prodotto --}}
-            <div class="col-12 mt-4 text-center">
-                <button type="submit" class="btn mx-3" style="background-color: #a73922; color: white">Modifica</button>
-                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary btn-edit mx-3">Annulla</a>
+            <div class="col-12 py-1 py-md-3 ">
+                <button type="submit" class="btn" style="background-color: #a73922; color: white">Modifica</button>
+                <a href="{{ route('admin.products.index') }}" class="btn btn-secondary ms-3">Annulla</a>
             </div>
         </form>
 
