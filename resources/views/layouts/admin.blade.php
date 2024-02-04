@@ -44,7 +44,7 @@
     <main>
         <div class="main-wrapper d-flex">
             @include('admin.partials.aside')
-            <div class="main-content">
+            <div class="main-content" style="padding-bottom: 70px">
                 @yield('content')
             </div>
         </div>
