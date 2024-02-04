@@ -1,31 +1,29 @@
 .dashboard-header {
-    padding: 5px;
-    height: 60px;
-    background-color: #260d08;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
-    .container-header {
-        width: 80%;
-        margin: 0 auto;
+  padding: 5px;
+  height: 60px;
+  background-color: #260d08;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+
+  .container-header {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  a,
+  .admin-name {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "Lato", sans-serif;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .action {
+    a {
+      text-align: end;
+      color: white;
     }
-    a,
-    .admin-name {
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-family: "Lato", sans-serif;
-    }
-    a:hover {
-        text-decoration: none;
-    }
-    .home {
-    }
-    .logo {
-        margin: 0;
-        padding-left: 100px;
-    }
-    .action {
-        a {
-            text-align: end;
-            color: white;
-        }
-    }
+  }
 }

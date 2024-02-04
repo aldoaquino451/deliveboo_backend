@@ -2,9 +2,9 @@
 
     <div class="container-header d-flex justify-content-between align-items-center">
 
-        <h1 class="logo text-center">Deliveboo</h1>
+        <h1 class="logo mb-0 text-center">Deliveboo</h1>
         <div class="d-flex align-items-center justify-content-end action">
-            <span class="admin-name text-capitalize me-2">{{ Auth::user()->name }}</span>
+            <span class="admin-name text-capitalize me-2 d-none d-sm-inline">{{ Auth::user()->name }}</span>
             <a href="{{ route('logout') }}"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="fa-solid fa-right-from-bracket"></i>
