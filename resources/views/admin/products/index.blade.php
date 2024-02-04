@@ -24,13 +24,15 @@
                             <p class="card-title">{{ $product->name }}</p>
                             <span class="card-price">&euro;{{ $product->price }}</span>
                             <p class="card-text">{{ $product->ingredients }}</p>
-                            <ul>
+                            <ul class="d-flex gap-3 mb-2">
                                 <li class="list-group-item">
                                     @if ($product->is_visible)
+                                        <i class="fa-solid fa-eye text-info"></i>
+                                    @else
                                         <i class="fa-solid fa-eye" style="color: grey;"></i>
                                     @endif
                                 </li>
-                                <li class="list-group-item mt-2">
+                                <li class="list-group-item">
                                     @if ($product->is_vegan)
                                         <i class="fa-solid fa-seedling" style="color: green;"></i>
                                     @endif
