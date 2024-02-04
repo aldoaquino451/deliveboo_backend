@@ -18,7 +18,7 @@
                             @csrf
                             <div class="row">
                                 <label for="name" class="col-md-2 col-form-label text-md-left">{{ __('Nome') }}
-                                    (*)</label>
+                                    *</label>
                                 <div class="col-md-4">
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
@@ -30,7 +30,7 @@
                                     @enderror
                                 </div>
                                 <label for="lastname" class="col-md-2 col-form-label text-md-right">{{ __('Cognome') }}
-                                    (*)</label>
+                                    *</label>
                                 <div class="col-md-4">
                                     <input id="lastname" type="text"
                                         class="form-control @error('lastname') is-invalid @enderror" name="lastname"
@@ -47,7 +47,7 @@
                             </div>
                             <div class="mb-4 row">
                                 <label for="email" class="col-md-2 col-form-label text-md-left">{{ __('E-Mail') }}
-                                    (*)</label>
+                                    *</label>
                                 <div class="col-md-10">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
@@ -62,7 +62,7 @@
                             </div>
                             <div class="mb-4 row">
                                 <label for="password" class="col-md-2 col-form-label text-md-left">{{ __('Password') }}
-                                    (*)</label>
+                                    *</label>
                                 <div class="col-md-3">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
@@ -74,7 +74,7 @@
                                     @enderror
                                 </div>
                                 <label for="password-confirm"
-                                    class="col-md-3 col-form-label text-md-right">{{ __('Conferma Password') }} (*)</label>
+                                    class="col-md-3 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
                                 <div class="col-md-4">
                                     <input id="password-confirm" type="password"
                                         class="form-control @error('password-confirm') is-invalid @enderror"
@@ -86,7 +86,7 @@
                             <div class="title-restaurant text-center my-4">Dati relativi al ristorante</div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="name_restaurant">Nome ristorante (*)</label>
+                                    <label for="name_restaurant">Nome ristorante *</label>
                                     <input type="text"
                                         class="form-control @error('name_restaurant') is-invalid @enderror"
                                         id="name_restaurant" required name="name_restaurant"
@@ -97,7 +97,7 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="vat_number">Partita IVA (*)</label>
+                                    <label for="vat_number">Partita IVA *</label>
                                     <input type="text" class="form-control @error('vat_number') is-invalid @enderror"
                                         id="vat_number" required minlength="11" maxlength="11" name="vat_number"
                                         value="{{ old('vat_number') }}" onfocus="hideVatNumberMessage()">
@@ -110,7 +110,7 @@
                             </div>
 
                             <div class="col-12 p-0">
-                                <label for="address" class="form-label mt-3">Indirizzo (*)</label>
+                                <label for="address" class="form-label mt-3">Indirizzo *</label>
                                 <input type="text" class="form-control @error('address') is-invalid @enderror"
                                     id="address" required name="address" placeholder="Indirizzo, CAP, Città, Provincia"
                                     value="{{ old('address') }}">
@@ -120,7 +120,7 @@
                             @enderror
 
                             <div class="col-12 p-0">
-                                <label for="image" class="form-label mt-3">Immagine</label>
+                                <label for="image" class="form-label mt-3">Immagine *</label>
                                 <input type="file" class="form-control @error('image') is-invalid @enderror" required
                                     id="image" name="image" value="{{ old('image') }}">
                             </div>
@@ -138,7 +138,7 @@
                             @enderror
 
                             <div class="text-center mt-3">
-                                <p>Selezione una o più tipologie per il tuo ristorante(*)</p>
+                                <p>Selezione una o più tipologie per il tuo ristorante *</p>
                                 <div role="group" aria-label="Small button group">
                                     @foreach ($typologies as $typology)
                                         <input type="checkbox" class="btn-check" id="typology_{{ $typology->id }}"
@@ -155,7 +155,7 @@
                             </div>
 
                             <div class="my-4 row">
-                                <span style="font-size: 0.9rem;">(*) = campo obbligatorio;</span>
+                                <span style="font-size: 0.9rem;">* : campo obbligatorio;</span>
                                 <div class="text-center">
                                     <button type="submit" onclick="addEvent()" id="btn-submit"
                                         class="btn register-btn">
