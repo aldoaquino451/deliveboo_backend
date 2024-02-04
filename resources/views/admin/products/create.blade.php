@@ -2,7 +2,7 @@
 @section('content')
     <div class="container px-5 py-3">
 
-        <h4 class="mb-4">Inserisci i dati del nuovo prodotto</h4>
+        <h4 class="mb-5 text-uppercase text-center">Salva un nuovo prodotto</h4>
 
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -13,8 +13,10 @@
         <form action="{{ route('admin.products.store') }}" method="POST" class="row g-3" enctype="multipart/form-data">
             @csrf
 
+
+            {{-- Nome prodotto --}}
             <div class="col-md-6">
-                <label for="name" class="form-label">Nome prodotto (*)</label>
+                <label for="name" class="form-label">Nome prodotto *</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
                     autocomplete="name" autofocus required minlength="3" maxlength="254" value="{{ old('name') }}">
                 @error('name')
@@ -22,8 +24,10 @@
                 @enderror
             </div>
 
+
+            {{-- Prezzo prodotto --}}
             <div class="col-md-2">
-                <label for="price" class="form-label">Prezzo (*)</label>
+                <label for="price" class="form-label">Prezzo *</label>
                 <input type="number" step=0.01 min=0 max=999.99 required
                     class="form-control @error('price') is-invalid @enderror" id="price" name="price"
                     value="{{ old('price') }}">
@@ -32,9 +36,11 @@
                 @enderror
             </div>
 
+
+            {{-- Ingredienti prodotto --}}
             <div class="col-12">
                 <label for="ingredients" class="form-label @error('ingredients') is-invalid @enderror">Ingredienti
-                    (*)</label>
+                    *</label>
                 <textarea class="form-control" id="ingredients" placeholder="Lista Ingredienti" name="ingredients" required
                     minlength="8">{{ old('ingredients') }}</textarea>
                 @error('ingredients')
@@ -42,33 +48,32 @@
                 @enderror
             </div>
 
+            {{-- Immagine prodotto --}}
             <div class="col-10">
                 <label for="image" class="form-label">Immagine</label>
                 <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                     name="image" value="{{ old('image') }}" onchange="showImage(event)">
             </div>
-            @error('image')
-                <p class="text-danger">{{ $message }}</p>
-            @enderror
+
+            {{-- Anteprima prodotto --}}
             <img id="thumb" style="width:150px; border-radius:30px;" src="/img/placeholder-image.jpg" />
 
-
+            {{-- Categoria prodotto --}}
             <div class="col-md-8">
-                <label for="category_id" class="form-label">Categoria (*)</label>
+                <label for="category_id" class="form-label">Categoria *</label>
                 <select id="category_id" class="form-select @error('category_id') is-invalid @enderror" name="category_id">
                     <option value=0 selected>Seleziona</option>
-
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                             {{ $category->name }}</option>
                     @endforeach
-
                 </select>
                 @error('category_id')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
+            {{-- Visibile - Vegano prodotto --}}
             <div class="col-md-12 ">
                 <div class="form-check mb-2">
                     <input class="form-check-input" type="checkbox" id="is_visible" name="is_visible" value="1"
@@ -86,8 +91,9 @@
                 </div>
             </div>
 
-            <span style="font-size: 0.8rem">(*) = campo obbligatorio;</span>
+            <span style="font-size: 0.8rem">* : campo obbligatorio;</span>
 
+            {{-- Bottoni prodotto --}}
             <div class="col-12 mt-4">
                 <button type="submit" class="btn btn-primary">Crea</button>
                 <a href="{{ route('admin.products.index') }}" class="btn btn-secondary">Annulla</a>
