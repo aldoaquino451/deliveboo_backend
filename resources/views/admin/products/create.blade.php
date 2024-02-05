@@ -1,8 +1,9 @@
 @extends('layouts.admin')
-@section('content')
-    <div class="container px-3 py-2 p-md-4 " style="max-width: 1000px">
 
-        <h4 class="mb-3 mb-md-5 text-uppercase text-center">Salva un nuovo prodotto</h4>
+@section('content')
+    <div class="container px-3 p-md-4 " style="max-width: 1000px">
+
+        <h4 class="mb-4 mb-md-5 text-uppercase text-center">Aggiungi un prodotto</h4>
 
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">

@@ -2,7 +2,8 @@
 
 @section('content')
     {{-- <h1>{{ $monthlyTotal }}</h1> --}}
-    <h2 class="mb-3 text-capitalize text-center fw-bold">Ordini</h2>
+    <h2 class="mb-4 text-capitalize text-center fw-bold">Ordini</h2>
+
     <div class="container">
 
         @if (count($orders_list) > 0)

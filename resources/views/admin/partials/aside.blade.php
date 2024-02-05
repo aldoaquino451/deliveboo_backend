@@ -1,4 +1,4 @@
-<aside>
+<aside class="">
 
     <div class="modal-button">
         <button class="m-0 p-0 pe-1 d-flex justify-content-center align-items-center">
@@ -49,16 +49,19 @@
     <script>
         const button = document.querySelector('.modal-button');
         const menu = document.querySelector('ul');
+        const aside = document.querySelector('aside');
 
         button.addEventListener('click', function() {
             button.style.display = 'none';
             menu.style.display = 'flex';
+            aside.classList.add('active');
         })
 
         window.addEventListener('click', function(event) {
             if (!button.contains(event.target) && !menu.contains(event.target) && button.style.display === 'none') {
                 button.style.display = 'block';
                 menu.style.display = 'none';
+                aside.classList.remove('active');
             }
         });
     </script>

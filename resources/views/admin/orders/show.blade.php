@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid container-lg" style="max-width: 800px ">
 
-        <h2 class="text-center fw-bold py-4">Ordine: # {{ $order->order_number }}</h2>
+        <h2 class="text-center fw-bold py-4">Ordine: #{{ $order->order_number }}</h2>
 
         <div class="row mb-5">
             <div class="col-md-3">

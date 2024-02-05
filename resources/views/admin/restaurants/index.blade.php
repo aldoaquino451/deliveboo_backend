@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-4 mt-3 text-center logo">{{ $restaurant->name_restaurant }}</h1>
+        <h1 class="mb-4 text-center logo">{{ $restaurant->name_restaurant }}</h1>
 
         <div style="max-width: 1000px" class="px-0 px-xl-5 mx-auto d-flex flex-column flex-lg-row justify-content-center">
 

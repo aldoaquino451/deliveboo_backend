@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2 class="mb-3 text-capitalize text-center fw-bold">Prodotti</h2>
+    <h2 class="mb-4 text-capitalize text-center fw-bold">Prodotti</h2>
 
     @if (session('success'))
         <div class="container d-flex justify-content-center">
