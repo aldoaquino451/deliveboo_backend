@@ -10,15 +10,13 @@ main {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   main {
     .main-wrapper {
 
       .main-content {
-        width: calc(100% - 50px);
-        padding: 0;
-        padding-top: 15px;
-
+        width: 100%;
+        padding: 15px 10px;
       }
     }
   }
