@@ -38,6 +38,7 @@ aside {
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.2);
     text-align: center;
     padding: 10px;
+    list-style: none;
 
     li {
       &:not(:last-child) {

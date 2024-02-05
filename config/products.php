@@ -320,7 +320,7 @@ return [
     'ingredients' => 'Pomodoro, Mozzarella, Basilico, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/PmdwxSwWuNwB6jYx841fpJHpoqgjQtNucGXdufKO.webp'
+    'image' => 'uploads/products/j6sseUYYo1ZLaD6KJY0u6TR1RomvdYuVU58DtxQ8.avif'
   ],
   [
     'category_id' => 7,
@@ -330,7 +330,7 @@ return [
     'ingredients' => 'Pomodoro, Aglio, Origano, Olio Extra Vergine di Oliva',
     'is_visible' => 1,
     'is_vegan' => 1,
-    'image' => 'uploads/products/o8bWXQ7TwVdFuqpuyfjt2oiXpv2n3bVByh1vQMcl.jpg'
+    'image' => 'uploads/products/j6sseUYYo1ZLaD6KJY0u6TR1RomvdYuVU58DtxQ8.avif'
   ],
   [
     'category_id' => 7,
@@ -355,12 +355,12 @@ return [
   [
     'category_id' => 7,
     'restaurant_id' => 1,
-    'name' => 'Napoletana',
+    'name' => 'Diavola',
     'price' => 9.00,
-    'ingredients' => 'Pomodoro, Mozzarella, Acciughe, Olive Nere, Origano',
+    'ingredients' => 'Pomodoro, Mozzarella, Salame Piccante, Basilico',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/umjrEWqzA3L8mFJv6CLb90OFeKoF8jUeyCRAp1YB.jpg'
+    'image' => 'uploads/products/mAFbIBJswid63qJ8zsSXrNJskfsoPmle1LvGbRgO.jpg'
   ],
   [
     'category_id' => 4,
@@ -420,7 +420,7 @@ return [
     'ingredients' => 'Pecorino, Pepe',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/HbwqxS2t5IiUIcIuLk5pdlFTJxZdF79i8zVN7dvr.avif',
+    'image' => 'uploads/products/uA0ocLaXrMTSc8uAunWvFwCTTZXqr4vWAOh7fQvS.avif',
   ],
   [
     'category_id' => 6,
@@ -813,7 +813,7 @@ return [
     'ingredients' => 'Carne, cipolla, carote, sedano, peperoncino, passata di pomodoro, vino rosso',
     'is_visible' => 1,
     'is_vegan' => 0,
-    'image' => 'uploads/products/1AArYipvgzSzspmNIhGlNnlH13oHpqnKW2nAfBAC.avif',
+    'image' => 'uploads/products/pY8mQtQ4UBDd4JcxrFB7aQSYnux46SfOOSRDkcDU.jpg',
   ],
   [
     'category_id' => 4,
