@@ -48,17 +48,23 @@
     bottom: 20px;
     right: 20px;
 
-    .btn-edit {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      color: #260d09;
-    }
-
+    .btn-edit,
     .btn-trash {
       width: 40px;
       height: 40px;
       border-radius: 50%;
+      transition: scale 0.3s ease;
+
+      &:hover {
+        scale: 1.08;
+      }
+    }
+
+    .btn-edit {
+      color: #260d09;
+    }
+
+    .btn-trash {
       color: white;
       background-color: #260d09;
     }
@@ -66,6 +72,5 @@
 
   &:hover {
     text-decoration: none;
-    transform: scale(1.05);
   }
 }
