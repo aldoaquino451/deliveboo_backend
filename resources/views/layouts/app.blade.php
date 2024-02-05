@@ -44,28 +44,23 @@
 </head>
 
 <body>
+
     <div id="app">
 
         <header class="header-login text-white">
-
-            <div class="container d-flex justify-content-between align-items-center">
-
-                <a href="{{ url('http://localhost:5174/') }}" class="home fs-4"><i class="fa-solid fa-house"></i></a>
-
-                <h1 class="logo text-center">Deliveboo</h2>
-
-                    <div class="d-flex justify-content-end action">
-                        @if (!Route::is('login'))
-                            <a class="nav-link me-3 btn p-1" href="{{ route('login') }}">{{ __('Accedi') }}</a>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <a class="nav-link  btn p-1" href="{{ route('register') }}">{{ __('Registrati') }}</a>
-                        @endif
-                    </div>
-
+            <div class="container h-100 d-flex justify-content-between align-items-center">
+                <a href="{{ url('http://localhost:5174/') }}" class="home fs-4">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <h1 class="logo text-center">Deliveboo</h1>
+                <div class="d-flex justify-content-end action">
+                    @if (!Route::is('login'))
+                        <a class="text-light" href="{{ route('login') }}">{{ __('Accedi') }}</a>
+                    @elseif (!Route::is('register'))
+                        <a class="text-light" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                    @endif
+                </div>
             </div>
-
         </header>
 
         <main style="padding-bottom: 100px">

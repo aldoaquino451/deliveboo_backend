@@ -3,9 +3,8 @@
 @section('content')
     <div class="container main-register mt-4">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10 col-lg-8">
                 <div class="card-fr">
-                    <div class="card-header text-center mb-3">Registrazione</div>
                     <div class="card-body">
 
                         @if ($errors->any())
@@ -14,12 +13,15 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" id="my-form">
+                        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" id="my-form"
+                            class="container">
                             @csrf
+
+                            <div class="title-restaurant text-center mb-3 mt-2">Dati dell'utente</div>
+
                             <div class="row">
-                                <label for="name" class="col-md-2 col-form-label text-md-left">{{ __('Nome') }}
-                                    *</label>
-                                <div class="col-md-4">
+                                <div class="col-md-6 mb-4">
+                                    <label for="name">{{ __('Nome') }} *</label>
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" required minlength="3" autocomplete="name" autofocus>
@@ -29,9 +31,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <label for="lastname" class="col-md-2 col-form-label text-md-right">{{ __('Cognome') }}
-                                    *</label>
-                                <div class="col-md-4">
+
+                                <div class="col-md-6 mb-4">
+                                    <label for="lastname">{{ __('Cognome') }} *</label>
                                     <input id="lastname" type="text"
                                         class="form-control @error('lastname') is-invalid @enderror" name="lastname"
                                         value="{{ old('lastname') }}" required minlength="3" autocomplete="lastname"
@@ -42,13 +44,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="mb-4 row">
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="email" class="col-md-2 col-form-label text-md-left">{{ __('E-Mail') }}
-                                    *</label>
-                                <div class="col-md-10">
+
+                                <div class="mb-4">
+                                    <label for="email">{{ __('E-Mail') }} *</label>
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email"
@@ -59,11 +57,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
-                            <div class="mb-4 row">
-                                <label for="password" class="col-md-2 col-form-label text-md-left">{{ __('Password') }}
-                                    *</label>
-                                <div class="col-md-3">
+
+                                <div class="col-md-6 mb-4">
+                                    <label for="password">{{ __('Password') }} *</label>
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required minlength="8" maxlength="32" autocomplete="off" not-enter not-space>
@@ -73,19 +69,19 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <label for="password-confirm"
-                                    class="col-md-3 col-form-label text-md-right">{{ __('Conferma Password') }} *</label>
-                                <div class="col-md-4">
+
+                                <div class="col-md-6 mb-4">
+                                    <label for="password-confirm">{{ __('Conferma Password') }} *</label>
                                     <input id="password-confirm" type="password"
                                         class="form-control @error('password-confirm') is-invalid @enderror"
                                         name="password_confirmation" required minlength="8" maxlength="32" not-enter
                                         not-space autocomplete="off" onkeyup="validatePassword()">
                                     <p id="message-password" style="height: 20px;" class="m-0 p-0"></p>
                                 </div>
-                            </div>
-                            <div class="title-restaurant text-center my-4">Dati relativi al ristorante</div>
-                            <div class="row">
-                                <div class="col-md-6">
+
+                                <div class="title-restaurant text-center mb-3 mt-2">Dati del ristorante</div>
+
+                                <div class="col-md-6 mb-4">
                                     <label for="name_restaurant">Nome ristorante *</label>
                                     <input type="text"
                                         class="form-control @error('name_restaurant') is-invalid @enderror"
@@ -96,7 +92,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="col-md-6">
+                                <div class="col-md-6 mb-4">
                                     <label for="vat_number">Partita IVA *</label>
                                     <input type="text" class="form-control @error('vat_number') is-invalid @enderror"
                                         id="vat_number" required minlength="11" maxlength="11" name="vat_number"
@@ -107,61 +103,65 @@
                                         </span>
                                     @enderror
                                 </div>
-                            </div>
 
-                            <div class="col-12 p-0">
-                                <label for="address" class="form-label mt-3">Indirizzo *</label>
-                                <input type="text" class="form-control @error('address') is-invalid @enderror"
-                                    id="address" required name="address" placeholder="Indirizzo, CAP, Città, Provincia"
-                                    value="{{ old('address') }}">
-                            </div>
-                            @error('address')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-
-                            <div class="col-12 p-0">
-                                <label for="image" class="form-label mt-3">Immagine *</label>
-                                <input type="file" class="form-control @error('image') is-invalid @enderror" required
-                                    id="image" name="image" value="{{ old('image') }}">
-                            </div>
-                            @error('address')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-
-                            <div class="col-12 p-0">
-                                <label for="description" class="form-label mt-3">Descrizione</label>
-                                <textarea class="form-control @error('description') is-invalid @enderror" id="description"
-                                    placeholder="Inserisci una breve descrizione" name="description" value="{{ old('description') }}"></textarea>
-                            </div>
-                            @error('description')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
-
-                            <div class="text-center mt-3">
-                                <p>Selezione una o più tipologie per il tuo ristorante *</p>
-                                <div role="group" aria-label="Small button group">
-                                    @foreach ($typologies as $typology)
-                                        <input type="checkbox" class="btn-check" id="typology_{{ $typology->id }}"
-                                            autocomplete="off" name="typologies[]" value="{{ $typology->id }}">
-                                        <label class="btn btn-outline-secondary m-1"
-                                            for="typology_{{ $typology->id }}">{{ $typology->name }}</label>
-                                    @endforeach
+                                <div class="mb-4">
+                                    <label for="address" class="form-label">Indirizzo *</label>
+                                    <input type="text" class="form-control @error('address') is-invalid @enderror"
+                                        id="address" required name="address"
+                                        placeholder="Indirizzo, CAP, Città, Provincia" value="{{ old('address') }}">
+                                    @error('address')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
-                                <span class="text-danger-typologies d-none" style="color: #a73922;">Selezionare almeno una
-                                    tipologia!</span>
-                                @error('typologies')
-                                    <p class="text-danger">{{ $message }}</p>
-                                @enderror
-                            </div>
 
-                            <div class="my-4 row">
-                                <span style="font-size: 0.9rem;">* : campo obbligatorio;</span>
+                                <div class="mb-4">
+                                    <label for="image" class="form-label">Immagine *</label>
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror"
+                                        required id="image" name="image" value="{{ old('image') }}">
+                                    @error('address')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="description" class="form-label">Descrizione</label>
+                                    <textarea class="form-control @error('description') is-invalid @enderror" id="description"
+                                        placeholder="Inserisci una breve descrizione" name="description" value="{{ old('description') }}"></textarea>
+                                    @error('description')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="description" class="form-label">Tipologia / Tipologie *</label>
+                                    <div id="typologies" role="group" aria-label="Small button group"
+                                        class="text-md-center">
+                                        @foreach ($typologies as $typology)
+                                            <input type="checkbox" class="btn-check" id="typology_{{ $typology->id }}"
+                                                autocomplete="off" name="typologies[]" value="{{ $typology->id }}">
+                                            <label class="btn btn-outline-secondary m-1"
+                                                for="typology_{{ $typology->id }}">{{ $typology->name }}</label>
+                                        @endforeach
+                                    </div>
+                                    <span class="text-danger-typologies d-none" style="color: #a73922;">
+                                        Selezionare almeno una tipologia!
+                                    </span>
+                                    @error('typologies')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+
+                                <p class="mb-4" style="font-size: 0.9rem; font-weight: normal;">
+                                    * : campo obbligatorio.
+                                </p>
+
                                 <div class="text-center">
                                     <button type="submit" onclick="addEvent()" id="btn-submit"
                                         class="btn register-btn">
                                         {{ __('Registrati') }}
                                     </button>
                                 </div>
+
                             </div>
 
                         </form>

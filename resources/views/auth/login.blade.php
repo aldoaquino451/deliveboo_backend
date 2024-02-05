@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-4">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
+            <div class="px-5 px-sm-2 col-md-8">
                 <div class="card-fr">
                     <div class="card-header text-center mb-3">Accedi al tuo ristorante</div>
 
@@ -12,10 +12,11 @@
                             @csrf
 
                             <div class="mb-4 row">
-                                <label for="email"
-                                    class="col-4 col-form-label text-right fw-bold">{{ __('E-Mail Address') }}</label>
+                                <label for="email" class="col-sm-5 col-form-label py-0 mb-2 px-3 text-sm-right fw-bold">
+                                    {{ __('E-Mail Address') }}
+                                </label>
 
-                                <div class="col-6">
+                                <div class="col-sm-7 col-xl-5">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -28,11 +29,12 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
-                                <label for="password"
-                                    class="col-4 col-form-label text-right fw-bold">{{ __('Password') }}</label>
+                            <div class="mb-5 row">
+                                <label for="password" class="col-sm-5 col-form-label py-0 mb-2 px-3 text-sm-right fw-bold">
+                                    {{ __('Password') }}
+                                </label>
 
-                                <div class="col-6">
+                                <div class="col-sm-7 col-xl-5">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
@@ -45,7 +47,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
+                            {{-- <div class="mb-4 row">
                                 <div class="col-4 offset-4 text-center">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
@@ -56,24 +58,24 @@
                                         </label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="mb-4 row justify-content-center">
-                                    <button type="submit" class="btn login-btn mb-3">
-                                        {{ __('Login') }}
-                                    </button>
+                                <button type="submit" class="btn login-btn mb-3">
+                                    {{ __('Login') }}
+                                </button>
 
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            <span class="text-center">Hai dimenticato la tua password?</span>
-                                        </a>
-                                    @endif
-                                </div>
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        <span class="text-center">Hai dimenticato la tua password?</span>
+                                    </a>
+                                @endif
                             </div>
-                        </form>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 @endsection
