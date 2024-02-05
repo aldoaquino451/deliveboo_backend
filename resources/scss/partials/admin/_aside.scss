@@ -1,75 +1,61 @@
 aside {
-  background-color: #a73922;
-  width: 100px;
-  height: calc(100vh - 90px);
-  margin: auto 0;
-  border-radius: 0 20px 20px 0;
-  box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
 
   ul {
+    width: 100px;
+    height: calc(100vh - 90px);
+    border-radius: 0 20px 20px 0;
+    background-color: #a73922;
+    box-shadow: 3px 3px 5px 2px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 0;
+    padding: 10px;
 
     li {
-      width: 100%;
-      height: 60px;
-      list-style-type: none;
-
-      &:nth-child(1) {
-        margin-bottom: 50px;
-        margin-top: 10px;
+      &:first-child {
+        margin-bottom: 30px;
       }
 
-      &:not(:first-child) {
-        margin: 20px 0;
-      }
-    }
-  }
+      a {
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        text-decoration: none;
+        border-radius: 0 15px 15px 0;
 
-  a {
-    padding: 10px;
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    font-size: 0.8rem;
+        i {
+          font-size: 2rem;
+          margin-bottom: 3px;
+        }
 
-    &.active {
-      text-decoration: none;
-      background-color: rgba(255, 255, 255, 0.762);
-      border-radius: 0 15px 15px 0;
+        span {
+          font-weight: bold;
+          color: white;
+        }
 
-      i,
-      span {
-        color: #a73922;
-      }
-    }
+        &.active {
+          background-color: rgba(255, 255, 255, 1);
 
-    &:hover {
-      text-decoration: none;
-      background-color: white;
+          i,
+          span {
+            color: #a73922;
+          }
+        }
 
-      border-radius: 0 15px 15px 0;
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.7);
+          text-decoration: none;
 
-      i,
-      span {
-        color: #a73922;
+          i,
+          span {
+            color: #a73922;
+          }
+        }
+
       }
     }
 
-    i {
-      font-size: 2rem;
-      margin-bottom: 3px;
-    }
-
-    span {
-      width: 100%;
-      font-weight: bold;
-      color: white;
-    }
   }
 }
 
